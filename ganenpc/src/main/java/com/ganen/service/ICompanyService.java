@@ -24,4 +24,8 @@ public interface ICompanyService {
     public List<ServiceOrder> getCompanyOrder(int companyOrderID);
     //导出excel发放明细
     List<EmployeeOrder> expressGant(String companyOrderNumber);
+
+    Company getCompanyBillingByNumber(int companyOrderID);
+
+    ServiceExpress getServiceExpress(int companyOrderID);
 }

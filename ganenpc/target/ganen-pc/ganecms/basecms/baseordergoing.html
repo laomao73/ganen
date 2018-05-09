@@ -9,7 +9,34 @@
     <script src="../../tooljs/vue-resource.min.js"></script>
     <script>
         $(function(){
-            $(window).attr('href','serordergoing.html');
+            var orderGoing = new Vue({
+                el:'#order-going-frame',
+                data:{
+                    companyOrderID:'',   //订单ID
+                    employeeArr:[],     //发放明细
+                    serviceArr:[]   //服务明细
+                },
+                created:function(){
+                    this.companyOrderID = localStorage.getItem('orderID');
+                    this.loadOrderMsg();
+                },
+                methods:{
+                    loadOrderMsg:function(){    //读取订单详情
+                        this.$http.get('/ganen/orderByID.do',{
+                            params:{
+                                companyOrderID:this.companyOrderID
+                            }
+                        }).then(function(res){
+                            var bodyText = eval('('+res.bodyText+')');
+                            console.log(bodyText);
+                            // this.employeeArr = bodyText.employeeInfo;
+                            // this.serviceArr = bodyText.serviceInfo;
+                        },function(res){
+                            console.log(res);
+                        });
+                    }
+                }
+            });
         });
     </script>
 </head>

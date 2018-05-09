@@ -35,4 +35,8 @@ public interface CompanyDao {
     public CompanyOrder orderByID(int companyOrderID);
     //导出excel发放明细
     List<EmployeeOrder> expressGant(String companyOrderNumber);
+
+    Company getCompanyBillingByNumber(@Param("companyOrderID") int companyOrderID);
+
+    ServiceExpress getServiceExpress(@Param("companyOrderID") int companyOrderID);
 }

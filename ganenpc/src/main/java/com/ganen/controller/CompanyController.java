@@ -533,6 +533,7 @@ public class CompanyController {
                 employeeChild.put("employeeName", emps.getEmployee().getEmployeeName());
                 employeeChild.put("employeePhone", emps.getEmployee().getEmployeePhone());
                 employeeChild.put("employeeCard", emps.getEmployee().getEmployeeCard());
+                employeeChild.put("employeeTax", emps.getEmployeeTax());
                 employeeChild.put("employeeBankNumber", emps.getEmployee().getEmployeeBankNumber());
                 employeeChild.put("employeeOpen", emps.getEmployee().getEmployeeOpen());
                 employeeChild.put("employeeOpenNumber", emps.getEmployee().getEmployeeOpenNumber());

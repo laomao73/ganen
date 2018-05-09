@@ -1,6 +1,8 @@
 package com.ganen.controller;
 
 import com.ganen.entity.*;
+import com.ganen.service.ICardTypeService;
+import com.ganen.service.ICompanyService;
 import com.ganen.service.impl.GanenService;
 import com.ganen.service.impl.LimitPageService;
 import com.ganen.service.impl.ServiceExpressService;
@@ -36,6 +38,10 @@ public class GanenController {
     private LimitPageService pageService;
     @Autowired
     private ServiceExpressService expressService;
+    @Autowired
+    private ICompanyService service;
+    @Autowired
+    private ICardTypeService cardTypeService;
 
     /**
      * 平台登录
@@ -259,6 +265,103 @@ public class GanenController {
         map.put("content", coAll);
         return map;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 根据企业订单ID获得企业订单
+     *
+     * @param companyOrderID
+     * @return
+     */
+    @RequestMapping(value = "orderByID.do", method = RequestMethod.GET)
+    @ResponseBody
+    public Map<String, Object> orderByID(@RequestParam("companyOrderID") int companyOrderID) {
+        Map<String, Object> map = new HashMap<String, Object>();
+        HttpSession session = request.getSession();
+        Company billing = service.getCompanyBillingByNumber(companyOrderID);
+        List<ServiceOrder> serviceOrders = service.getCompanyOrder(companyOrderID);
+        ServiceExpress serviceExpress=service.getServiceExpress(companyOrderID);
+        Map<String, Object> serviceChild = new HashMap<String, Object>();
+        Map<String, Map<String, Object>> employee = new HashMap<String, Map<String, Object>>();
+        Map<String, Map<String, Object>> services = new HashMap<String, Map<String, Object>>();
+        Map<String, Object> employeeChild = new HashMap<String, Object>();
+        List<CardType> cardTypes = cardTypeService.selectCardTypeAll();
+        for (int i = 0; i < serviceOrders.size(); i++) {
+            ServiceOrder serviceOrder = serviceOrders.get(i);
+            serviceChild.put("companyAllName", billing.getCompanyAllName());
+            serviceChild.put("companyTaxNumber", billing.getCompanyBilling().getCompanyTaxNumber());
+            serviceChild.put("companyAddress", billing.getCompanyBilling().getCompanyAddress());
+            serviceChild.put("companyPhone", billing.getCompanyBilling().getCompanyPhone());
+            serviceChild.put("companyOpenBank", billing.getCompanyBilling().getCompanyOpenBank());
+            serviceChild.put("companyBankCard", billing.getCompanyBilling().getCompanyBankCard());
+            serviceChild.put("companyOrderSalary", serviceOrder.getServiceOrderPrice().subtract(serviceOrder.getServiceOrderServicePrice()));
+            serviceChild.put("companyOrderTaxCount", serviceOrder.getCompanyOrder().getCompanyOrderTaxCount());
+            serviceChild.put("companyOrderPriceCount", serviceOrder.getServiceOrderPrice());
+            serviceChild.put("companyOrderNumber", serviceOrder.getCompanyOrder().getCompanyOrderNumber());
+            serviceChild.put("serviceCompanyAllName", serviceOrder.getService().getServiceCompanyName());
+            serviceChild.put("serviceOpenNumber", serviceOrder.getService().getServiceOpenNumber());
+            serviceChild.put("serviceOpenName", serviceOrder.getService().getServiceOpenName());
+            serviceChild.put("serviceTicketType", serviceOrder.getServiceOrderTicketType());
+            serviceChild.put("serviceTicketCategory", serviceOrder.getServiceOrderTicketCategory());
+            serviceChild.put("serviceOrderImage", serviceOrder.getServiceOrderImage());
+            if(serviceExpress!=null){
+                serviceChild.put("serviceExpress", serviceExpress.getServiceExpress());
+            }else{
+                serviceChild.put("serviceExpress", null);
+            }
+            services.put("service" + i, serviceChild);
+            serviceChild = new HashMap<String, Object>();
+
+            for (int j = 0; j < serviceOrder.getEmployeeOrderList().size(); j++) {
+                EmployeeOrder emps = serviceOrder.getEmployeeOrderList().get(j
+
+                );
+                employeeChild.put("employeePrice", emps.getEmployeePrice());
+                employeeChild.put("employeeName", emps.getEmployee().getEmployeeName());
+                employeeChild.put("employeePhone", emps.getEmployee().getEmployeePhone());
+                employeeChild.put("employeeCard", emps.getEmployee().getEmployeeCard());
+                employeeChild.put("employeeTax", emps.getEmployeeTax());
+                employeeChild.put("employeeBankNumber", emps.getEmployee().getEmployeeBankNumber());
+                employeeChild.put("employeeOpen", emps.getEmployee().getEmployeeOpen());
+                employeeChild.put("employeeOpenNumber", emps.getEmployee().getEmployeeOpenNumber());
+                employeeChild.put("serviceCompanyAllName", serviceOrder.getService().getServiceCompanyName());
+                for (int h = 0; h < cardTypes.size(); h++) {
+                    CardType cardType = cardTypes.get(h);
+                    if (emps.getEmployee().getEmployeeCardType() == cardType.getCardTypeID()) {
+                        emps.getEmployee().setEmployeeCardCN(cardType.getCardTypeName());
+                    }
+                }
+                employeeChild.put("employeeCardCN", emps.getEmployee().getEmployeeCardCN());
+                employee.put("employee" + j, employeeChild);
+                employeeChild = new HashMap<String, Object>();
+            }
+        }
+        map.put("serviceInfo", services);
+        map.put("employeeInfo", employee);
+        session.setAttribute("companyOrder", serviceOrders.get(0).getCompanyOrder());
+        return map;
+    }
+
+
+
+
+
+
+
+
+
+
 
     /**
      * 获取全部企业

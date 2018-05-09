@@ -19,7 +19,10 @@
                     companyOrderArr:[],  //订单集合
                     pageCount:'',    //总页数
                     pageNumberArr:[],    //页码
-                    now:''  //当前页值
+                    now:'',  //当前页值
+                    orderNumberTxt:'',   //订单号查询输入
+                    stateTxt:'' //订单状态输入
+
                 },
                 created:function(){
                     if(!sessionStorage.getItem('userPhone')){
@@ -78,6 +81,33 @@
                         this.pageNow = this.now+1;
                         this.pageNumberArr = [];
                         this.getOrderMsg(this.pageNow);
+                    },
+                    orderStateTxt:function(event){   //获取订单状态值
+                        this.stateTxt = event.target.value;
+                    },
+                    checkOrder:function(){  //点击查询
+                        if(!this.stateTxt){
+                            this.stateTxt = '执行中';
+                        }
+
+                        this.companyOrderNumber = this.orderNumberTxt;
+                        this.pageNow = 1;
+                        this.companyOrderState = this.stateTxt;
+                        this.pageNumberArr= [];
+
+                        this.getOrderMsg(this.pageNow);
+                    },
+                    orderInit:function(){   //清空所有条件
+                        this.companyOrderNumber = null;
+                        this.pageNow = 1;
+                        this.companyOrderState = null;
+                        this.pageNumberArr= [];
+
+                        this.getOrderMsg(this.pageNow);
+                    },
+                    locationOrderGoing:function(id){  //点击跳转订单详情
+                        localStorage.setItem('orderID',id);
+                        $(window).attr('location','baseordergoing.html');
                     }
                 }
             });
@@ -93,7 +123,7 @@
         <div class="company-order1">
             <div class="order-fn-area1">
                 <span class="area1-txt">订单号</span>
-                <input type="text" class="area1-input">
+                <input type="text" class="area1-input" v-model="orderNumberTxt">
             </div>
             <!--<div class="order-fn-area1">-->
                 <!--<span class="area1-txt">企业名称</span>-->
@@ -101,17 +131,18 @@
             <!--</div>-->
             <div class="order-fn-area1">
                 <span class="area1-txt">订单状态</span>
-                <select name="" id="order-state">
+                <select name="" id="order-state" @change="orderStateTxt($event)">
+                    <option value="请选择">请选择</option>
                     <option value="执行中">执行中</option>
-                    <option value="">发放中</option>
-                    <option value="">部份发放失败</option>
-                    <option value="">发放失败</option>
-                    <option value="">已完成</option>
+                    <option value="发放中">发放中</option>
+                    <option value="部份发放失败">部份发放失败</option>
+                    <option value="发放失败">发放失败</option>
+                    <option value="已完成">已完成</option>
                 </select>
             </div>
             <div class="order-fn-area1">
-                <a href="javascript:;" class="select-btn">查询</a>
-                <a href="javascript:;" class="select-clear">清空条件恢复所有订单</a>
+                <a href="javascript:;" class="select-btn" @click="checkOrder()">查询</a>
+                <a href="javascript:;" class="select-clear" @click="orderInit()">清空条件恢复所有订单</a>
             </div>
         </div>
 
@@ -141,7 +172,7 @@
                     <td>{{item.companyOrderCount}}</td>
                     <td>{{item.companyOrderState}}</td>
                     <td>
-                        <a href="baseordergoing.html">查看详情</a>
+                        <a href="javascript:;" @click="locationOrderGoing(item.companyOrderID)">查看详情</a>
                     </td>
                     <td>
                         <a href="casemoney.html">发放</a>
