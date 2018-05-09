@@ -16,6 +16,10 @@
                     companyOrderNumber:null,  //订单号
                     companyName:null, //公司名称
                     companyOrderState:null,   //订单状态
+                    companyOrderArr:[],  //订单集合
+                    pageCount:'',    //总页数
+                    pageNumberArr:[],    //页码
+                    now:''  //当前页值
                 },
                 created:function(){
                     if(!sessionStorage.getItem('userPhone')){
@@ -26,7 +30,7 @@
                     this.getOrderMsg(this.pageNow);
                 },
                 methods:{
-                    getOrderMsg:function(page){
+                    getOrderMsg:function(page){ //获取订单信息
                         this.$http.get('/ganen/orderAll.do',{
                             params:{
                                 pageNow:this.pageNow,
@@ -37,14 +41,46 @@
                         }).then(function(res){
                             var bodyText = eval('('+res.bodyText+')');
 
+                            this.pageCount = bodyText.totalPageCount;
+                            for(var i=0;i<this.pageCount;i++){
+                                this.pageNumberArr.push(i+1);
+                            }
+
                             if(bodyText.result){
-                                console.log(bodyText.content);
+                                this.companyOrderArr = bodyText.content;
                             }else{
                                 console.log(bodyText.content);
                             }
                         },function(res){
                             console.log(res);
                         });
+                    },
+                    checkPage:function(index){  //点击页码切换页
+                        this.now = index;
+                        this.pageNow = this.now+1;
+                        this.pageNumberArr = [];
+                        this.getOrderMsg(this.pageNow);
+                    },
+                    prevPage:function(){    //点击上一页
+                        this.now--;
+                        if(this.now < 0){
+                            this.now = 0;
+                        }
+                        this.pageNow = this.now+1;
+                        this.pageNumberArr = [];
+                        this.getOrderMsg(this.pageNow);
+                    },
+                    nextPage:function(){    //点击下一页
+                        this.now++;
+                        if(this.now > this.pageCount-1){
+                            this.now = this.pageCount-1;
+                        }
+                        this.pageNow = this.now+1;
+                        this.pageNumberArr = [];
+                        this.getOrderMsg(this.pageNow);
+                    },
+                    checkOrder:function(){  //点击查询
+
                     }
                 }
             });
@@ -60,16 +96,16 @@
         <div class="company-order1">
             <div class="order-fn-area1">
                 <span class="area1-txt">订单号</span>
-                <input type="text" class="area1-input">
+                <input type="text" class="area1-input" v-model="orderNumber">
             </div>
-            <div class="order-fn-area1">
-                <span class="area1-txt">企业名称</span>
-                <input type="text" class="area1-input">
-            </div>
+            <!--<div class="order-fn-area1">-->
+                <!--<span class="area1-txt">企业名称</span>-->
+                <!--<input type="text" class="area1-input">-->
+            <!--</div>-->
             <div class="order-fn-area1">
                 <span class="area1-txt">订单状态</span>
                 <select name="" id="order-state">
-                    <option value="">执行中</option>
+                    <option value="执行中">执行中</option>
                     <option value="">发放中</option>
                     <option value="">部份发放失败</option>
                     <option value="">发放失败</option>
@@ -77,8 +113,8 @@
                 </select>
             </div>
             <div class="order-fn-area1">
-                <a href="javascript:;" class="select-btn">查询</a>
-                <a href="javascript:;" class="select-clear">清空所有条件</a>
+                <a href="javascript:;" class="select-btn" @click="checkOrder()">查询</a>
+                <a href="javascript:;" class="select-clear">清空条件恢复所有订单</a>
             </div>
         </div>
 
@@ -100,13 +136,13 @@
                     <th class="th-little">查看详情</th>
                     <th class="th-little">发放操作</th>
                 </tr>
-                <tr>
-                    <td>2018041866</td>
-                    <td>北京感恩有你数字科技有限公司</td>
-                    <td>50000000</td>
-                    <td>2018-04-18 17:39:28</td>
-                    <td>20</td>
-                    <td>执行中</td>
+                <tr v-for="(item,index) in companyOrderArr">
+                    <td>{{item.companyOrderNumber}}</td>
+                    <td>{{item.companyAllName}}</td>
+                    <td>{{item.companyOrderPriceCount}}</td>
+                    <td>{{item.companyOrderTime}}</td>
+                    <td>{{item.companyOrderCount}}</td>
+                    <td>{{item.companyOrderState}}</td>
                     <td>
                         <a href="baseordergoing.html">查看详情</a>
                     </td>
@@ -119,14 +155,9 @@
 
         <!--分页区-->
         <div class="page-btn-box">
-            <a href="javascript:;" class="prev">上一页</a>
-            <a href="javascript:;" class="page-btn active">1</a>
-            <a href="javascript:;" class="page-btn">2</a>
-            <a href="javascript:;" class="page-btn">3</a>
-            <a href="javascript:;" class="page-btn">4</a>
-            <a href="javascript:;" class="page-btn">5</a>
-            <a href="javascript:;" class="page-btn">6</a>
-            <a href="javascript:;" class="next">下一页</a>
+            <a href="javascript:;" class="prev" @click="prevPage()">上一页</a>
+            <span v-for="(item,index) in pageNumberArr" :class="{active:now==index}" @click="checkPage(index)">{{item}}</span>
+            <a href="javascript:;" class="next" @click="nextPage()">下一页</a>
         </div>
     </div>
 </div>

@@ -205,6 +205,25 @@
     line-height: 20px;
 }
 
+.page-btn-box span{
+    width:20px;
+    height:20px;
+    border:1px solid #909090;
+    text-decoration: none;
+    color:#909090;
+    font-size:12px;
+    text-align: center;
+    line-height: 20px;
+    display: inline-block;
+    margin:0 3px 0 3px;
+    cursor: pointer;
+}
+
+.page-btn-box span.active{
+    background:#909090;
+    color:#fff;
+}
+
 .page-btn.active{
     background:#909090;
     color:#fff;

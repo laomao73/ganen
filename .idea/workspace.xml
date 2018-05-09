@@ -8,24 +8,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9f98f5fc-2edd-4b79-95ea-902f60e28945" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/controller/CompanyController.java" afterPath="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/controller/CompanyController.java" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/dao/CompanyMapper.xml" afterPath="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/dao/CompanyMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/dao/GanenUserMapper.xml" afterPath="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/dao/GanenUserMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/baselogin.html" afterPath="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/baselogin.html" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/basemsgex.html" afterPath="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/basemsgex.html" />
       <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/baseorder.html" afterPath="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/baseorder.html" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/css/exing.css" afterPath="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/css/exing.css" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/exing.html" afterPath="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/exing.html" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/companycms/companylogin.html" afterPath="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/companycms/companylogin.html" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/companycms/css/companyxuan.css" afterPath="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/companycms/css/companyxuan.css" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/companylogin.html" afterPath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/companylogin.html" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/target/classes/com/ganen/dao/CompanyMapper.xml" afterPath="$PROJECT_DIR$/ganenpc/target/classes/com/ganen/dao/CompanyMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/target/ganen-pc/WEB-INF/classes/com/ganen/dao/CompanyMapper.xml" afterPath="$PROJECT_DIR$/ganenpc/target/ganen-pc/WEB-INF/classes/com/ganen/dao/CompanyMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/target/ganen-pc/companyImage/110104198701311614.png" afterPath="$PROJECT_DIR$/ganenpc/target/ganen-pc/companyImage/110104198701311614.png" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/target/ganen-pc/ganecms/basecms/baselogin.html" afterPath="$PROJECT_DIR$/ganenpc/target/ganen-pc/ganecms/basecms/baselogin.html" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/target/ganen-pc/ganecms/basecms/css/exing.css" afterPath="$PROJECT_DIR$/ganenpc/target/ganen-pc/ganecms/basecms/css/exing.css" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/target/ganen-pc/ganecms/basecms/exing.html" afterPath="$PROJECT_DIR$/ganenpc/target/ganen-pc/ganecms/basecms/exing.html" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/target/ganen-pc/ganecms/companycms/companylogin.html" afterPath="$PROJECT_DIR$/ganenpc/target/ganen-pc/ganecms/companycms/companylogin.html" />
+      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/css/baseorder.css" afterPath="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/css/baseorder.css" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -61,38 +45,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="baseorder.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="baseorder.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/baseorder.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="42" column="62" lean-forward="false" selection-start-line="42" selection-start-column="62" selection-end-line="42" selection-end-column="62" />
+            <state relative-caret-position="146">
+              <caret line="98" column="75" lean-forward="false" selection-start-line="98" selection-start-column="75" selection-end-line="98" selection-end-column="75" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CompanyController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/controller/CompanyController.java">
+      <file leaf-file-name="baseorder.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/css/baseorder.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="591" column="37" lean-forward="true" selection-start-line="591" selection-start-column="37" selection-end-line="591" selection-end-column="37" />
-              <folding>
-                <element signature="method#chooseBear#0;class#CompanyController#0" expanded="false" />
-                <element signature="method#checkAll#0;class#CompanyController#0" expanded="false" />
-                <element signature="method#newOrder#0;class#CompanyController#0" expanded="false" />
-                <element signature="method#authTow#0;class#CompanyController#0" expanded="false" />
-                <element signature="method#checkInfo#0;class#CompanyController#0" expanded="false" />
-                <element signature="method#deleteEmployee#0;class#CompanyController#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PublicController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/controller/PublicController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-6101">
-              <caret line="32" column="13" lean-forward="false" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+            <state relative-caret-position="241">
+              <caret line="218" column="19" lean-forward="false" selection-start-line="218" selection-start-column="19" selection-end-line="218" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -101,18 +68,18 @@
       <file leaf-file-name="ganen.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/ganen.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1330">
-              <caret line="70" column="34" lean-forward="true" selection-start-line="70" selection-start-column="16" selection-end-line="70" selection-end-column="34" />
+            <state relative-caret-position="37">
+              <caret line="71" column="71" lean-forward="false" selection-start-line="71" selection-start-column="54" selection-end-line="71" selection-end-column="71" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ganenpc.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/companycms/ganenpc.txt">
+      <file leaf-file-name="service.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/servicecms/service.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5947">
-              <caret line="80" column="34" lean-forward="false" selection-start-line="80" selection-start-column="34" selection-end-line="80" selection-end-column="34" />
+            <state relative-caret-position="-3021">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -182,7 +149,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/util/SmsDemo.java" />
         <option value="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/companycms/css/companyuserset.css" />
         <option value="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/util/SimpleHttpUtils.java" />
         <option value="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/companycms/companyuserset.html" />
@@ -231,8 +197,9 @@
         <option value="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/exing.html" />
         <option value="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/companycms/css/companyxuan.css" />
         <option value="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/basemsgex.html" />
-        <option value="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/baseorder.html" />
         <option value="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/controller/CompanyController.java" />
+        <option value="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/css/baseorder.css" />
+        <option value="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/baseorder.html" />
       </list>
     </option>
   </component>
@@ -294,12 +261,35 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="PackagesPane">
         <subPane>
           <expand>
             <path>
               <item name="ganen" type="58d84e3e:PackageViewProjectNode" />
               <item name="ganenpc" type="616d4139:PackageViewModuleNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
+            <path>
+              <item name="ganen" type="1abcf292:AndroidViewProjectNode" />
+              <item name="ganenpc" type="1039202d:NonAndroidModuleNode" />
+            </path>
+            <path>
+              <item name="ganen" type="1abcf292:AndroidViewProjectNode" />
+              <item name="ganenpc" type="1039202d:NonAndroidModuleNode" />
+              <item name="java" type="b5c1fe26:NonAndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="ganen" type="1abcf292:AndroidViewProjectNode" />
+              <item name="ganenpc" type="1039202d:NonAndroidModuleNode" />
+              <item name="java" type="b5c1fe26:NonAndroidSourceTypeNode" />
+              <item name="ganen" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -336,33 +326,6 @@
               <item name="ganenpc" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="part1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ganen" type="462c0819:PsiDirectoryNode" />
-              <item name="ganenpc" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ganen" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="part1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ganen" type="462c0819:PsiDirectoryNode" />
-              <item name="ganenpc" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ganen" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="part1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ganen" type="462c0819:PsiDirectoryNode" />
-              <item name="ganenpc" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -392,30 +355,18 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="ganecms" type="462c0819:PsiDirectoryNode" />
-              <item name="companycms" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-      <pane id="AndroidView">
-        <subPane>
-          <expand>
-            <path>
-              <item name="ganen" type="1abcf292:AndroidViewProjectNode" />
-              <item name="ganenpc" type="1039202d:NonAndroidModuleNode" />
+              <item name="basecms" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="ganen" type="1abcf292:AndroidViewProjectNode" />
-              <item name="ganenpc" type="1039202d:NonAndroidModuleNode" />
-              <item name="java" type="b5c1fe26:NonAndroidSourceTypeNode" />
-            </path>
-            <path>
-              <item name="ganen" type="1abcf292:AndroidViewProjectNode" />
-              <item name="ganenpc" type="1039202d:NonAndroidModuleNode" />
-              <item name="java" type="b5c1fe26:NonAndroidSourceTypeNode" />
+              <item name="part1" type="b2602c69:ProjectViewProjectNode" />
               <item name="ganen" type="462c0819:PsiDirectoryNode" />
+              <item name="ganenpc" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="ganecms" type="462c0819:PsiDirectoryNode" />
+              <item name="servicecms" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -868,7 +819,8 @@
       <workItem from="1525766599918" duration="75000" />
       <workItem from="1525766961506" duration="7618000" />
       <workItem from="1525776001889" duration="3326000" />
-      <workItem from="1525828351695" duration="9797000" />
+      <workItem from="1525828351695" duration="10579000" />
+      <workItem from="1525848664224" duration="3635000" />
     </task>
     <task id="LOCAL-00001" summary="frist commit">
       <created>1521772862848</created>
@@ -909,7 +861,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="773194000" />
+    <option name="totallyTimeSpent" value="777611000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -945,7 +897,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32341" sideWeight="0.8181234" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32746956" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43301758" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27056554" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22943445" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
@@ -1078,20 +1030,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/companyorder.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/companyordercheck.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/companyordercomplate.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1281,18 +1219,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/baselogin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-532">
-          <caret line="12" column="34" lean-forward="true" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/css/exing.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1197">
           <caret line="63" column="20" lean-forward="false" selection-start-line="63" selection-start-column="20" selection-end-line="63" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1300,7 +1230,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1308,7 +1237,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="447">
           <caret line="30" column="59" lean-forward="true" selection-start-line="30" selection-start-column="59" selection-end-line="30" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1316,13 +1244,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="428">
           <caret line="90" column="35" lean-forward="false" selection-start-line="90" selection-start-column="35" selection-end-line="90" selection-end-column="35" />
-          <folding>
-            <element signature="method#getCompanyID#0;class#CompanyService#0" expanded="false" />
-            <element signature="method#companyUpdatePwd#0;class#CompanyService#0" expanded="false" />
-            <element signature="method#companyAuthOne#0;class#CompanyService#0" expanded="false" />
-            <element signature="method#companyAuthTwo#0;class#CompanyService#0" expanded="false" />
-            <element signature="method#CompanyID#0;class#CompanyService#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1330,7 +1251,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
           <caret line="23" column="45" lean-forward="false" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1338,7 +1258,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
           <caret line="30" column="55" lean-forward="false" selection-start-line="30" selection-start-column="55" selection-end-line="30" selection-end-column="55" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1346,22 +1265,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
           <caret line="134" column="36" lean-forward="true" selection-start-line="134" selection-start-column="36" selection-end-line="134" selection-end-column="36" />
-          <folding>
-            <marker date="1525832073094" expanded="true" signature="6672:6894" ph="INSERT INTO company... " />
-            <marker date="1525832073094" expanded="true" signature="6980:7417" ph="INSERT INTO companyOrder... " />
-            <marker date="1525832073094" expanded="true" signature="7527:7676" ph="SELECT compa... companyBilling" />
-            <marker date="1525832073094" expanded="true" signature="7774:7844" ph="SELECT compa... companyLogin" />
-            <marker date="1525832073094" expanded="true" signature="7939:7997" ph="SELECT compa... company" />
-            <marker date="1525832073094" expanded="true" signature="8095:8163" ph="SELECT c.com... company" />
-            <marker date="1525832073094" expanded="true" signature="8261:8326" ph="SELECT c.com... company" />
-            <marker date="1525832073094" expanded="true" signature="8400:8444" ph="SELECT MAX(c... companyOrder" />
-            <marker date="1525832073094" expanded="true" signature="8544:8630" ph="SELECT compa... companyOrder" />
-            <marker date="1525832073094" expanded="true" signature="8734:9086" ph="SELECT *FROM... serviceOrder" />
-            <marker date="1525832073094" expanded="true" signature="9181:9385" ph="SELECT *FROM... company" />
-            <marker date="1525832073094" expanded="true" signature="9491:9759" ph="SELECT *FROM... companyOrder" />
-            <marker date="1525832073094" expanded="true" signature="9817:9888" ph="UPDATE companyLogin... " />
-            <marker date="1525832073094" expanded="true" signature="9968:10176" ph="UPDATE company... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1377,15 +1280,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="298">
           <caret line="61" column="0" lean-forward="true" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-          <folding>
-            <marker date="1525834234105" expanded="true" signature="293:342" ph="SELECT *FROM... company" />
-            <marker date="1525834234105" expanded="true" signature="449:498" ph="SELECT *FROM... service" />
-            <marker date="1525834234105" expanded="true" signature="579:966" ph="SELECT *FROM... company" />
-            <marker date="1525834234105" expanded="true" signature="1471:1810" ph="SELECT *FROM... service" />
-            <marker date="1525834234105" expanded="true" signature="2285:2363" ph="SELECT *FROM... ganenUser" />
-            <marker date="1525834234105" expanded="true" signature="2442:2504" ph="UPDATE company... " />
-            <marker date="1525834234105" expanded="true" signature="2584:2632" ph="DELETE FROM company... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1393,7 +1287,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
           <caret line="33" column="8" lean-forward="false" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1401,10 +1294,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
           <caret line="92" column="28" lean-forward="true" selection-start-line="92" selection-start-column="28" selection-end-line="92" selection-end-column="28" />
-          <folding>
-            <element signature="e#3191#3192#0" expanded="false" />
-            <element signature="e#3247#3248#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1412,7 +1301,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="184" column="36" lean-forward="false" selection-start-line="184" selection-start-column="36" selection-end-line="184" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1420,7 +1308,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="56" column="21" lean-forward="false" selection-start-line="56" selection-start-column="21" selection-end-line="56" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1428,7 +1315,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="65" column="24" lean-forward="true" selection-start-line="65" selection-start-column="24" selection-end-line="65" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1436,7 +1322,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="621">
           <caret line="97" column="34" lean-forward="false" selection-start-line="97" selection-start-column="34" selection-end-line="97" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1444,7 +1329,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-285">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1456,27 +1340,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/baseorder.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="42" column="62" lean-forward="false" selection-start-line="42" selection-start-column="62" selection-end-line="42" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/controller/PublicController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-6101">
           <caret line="32" column="13" lean-forward="false" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/ganen.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1330">
-          <caret line="70" column="34" lean-forward="true" selection-start-line="70" selection-start-column="16" selection-end-line="70" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1484,7 +1351,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-5947">
           <caret line="80" column="34" lean-forward="false" selection-start-line="80" selection-start-column="34" selection-end-line="80" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1500,6 +1366,45 @@
             <element signature="method#checkInfo#0;class#CompanyController#0" expanded="false" />
             <element signature="method#deleteEmployee#0;class#CompanyController#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/baselogin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="12" column="34" lean-forward="true" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/css/baseorder.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="218" column="19" lean-forward="false" selection-start-line="218" selection-start-column="19" selection-end-line="218" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/servicecms/service.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3021">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/ganen.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="37">
+          <caret line="71" column="71" lean-forward="false" selection-start-line="71" selection-start-column="54" selection-end-line="71" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/baseorder.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="98" column="75" lean-forward="false" selection-start-line="98" selection-start-column="75" selection-end-line="98" selection-end-column="75" />
+          <folding />
         </state>
       </provider>
     </entry>
