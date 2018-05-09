@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ganen.dao.LimitDao">
+    <resultMap id="companyOrderAll" type="com.ganen.entity.CompanyOrder">
+        <id column="companyOrderID" property="companyOrderID"/>
+        <result column="companyOrderNumber" property="companyOrderNumber"/>
+        <result column="companyOrderPriceCount" property="companyOrderPriceCount"/>
+        <result column="companyOrderTime" property="companyOrderTime"/>
+        <result column="companyOrderCount" property="companyOrderCount"/>
+        <result column="companyOrderState" property="companyOrderState"/>
+        <association property="company" javaType="com.ganen.entity.Company">
+            <id column="companyID" property="companyID"/>
+            <result column="companyAllName" property="companyAllName"/>
+        </association>
+        <collection property="serviceOrderList" column="serviceOrderID" ofType="com.ganen.entity.ServiceOrder">
+            <id property="serviceOrderID" column="serviceOrderID"/>
+        </collection>
+    </resultMap>
+    <resultMap id="company" type="com.ganen.entity.Company">
+        <id property="companyID" column="companyID"/>
+        <result property="companyAllName" column="companyAllName"/>
+        <association property="companyBilling" javaType="com.ganen.entity.CompanyBilling">
+            <id property="companyBillingID" column="companyBillingID"/>
+            <result property="companyTaxNumber" column="companyTaxNumber"/>
+            <result property="companyAddress" column="companyAddress"/>
+            <result property="companyPhone" column="companyPhone"/>
+            <result property="companyOpenBank" column="companyOpenBank"/>
+            <result property="companyBankCard" column="companyBankCard"/>
+        </association>
+        <association property="companyTicket" javaType="com.ganen.entity.CompanyTicket">
+            <id property="ticketID" column="ticketID"/>
+            <result property="ticketName" column="ticketName"/>
+            <result property="ticketPhone" column="ticketPhone"/>
+            <result property="ticketAddress" column="ticketAddress"/>
+        </association>
+    </resultMap>
+    <select id="serviceOrderOneCount" resultType="Integer">
+          SELECT COUNT(*) FROM companyOrder co,serviceOrder so,company c
+        WHERE so.companyOrderID=co.companyOrderID
+        AND co.companyID=c.companyID
+        AND so.serviceID=#{serviceID}
+        <if test="companyOrderNumber!=null and companyOrderNumber!=''">
+            AND co.companyOrderNumber=#{companyOrderNumber}
+        </if>
+        <if test="companyName!=null and companyName!=''">
+            AND c.companyName like "%"#{companyName}"%"
+        </if>
+        <if test="companyOrderState!=null and companyOrderState!=''">
+            AND co.companyOrderState=#{companyOrderState}
+        </if>
+    </select>
+    <select id="serviceOrderOneAll" resultMap="companyOrderAll">
+        SELECT *FROM companyOrder co,serviceOrder so,company c
+        WHERE so.companyOrderID=co.companyOrderID
+        AND co.companyID=c.companyID
+        AND so.serviceID=#{serviceID}
+        <if test="companyOrderNumber!=null and companyOrderNumber!='' ">
+            AND co.companyOrderNumber=#{companyOrderNumber}
+        </if>
+        <if test="companyName!=null and companyName!='' ">
+            AND c.companyName like "%"#{companyName}"%"
+        </if>
+        <if test="companyOrderState!=null and companyOrderState!='' ">
+            AND co.companyOrderState=#{companyOrderState}
+        </if>
+        limit #{startPos},#{pageSize}
+    </select>
+
+    <select id="companyOrderOneCount" resultType="Integer">
+        SELECT COUNT(*) FROM companyOrder co,serviceOrder so,company c
+        WHERE so.companyOrderID=co.companyOrderID
+        AND co.companyID=c.companyID
+        AND co.companyID=#{companyID}
+        <if test="companyOrderNumber!=null and companyOrderNumber!=''">
+            AND co.companyOrderNumber=#{companyOrderNumber}
+        </if>
+        <if test="companyName!=null and companyName!=''">
+            AND c.companyName like "%"#{companyName}"%"
+        </if>
+        <if test="companyOrderState!=null and companyOrderState!=''">
+            AND co.companyOrderState=#{companyOrderState}
+        </if>
+    </select>
+    <select id="companyOrderOneAll" resultMap="companyOrderAll">
+        SELECT *FROM companyOrder co,serviceOrder so,company c
+        WHERE so.companyOrderID=co.companyOrderID
+        AND co.companyID=c.companyID
+        AND co.companyID=#{companyID}
+        <if test="companyOrderNumber!=null and companyOrderNumber!='' ">
+            AND co.companyOrderNumber=#{companyOrderNumber}
+        </if>
+        <if test="companyName!=null and companyName!='' ">
+            AND c.companyName like "%"#{companyName}"%"
+        </if>
+        <if test="companyOrderState!=null and companyOrderState!='' ">
+            AND co.companyOrderState=#{companyOrderState}
+        </if>
+        limit #{startPos},#{pageSize}
+    </select>
+
+
+    <select id="ganenOrderCount" resultType="Integer">
+        SELECT COUNT(*) FROM companyOrder co,serviceOrder so,company c
+        WHERE so.companyOrderID=co.companyOrderID
+        AND co.companyID=c.companyID
+        <if test="companyOrderNumber!=null and companyOrderNumber!=''">
+            AND co.companyOrderNumber=#{companyOrderNumber}
+        </if>
+        <if test="companyName!=null and companyName!=''">
+            AND c.companyName like "%"#{companyName}"%"
+        </if>
+        <if test="companyOrderState!=null and companyOrderState!=''">
+            AND co.companyOrderState=#{companyOrderState}
+        </if>
+    </select>
+    <select id="ganenOrderAll" resultMap="companyOrderAll">
+        SELECT *FROM companyOrder co,serviceOrder so,company c
+        WHERE so.companyOrderID=co.companyOrderID
+        AND co.companyID=c.companyID
+        <if test="companyOrderNumber!=null and companyOrderNumber!='' ">
+            AND co.companyOrderNumber=#{companyOrderNumber}
+        </if>
+        <if test="companyName!=null and companyName!='' ">
+            AND c.companyName like "%"#{companyName}"%"
+        </if>
+        <if test="companyOrderState!=null and companyOrderState!='' ">
+            AND co.companyOrderState=#{companyOrderState}
+        </if>
+        limit #{startPos},#{pageSize}
+    </select>
+
+    <select id="companyAllCount" parameterType="String" resultType="Integer">
+        SELECT COUNT(*) FROM company c,companyBilling cb,companyTicket ct
+        WHERE cb.companyID=c.companyID
+        AND ct.companyID=c.companyID
+        <if test="companyName!=null and companyName!=''">
+            AND c.companyName like "%"#{companyName}"%"
+        </if>
+    </select>
+    <select id="companyAll" resultMap="company">
+        SELECT *FROM company c,companyBilling cb,companyTicket ct
+        WHERE cb.companyID=c.companyID
+        AND ct.companyID=c.companyID
+        <if test="companyName!=null and companyName!='' ">
+            AND c.companyName like "%"#{companyName}"%"
+        </if>
+        limit #{startPos},#{pageSize}
+    </select>
+
+    <select id="serviceAllCount" parameterType="String" resultType="Integer">
+        SELECT COUNT(*) FROM service s
+        WHERE 1=1
+        <if test="serviceName!=null and serviceName!=''">
+            AND s.serviceName like "%"#{serviceName}"%"
+        </if>
+    </select>
+    <select id="serviceAll" resultType="Service">
+        SELECT *FROM service s
+        WHERE 1=1
+        <if test="serviceName!=null and serviceName!='' ">
+            AND s.serviceName like "%"#{serviceName}"%"
+        </if>
+        limit #{startPos},#{pageSize}
+    </select>
+
+</mapper>

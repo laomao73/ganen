@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>服务公司平台登录页</title>
+    <link rel="stylesheet" href="css/serlogin.css">
+    <script src="../../tooljs/jquery.min.js"></script>
+    <script src="../../tooljs/vue.min.js"></script>
+    <script src="../../tooljs/vue-resource.min.js"></script>
+    <script>
+        $(function(){
+            var login = new Vue({
+                el:'#login-frame',
+                data:{
+                    userPhone:'',
+                    userPwd:''
+                },
+                created:function(){
+                    localStorage.clear();
+                    sessionStorage.clear();
+                },
+                methods:{
+                    forgetPass:function(){  //点击忘记密码跳转
+                        $(window).attr('location','sergetpass.html');
+                    },
+                    resgin:function(){  //点击注册跳转
+                        $(window).attr('location','serresgin.html');
+                    },
+                    loginKey:function(event){
+                        if(event.keyCode == 13){
+                            this.loginHttp();
+                        }
+                    },
+                    login:function(){   //登录
+                        this.loginHttp();
+                    },
+                    loginHttp:function(){
+                        this.$http.post('/public/login.do',{
+                            type:2,
+                            userPhone:this.userPhone,
+                            userPwd:this.userPwd
+                        },{
+                            emulateJSON:true
+                        }).then(function(res){
+                            console.log(res);
+                            var bodyText = eval('('+res.bodyText+')');
+
+                            if(bodyText.result == '登录成功'){
+                                $(window).attr('location','serframe.html');
+                                sessionStorage.setItem('userPhone',this.userPhone);
+                            }else{
+                                alert(bodyText.result);
+                                $(window).attr('location').reload();
+                            }
+                        },function(res){
+                            console.log(res);
+                        });
+                    }
+                }
+            });
+        });
+
+
+    </script>
+</head>
+<body>
+
+<a href="../../index.html" class="back-pc">返回官网</a>
+
+<!--登录-->
+<div id="login-frame">
+    <h3>服务公司账号登录</h3>
+    <input type="text" v-model="userPhone" placeholder="请输入手机号" @keyup="loginKey($event)">
+    <input type="password" v-model="userPwd" placeholder="请输入密码" @keyup="loginKey($event)"><br/>
+    <a href="javascript:;" class="forgot-pass" @click="forgetPass()">忘记密码</a>
+    <a href="javascript:;" class="login-link" @click="resgin()">立即注册</a><br/>
+    <a href="javascript:;" class="login-btn" @click="login()">登录</a>
+</div>
+
+</body>
+</html>

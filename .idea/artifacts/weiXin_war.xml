@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="weiXin:war">
+    <output-path>$PROJECT_DIR$/weiXin/target</output-path>
+    <root id="archive" name="weiXin.war">
+      <element id="artifact" artifact-name="weiXin:war exploded" />
+    </root>
+  </artifact>
+</component>

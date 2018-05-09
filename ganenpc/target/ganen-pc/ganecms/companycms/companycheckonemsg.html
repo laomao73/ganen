@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改个人信息（灵活用工）1</title>
+    <link rel="stylesheet" href="css/companycheckonemsg.css">
+    <script src="../../tooljs/jquery.min.js"></script>
+    <script src="../../tooljs/vue.min.js"></script>
+    <script src="../../tooljs/vue-resource.min.js"></script>
+    <script>
+        $(function(){
+            var checkonemsg = new Vue({
+                el:'#checkonemsg-frame',
+                data:{
+                    employeeName:'',    //收款人姓名
+                    employeePhone:'',   //员工手机号
+                    employeeCard:'',    //证件号
+                    employeeCardType:1,    //证件类型
+                    employeeOpen:'',    //开户行全称
+                    employeeOpenNumber:'',  //开户行识别号
+                    employeeBankNumber:'',  //银行账号
+                    employeeSalary:'',  //金额
+                    cardTypeArr:[],  //证件类型数组
+                    id:''
+                },
+                methods:{
+                    cardChange:function(event){     //判断身份证，返回对应类型
+                        switch (event.target.value){
+                            case '身份证':
+                                this.employeeCardType = 1;
+                                break;
+                            case '临时身份证':
+                                this.employeeCardType = 2;
+                                break;
+                            case '户口本':
+                                this.employeeCardType = 3;
+                                break;
+                            case '护照':
+                                this.employeeCardType = 4;
+                                break;
+                            case '外国护照':
+                                this.employeeCardType = 5;
+                                break;
+                            case '回乡证':
+                                this.employeeCardType = 6;
+                                break;
+                            case '台胞证':
+                                this.employeeCardType = 7;
+                                break;
+                            case '军官证':
+                                this.employeeCardType = 8;
+                                break;
+                            case '警官证':
+                                this.employeeCardType = 9;
+                                break;
+                            case '士兵证':
+                                this.employeeCardType = 10;
+                                break;
+                            case '外交人员身份证':
+                                this.employeeCardType = 11;
+                                break;
+                            case '外国人居留许可证':
+                                this.employeeCardType = 12;
+                                break;
+                            case '边民出入境通行证':
+                                this.employeeCardType = 13;
+                                break;
+                            case '香港永久性居民身份证':
+                                this.employeeCardType = 14;
+                                break;
+                            case '澳门居民身份证':
+                                this.employeeCardType = 15;
+                                break;
+                            case '台湾身份证':
+                                this.employeeCardType = 16;
+                                break;
+                        }
+                    },
+                    changeMsg:function(event){
+                        event.preventDefault();
+
+                        this.$http.post('/company/updateEmployee.do',{
+                            id:this.id,
+                            employeeName:this.employeeName,
+                            employeePhone:this.employeePhone,
+                            employeeCard:this.employeeCard,
+                            employeeCardType:this.employeeCardType,
+                            employeeOpen:this.employeeOpen,
+                            employeeOpenNumber:this.employeeOpenNumber,
+                            employeeBankNumber:this.employeeBankNumber,
+                            employeeSalary:this.employeeSalary
+                        },{
+                            emulateJSON:true
+                        }).then(function(res){
+                            var bodyText = eval('('+res.bodyText+')');
+
+                            if(bodyText.result == '不能有空项'){
+                                alert(bodyText.result);
+                            }else if(bodyText.result == '修改成功'){
+                                alert(bodyText.result);
+                                $(window).attr('location','companyordercheck.html');
+                            }
+                        },function(res){
+                            console.log(res);
+                        });
+                    }
+                },
+                created:function(){ //加载时将用户信息写入修改表单
+                    var employeeItem = JSON.parse(localStorage.getItem('employeeItem'));
+
+                    this.employeeName = employeeItem.employee.employeeName;
+                    this.employeePhone = employeeItem.employee.employeePhone;
+                    this.employeeCard = employeeItem.employee.employeeCard;
+                    this.employeeOpen = employeeItem.employee.employeeOpen;
+                    this.employeeOpenNumber = employeeItem.employee.employeeOpenNumber;
+                    this.employeeBankNumber = employeeItem.employee.employeeBankNumber;
+                    this.employeeSalary = employeeItem.employeeSalary;
+                    this.id = employeeItem.employee.employeeID;
+
+                    this.$http.get('/cardType/cardTypeAll.do',{
+                        params:{
+
+                        }
+                    }).then(function(res){
+                        var bodyText = eval('('+res.bodyText+')');
+                        this.cardTypeArr = bodyText;
+                    },function(res){
+                        console.log(res);
+                    });
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+<!--修改个人信息-->
+<div id="checkonemsg-frame">
+    <div class="checkonemsg">
+        <p class="checkonemsg-title">修改个人信息</p>
+        <div class="checkonemsg-content">
+            <table>
+                <tr>
+                    <td class="msg-name">收款方账户名称：</td>
+                    <td class="msg-area">
+                        <input type="text" class="msg" v-model="employeeName">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="msg-name">证件号：</td>
+                    <td class="msg-area">
+                        <input type="text" class="msg" v-model="employeeCard">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="msg-name">证件类型：</td>
+                    <td class="msg-area" style="text-align: left;">
+                        <select name="" id="card-select" @change="cardChange($event)">
+                            <option v-for="(card,index) in cardTypeArr" :value="card.cardTypeName">{{card.cardTypeName}}</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="msg-name">银行账号：</td>
+                    <td class="msg-area">
+                        <input type="text" class="msg" v-model="employeeBankNumber">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="msg-name">开户行全称：</td>
+                    <td class="msg-area">
+                        <input type="text" class="msg" v-model="employeeOpen">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="msg-name">开户行识别号：</td>
+                    <td class="msg-area">
+                        <input type="text" class="msg" v-model="employeeOpenNumber">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="msg-name">金额：</td>
+                    <td class="msg-area">
+                        <input type="text" class="msg" v-model="employeeSalary">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="msg-name">员工手机号：</td>
+                    <td class="msg-area">
+                        <input type="text" class="msg" v-model="employeePhone">
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <a class="save" href="javascript:;" @click="changeMsg($event)">保存</a>
+    </div>
+</div>
+
+</body>
+</html>

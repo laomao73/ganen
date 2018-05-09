@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>服务公司订单管理</title>
+    <link rel="stylesheet" href="css/serorder.css">
+    <script src="../../tooljs/jquery.min.js"></script>
+    <script src="../../tooljs/vue.min.js"></script>
+    <script src="../../tooljs/vue-resource.min.js"></script>
+    <script>
+        $(function(){
+            var serviceOrder = new Vue({
+                el:'#company-order-frame',
+                data:{
+                    serviceOrderNone:true,
+                    serviceOrderMsg:false,
+                    pageNow:null,
+                    companyOrderNumber:null,
+                    companyName:null,
+                    companyOrderState:null,
+                    pageCount:'',
+                    pageArr:[],
+                    orderArr:[],
+                    serviceOrderArr:[],
+                    now:0
+                },
+                filters:{
+                    Date:function(value){   //时间过滤器
+                        var oDate = new Date();
+                        oDate.setTime(value);
+
+                        var oY = oDate.getFullYear();
+                        var oM = oDate.getMonth()+1;
+                        var oD = oDate.getDate();
+
+                        var h = oDate.getHours();
+                        var m = oDate.getMinutes();
+                        var s = oDate.getSeconds();
+
+                        return oY+'-'+toDou(oM)+'-'+toDou(oD)+' '+toDou(h)+':'+toDou(m)+':'+toDou(s);
+
+                        function toDou(num){
+                            return num<10?'0'+num:num;
+                        }
+                    }
+                },
+                created:function(){
+                    if(!sessionStorage.getItem('userPhone')){
+                        $(window).attr('location','serlogin.html');
+                    }
+
+                    this.pageNow = 1;
+                    this.orderAll(this.pageNow);
+                },
+                methods:{
+                    checkPage:function(index){  //点击换页
+                        this.pageArr = [];
+                        this.now = index;
+                        this.pageNow = this.now+1;
+                        this.orderAll(this.pageNow);
+                    },
+                    nextPage:function(){    //点击下一页
+                        this.pageArr = [];
+                        this.now++;
+                        if(this.now > this.pageCount-1){
+                            this.now = this.pageCount-1;
+                        }
+
+                        this.orderAll(this.now+1);
+                    },
+                    prevPage:function(){    //点击上一页
+                        this.pageArr = [];
+                        this.now--;
+                        if(this.now < 0){
+                            this.now = 0;
+                        }
+
+                        this.orderAll(this.now+1);
+                    },
+                    selectOrder:function(){ //点击查询订单
+                        this.pageArr = [];
+                        this.pageNow = null;
+                        this.orderAll(this.pageNow);
+                    },
+                    clear:function(){   //点击清空所有条件
+                        this.companyOrderNumber = null;
+                        this.companyOrderState = null;
+                        this.pageArr = [];
+                        this.pageNow = 1;
+
+                        this.orderAll(this.pageNow);
+                    },
+                    seeMain:function(id){   //查看订单详情
+                        $(window).attr('location','serordergoing.html');
+                        localStorage.setItem('orderID',id);
+                    },
+                    orderAll:function(page){    //获取所有订单信息
+                        this.$http.post('/service/orderAll.do',{
+                            pageNow:page,
+                            companyOrderNumber:this.companyOrderNumber,
+                            companyName:this.companyName,
+                            companyOrderState:this.companyOrderState
+                        },{
+                            emulateJSON:true
+                        }).then(function(res){
+                            console.log(res);
+                            var bodyText = eval('('+res.bodyText+')');
+                            this.pageCount = bodyText.totalPageCount;
+
+                            for(var i=0;i<this.pageCount;i++){
+                                this.pageArr.push(i+1);
+                            }
+
+                            if(bodyText.result){
+                                this.serviceOrderNone = false;
+                                this.serviceOrderMsg = true;
+
+                                this.orderArr = bodyText.content;
+                                console.log(this.orderArr);
+                            }else{
+                                this.serviceOrderNone = false;
+                                this.serviceOrderMsg = true;
+                            }
+                        },function(res){
+                            console.log(res);
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+<!--服务公司订单管理-->
+<div id="company-order-frame">
+    <div class="company-order-box">
+        <div class="company-order3" v-show="serviceOrderNone">
+            <p>暂无客户公司创建订单</p>
+        </div>
+
+        <div class="company-display-box" v-show="serviceOrderMsg">
+            <!--条件筛选查询功能区-->
+            <div class="company-order1">
+                <div class="order-fn-area1">
+                    <span class="area1-txt">订单号</span>
+                    <input type="text" class="area1-input" v-model="companyOrderNumber">
+                </div>
+                <div class="order-fn-area2">
+                    <span class="area1-txt">订单状态</span>
+                    <select name="" id="order-state" @change="changOrderState($event)">
+                        <option value="执行中">执行中</option>
+                        <option value="发放中">发放中</option>
+                        <option value="部份发放失败">部份发放失败</option>
+                        <option value="发放失败">发放失败</option>
+                        <option value="已发放">已发放</option>
+                    </select>
+                </div>
+                <div class="order-fn-area3">
+                    <a href="javascript:;" class="select-btn" @click="selectOrder()">查询</a>
+                </div>
+                <div class="order-fn-area4">
+                    <a href="javascript:;" class="select-clear" @click="clear()">清空条件恢复所有订单查询</a>
+                </div>
+            </div>
+
+            <!--订单区-表格-->
+            <div class="company-order4">
+                <table>
+                    <tr>
+                        <th class="th-little">订单号</th>
+                        <th class="th-little">企业名称</th>
+                        <th class="th-big">订单金额</th>
+                        <th class="th-big">订单时间</th>
+                        <th class="th-big">状态</th>
+                        <th class="th-little">查看订单详情</th>
+                    </tr>
+                    <tr v-for="(item,index) in orderArr">
+                        <td>{{item.companyOrderNumber}}</td>
+                        <td>{{item.companyAllName}}</td>
+                        <td>{{item.companyOrderPriceCount}}</td>
+                        <td>{{item.companyOrderTime|Date}}</td>
+                        <td>{{item.companyOrderState}}</td>
+                        <td>
+                            <a href="javascript:;" @click="seeMain(item.companyOrderID)">查看</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <!--分页区-->
+            <!--分页区-->
+            <div class="page-btn-box">
+                <a href="javascript:;" class="prev" @click="prevPage()">上一页</a>
+                <strong :class="{active:now==index}" v-for="(item,index) in pageArr" @click="checkPage(index)">{{item}}</strong>
+                <a href="javascript:;" class="next" @click="nextPage()">下一页</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

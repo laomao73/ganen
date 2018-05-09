@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>找回密码1</title>
+    <script src="../../tooljs/jquery.min.js"></script>
+    <script src="../../tooljs/vue.min.js"></script>
+    <script src="../../tooljs/vue-resource.min.js"></script>
+    <link rel="stylesheet" href="css/checkpass.css">
+    <script>
+        $(function(){
+            var checkPass = new Vue({
+                el:'#checkpass-frame',
+                data:{
+                    phone:'',
+                    strCode:'',
+                    disabled:false,
+                    btnTxt:'发送验证码'
+                },
+                methods:{
+                    getCode:function(){
+                        this.$http.get('/public/sendNumber.do?',{
+                            params:{
+                                contactsPhone:this.phone
+                            }
+                        }).then(function(res){
+                            console.log(res);
+                            var bodyText = eval('('+res.bodyText+')');
+                            if(bodyText.result == '手机号格式不正确'){
+                                alert(bodyText.result);
+                                return;
+                            }else{
+                                this.disabled = true;
+                                var num = 60;
+                                var that = this;
+                                var timer = setInterval(function(){
+                                    num--;
+                                    that.btnTxt = '重新发送('+num+')';
+                                    if(num<=0){
+                                        clearInterval(timer);
+                                        that.btnTxt = '发送验证码';
+                                        that.disabled = false;
+                                    }
+                                },1000);
+                            }
+                        });
+                    },
+                    checkpass:function(){
+                       this.$http.post('/public/forgetPwd.do',{
+                           type:1,
+                           phone:this.phone,
+                           strCode:this.strCode
+                       },{
+                           emulateJSON:true
+                       }).then(function(res){
+                           console.log(res);
+                           var bodyText = eval('('+res.bodyText+')');
+                           if(
+                                bodyText.result == '输入内容不包含空项，请您重新输入。'||
+                                bodyText.result == '请点击发送验证码'||
+                                bodyText.result == '验证码不正确,请您重新输入。'||
+                                bodyText.result == '手机号不存在'
+                           ){
+                               alert(bodyText.result);
+                               $(window).attr('location','checkpass.html');
+                           }else{
+                               $(window).attr('location','checkpass2.html');
+                               localStorage.setItem('result',bodyText.result);
+                           }
+                       });
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+<a href="../../index.html" class="back-pc">返回官网1</a>
+<div id="checkpass-frame">
+    <h3>找回密码</h3>
+    <input type="text" class="tel" v-model="phone" placeholder="请输入手机号"><br/>
+    <input type="text" class="check-number" v-model="strCode" placeholder="输入验证码">
+    <button class="get-check-number" @click="getCode()" v-text="btnTxt" :disabled="disabled">获取验证码</button>
+    <a href="javascript:;" class="next" @click="checkpass()">下一步</a>
+</div>
+
+</body>
+</html>

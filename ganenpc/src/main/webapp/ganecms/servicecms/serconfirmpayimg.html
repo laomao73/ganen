@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>确认打款截图</title>
+    <link rel="stylesheet" href="css/serconfirmpayimg.css">
+    <script src="../../tooljs/jquery.min.js"></script>
+    <script src="../../tooljs/vue.min.js"></script>
+    <script src="../../tooljs/vue-resource.min.js"></script>
+    <script>
+        $(function(){
+            var downPayImg = new Vue({
+                el:'#downpayimg-frame',
+                data:{
+                    serviceOrderID:'',
+                    payImgPath:'',
+                    payImgTxtDisplay:true,
+                    payImgDisplay:false,
+                    downloadImage:'',
+                },
+                created:function(){
+                    if(localStorage.getItem('orderID')){
+                        this.serviceOrderID = localStorage.getItem('orderID');
+                        this.downImg();
+
+                        this.$http.get('/public/image.do',{
+                            params:{
+                                serviceOrderID:this.serviceOrderID
+                            }
+                        }).then(function(res){
+                            var bodyText = res.bodyText;
+
+                            if(bodyText){
+                                this.payImgTxtDisplay = false;
+                                this.payImgDisplay = true;
+                            }
+
+                            this.payImgPath = bodyText;
+                        },function(res){
+                            console.log(res);
+                        });
+                    }
+                },
+                methods:{
+                    downImg:function(){ //下载打款截图
+                        this.downloadImage = '/service/downloadImage.do?serviceOrdereID='+localStorage.getItem('orderID');
+                    },
+                    deleteImage:function(){ //删除打款截图
+                        if(confirm('确认把此错误截图删除吗？')){
+                            this.$http.get('/service/deleteImage.do',{
+                                params:{
+                                    serviceOrderID:this.serviceOrderID
+                                }
+                            }).then(function(res){
+                                var bodyText = eval('('+res.bodyText+')');
+
+                                if(bodyText.result){
+                                    alert(bodyText.content);
+                                    $(window).attr('location','serorder.html');
+                                }else{
+                                    alert(bodyText.content);
+                                }
+                            },function(res){
+                                console.log(res);
+                            });
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+<!--确认打款截图-->
+<div id="downpayimg-frame">
+    <div class="downpayimg">
+        <div class="payimg-box">
+            <p class="payimg-txt" v-show="payImgTxtDisplay">还未上传打款截图</p>
+            <img v-show="payImgDisplay" class="payimg" width="100%" :src="payImgPath" alt="">
+        </div>
+        <div class="btn-box">
+            <a class="down-btn" :href="downloadImage">下载</a>
+            <a class="down-btn2" href="javascript:;" @click="deleteImage()">错误</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

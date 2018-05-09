@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ganen.dao.CompanyLoginDao">
+
+    <resultMap id="companyLogin" type="com.ganen.entity.CompanyLogin">
+        <id property="companyLoginID" column="companyLoginID"/>
+        <result property="contactsName" column="contactsName"/>
+        <result property="contactsPhone" column="contactsPhone"/>
+        <result property="contactsPwd" column="contactsPwd"/>
+        <collection column="companyLoginID" property="companyList" ofType="com.ganen.entity.Company" >
+            <id property="companyID" column="companyID"/>
+            <result property="companyAllName" column="companyAllName"/>
+        </collection>
+    </resultMap>
+    <resultMap id="company" type="com.ganen.entity.Company">
+        <id  property="companyID" column="companyID"/>
+        <result property="companyName" column="companyName"/>
+        <result property="companyAllName" column="companyAllName"/>
+        <association property="companyLogin" javaType="com.ganen.entity.CompanyLogin">
+            <id property="companyLoginID" column="companyLoginID"/>
+            <result property="contactsName" column="contactsName"/>
+            <result property="contactsPhone" column="contactsPhone"/>
+            <result property="contactsPwd" column="contactsPwd"/>
+        </association>
+    </resultMap>
+    <resultMap id="companyBillingTo" type="com.ganen.entity.CompanyBilling">
+        <id  property="companyBillingID" column="companyBillingID"/>
+        <result property="companyTaxNumber" column="companyTaxNumber"/>
+        <result property="companyAddress" column="companyAddress"/>
+        <result property="companyOpenBank" column="companyOpenBank"/>
+        <result property="companyBankCard" column="companyBankCard"/>
+        <association property="companyID" javaType="com.ganen.entity.Company">
+            <id property="companyID" column="companyID"/>
+            <result property="companyName" column="companyName"/>
+        </association>
+    </resultMap>
+    <resultMap id="companyTicketTo" type="com.ganen.entity.CompanyTicket">
+        <id  property="ticketID" column="ticketID"/>
+        <result property="ticketName" column="ticketName"/>
+        <result property="ticketPhone" column="ticketPhone"/>
+        <result property="ticketAddress" column="ticketAddress"/>
+        <association property="companyID" javaType="com.ganen.entity.Company">
+            <id property="companyID" column="companyID"/>
+            <result property="companyName" column="companyName"/>
+        </association>
+    </resultMap>
+    <insert id="companyLoginRegister" parameterType="CompanyLogin" >
+        INSERT INTO companyLogin(contactsName,contactsPhone,contactsPwd) VALUE("${contactsName}","${contactsPhone}","${contactsPwd}")
+    </insert>
+    <select id="companyLogin"         parameterType="String"  resultMap="companyLogin">
+        SELECT l.companyLoginID,l.contactsName,l.contactsPhone,c.companyID,c.companyAllName   FROM companyLogin l,company c WHERE l.companyLoginID=c.companyLoginID AND l.contactsPwd="${userPwd}" AND l.contactsPhone="${userPhone}"
+    </select>
+    <select id="chooseCompany"        parameterType="Integer" resultType="Company">
+        SELECT *FROM company WHERE companyID=#{companyID}
+    </select>
+    <insert id="companyRegister"      parameterType="String">
+        INSERT INTO company(companyName,companyAdopt,companyLoginID) VALUE("${companyName}",0,${id})
+    </insert>
+    <insert id="companyInsertTicket" >
+        INSERT INTO companyTicket(ticketName,ticketPhone,ticketAddress,companyID) VALUE("${ticket.ticketName}","${ticket.ticketPhone}","${ticket.ticketAddress}",${id})
+    </insert>
+    <insert id="companyInsertBilling">
+        INSERT INTO companyBilling(companyTaxNumber,companyAddress,companyPhone,companyOpenBank,companyBankCard,companyID)VALUE("${billing.companyTaxNumber}","${billing.companyAddress}","${billing.companyPhone}","${billing.companyOpenBank}","${billing.companyBankCard}",${id})
+    </insert>
+    <update id="companyAuthOne"       parameterType="Company">
+        UPDATE company SET companyAllName="${companyAllName}", companyBusinessNumber="${companyBusinessNumber}" , companyBusinessImage="${companyBusinessImage}" WHERE companyID=${companyID}
+    </update>
+    <update id="companyAuthTwo"       parameterType="Company">
+        UPDATE company SET companyLegalName="${companyLegalName}", companyLegalPhone="${companyLegalPhone}" ,companyLegalCard="${companyLegalCard}" ,companyLegalImage="${companyLegalImage}" WHERE companyID=${companyID}
+    </update>
+    <update id="updateCompanyBilling" parameterType="CompanyBilling">
+        UPDATE companyBilling SET companyTaxNumber=#{companyTaxNumber},companyAddress=#{companyAddress},companyPhone=#{companyPhone},companyOpenBank=#{companyOpenBank},companyBankCard=#{companyBankCard}
+         WHERE companyBillingID=#{companyBillingID}
+    </update>
+    <update id="updateCompanyTicket" parameterType="CompanyTicket">
+        UPDATE companyTicket SET ticketName=#{ticketName},ticketPhone=#{ticketPhone},ticketAddress=#{ticketAddress} WHERE ticketID=#{ticketID}
+    </update>
+    <update id="updatePhone">
+        UPDATE companyLogin SET contactsPhone=#{phoneOne} WHERE companyLoginID=#{companyLoginID}
+    </update>
+    <select id="isAdopt"              parameterType="Integer" resultType="Integer">
+        SELECT companyAdopt FROM company WHERE companyID=#{companyID}
+    </select>
+    <select id="phoneIsExist"         parameterType="String" resultType="int">
+        SELECT count(*) FROM companyLogin WHERE contactsPhone="${phone}"
+    </select>
+    <select id="getCompany"           parameterType="String" resultMap="companyLogin">
+      SELECT *FROM companyLogin c WHERE c.contactsPhone="${phone}"
+    </select>
+    <select id="getCompanyID"         parameterType="String" resultType="int">
+        SELECT companyID FROM company WHERE companyName="${companyName}"
+    </select>
+    <select id="companyIsExist"       parameterType="String" resultMap="company">
+        SELECT *FROM companyLogin l,company c WHERE l.companyLoginID=c.companyLoginID AND c.companyName="${companyName}"
+    </select>
+    <select id="companyBillingByID"   parameterType="Integer" resultType="CompanyBilling">
+        SELECT *FROM companyBilling WHERE companyID=#{companyID}
+    </select>
+    <select id="companyTicketByID"   parameterType="Integer" resultType="CompanyTicket">
+        SELECT *FROM companyTicket WHERE companyID=#{companyID}
+    </select>
+</mapper>

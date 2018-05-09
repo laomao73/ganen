@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>服务公司企业信息</title>
+    <link rel="stylesheet" href="css/sermsg.css">
+    <script src="../../tooljs/jquery.min.js"></script>
+    <script src="../../tooljs/vue.min.js"></script>
+    <script src="../../tooljs/vue-resource.min.js"></script>
+    <script>
+        $(function(){
+            var msg = new Vue({
+                el:'#msg-box',
+                data:{
+                    addDisplay:true,
+                    selectDisplay:false,
+                    serviceCompanyName:'',  //企业全称
+                    serviceOpen:'', //开户银行
+                    serviceOpenName:'',   //开户名称
+                    serviceOpenNumber:'',   //银行账号
+                    serviceTicketType:'',   //发票类型
+                    serviceTicketCategory:'',    //发票类目
+                    servicePeople:'',   //服务人员属性
+                    serviceIndustry:'',  //服务行业
+                    serviceMsg:''   //具体信息
+                },
+                created:function(){ //加载加获取服务公司企业信息
+                    if(!sessionStorage.getItem('userPhone')){
+                        $(window).attr('location','serlogin.html');
+                    }
+
+                    if(localStorage.getItem('serviceMsgArr')){
+                        localStorage.removeItem('serviceMsgArr');
+                    }
+
+                    this.$http.get('/service/selectInfo.do',{
+                        params:{
+
+                        }
+                    }).then(function(res){
+                        var bodyText = eval('('+res.bodyText+')');
+
+                        if(bodyText.result){
+                            this.addDisplay = false;
+                            this.selectDisplay = true;
+
+                            this.serviceMsg = bodyText.content;
+
+                            switch (this.serviceMsg.servicePeople){
+                                case 1:
+                                    this.servicePeople = '灵活用工';
+                                    break;
+                                case 2:
+                                    this.servicePeople = '企业用工';
+                                    break;
+                                case 3:
+                                    this.servicePeople = '灵活用工以及企业用工两者均可';
+                                    break;
+                            }
+
+                            this.serviceCompanyName = this.serviceMsg.serviceCompanyName;
+                            this.serviceOpen = this.serviceMsg.serviceOpen;
+                            this.serviceOpenName = this.serviceMsg.serviceOpenName;
+                            this.serviceOpenNumber = this.serviceMsg.serviceOpenNumber;
+                            this.serviceTicketType = this.serviceMsg.serviceTicketType;
+                            this.serviceTicketCategory = this.serviceMsg.serviceTicketCategory;
+                            this.serviceIndustry = this.serviceMsg.serviceIndustry;
+                        }else{
+                            this.addDisplay = true;
+                            this.selectDisplay = false;
+                        }
+                    },function(res){
+                        console.log(res);
+                    });
+                },
+                methods:{
+                    addLink:function(){ //点击新增跳转到新增页面
+                        $(window).attr('location','seraddmsg.html');
+                    },
+                    changeMsg:function(){   //点击修改企业信息
+                        localStorage.setItem('serviceMsgArr',JSON.stringify(this.serviceMsg));
+                        $(window).attr('location','seraddmsg.html');
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+<div id="msg-box">
+    <!--服务公司末增加公司未增加公司-->
+    <div id="add-company-frame" v-show="addDisplay">
+        <img class="no-add" src="images/noadd.png" alt="">
+        <a href="javascript:;" class="add-btn" @click="addLink()">新增</a>
+    </div>
+
+    <!--服务公司企业信息-->
+    <!--v-show="selectDisplay"-->
+    <div id="companyselect-frame" v-show="selectDisplay">
+        <div class="companyselect">
+            <h3 class="big-title">企业信息</h3>
+            <div class="kpmsg-box">
+                <div class="kpmsg">
+                    <table>
+                        <tr>
+                            <td class="kp-txt1">企业全称：</td>
+                            <td class="kp-txt2">{{serviceCompanyName}}</td>
+                        </tr>
+                        <tr>
+                            <td class="kp-txt1">开户银行：</td>
+                            <td class="kp-txt2">{{serviceOpen}}</td>
+                        </tr>
+                        <tr>
+                            <td class="kp-txt1">开户名称：</td>
+                            <td class="kp-txt2">{{serviceOpenName}}</td>
+                        </tr>
+                        <tr>
+                            <td class="kp-txt1">银行账号：</td>
+                            <td class="kp-txt2">{{serviceOpenNumber}}</td>
+                        </tr>
+                        <tr>
+                            <td class="kp-txt1">发票类型：</td>
+                            <td class="kp-txt2">{{serviceTicketType}}</td>
+                        </tr>
+                        <tr>
+                            <td class="kp-txt1">发票类目：</td>
+                            <td class="kp-txt2">{{serviceTicketCategory}}</td>
+                        </tr>
+                        <tr>
+                            <td class="kp-txt1">服务人员属性：</td>
+                            <td class="kp-txt2">{{servicePeople}}</td>
+                        </tr>
+                        <tr>
+                            <td class="kp-txt1">服务行业：</td>
+                            <td class="kp-txt2">{{serviceIndustry}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <!--修改按钮-->
+            <a href="javascript:;" class="checked-btn" @click="changeMsg()">修改</a>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+</html>

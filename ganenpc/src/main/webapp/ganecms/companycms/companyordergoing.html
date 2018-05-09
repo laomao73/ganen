@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>订单管理执行中1</title>
+    <link rel="stylesheet" href="css/companyordergoing.css">
+    <script src="../../tooljs/jquery.min.js"></script>
+    <script src="../../tooljs/vue.min.js"></script>
+    <script src="../../tooljs/vue-resource.min.js"></script>
+    <script>
+        $(function(){
+            var orderGoing = new Vue({
+                el:'#order-going-frame',
+                data:{
+                    companyOrderID:'',  //订单ID
+                    payImgNoUpload:true,    //点击上传
+                    payImgUpload:false,     //已上传
+                    employeeArr:'',         //发放明细集合
+                    serviceArr:'',           //服务明细集合
+                    expressExcelGantNumber:'',   //发放明细订单号
+                    expressExcelServiceNumber:''    //服务明细订单号
+                },
+                created:function(){
+                    if(!sessionStorage.getItem('userPhone') || !localStorage.getItem('orderID')){
+                        $(window.parent).attr('location','companylogin.html');
+                    }
+                    this.expressExcelGant();    //获取发放明细订单号
+                    this.expressExcelService(); //获取服务明细订单号
+                    this.companyOrderID = localStorage.getItem('orderID');
+
+                    this.$http.get('/company/orderByID.do',{
+                        params:{
+                            companyOrderID:this.companyOrderID
+                        }
+                    }).then(function(res){
+                        var bodyText = eval('('+res.bodyText+')');
+                        this.employeeArr = bodyText.employeeInfo;
+                        this.serviceArr = bodyText.serviceInfo;
+
+                        for(var i in this.serviceArr){  //判断是否上传打款截图
+                            if(!this.serviceArr[i].serviceOrderImage){
+                                this.payImgNoUpload = true;
+                                this.payImgUpload = false;
+                            }else{
+                                this.payImgNoUpload = false;
+                                this.payImgUpload = true;
+                            }
+                        }
+                    },function(res){
+                        console.log(res);
+                    });
+                },
+                methods:{
+                    expressExcelGant:function(){    //导出发放明细
+                        if(localStorage.getItem('orderNumber')){
+                            this.expressExcelGantNumber = '/company/expressExcelGant.do?companyOrderNumber='+localStorage.getItem('orderNumber');
+                        }
+                    },
+                    expressExcelService:function(){ //导出服务明细
+                        if(localStorage.getItem('orderNumber')){
+                            this.expressExcelServiceNumber = '/company/expressExcelService.do?companyOrderNumber='+localStorage.getItem('orderNumber');
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+<!--订单管理执行中-->
+<div id="order-going-frame">
+    <div class="order-going">
+        <!--发放明细-->
+        <h3 class="order-send-title">发放明细</h3>
+        <a :href="expressExcelGantNumber" class="putout-btn">导出数据</a>
+        <div class="send-table">
+            <table>
+                <tr>
+                    <th>服务公司</th>
+                    <th>收款人姓名</th>
+                    <th>证件号</th>
+                    <th>证件类型</th>
+                    <th>银行账号</th>
+                    <th>开户银行全称</th>
+                    <th>开户行识别号</th>
+                    <th>应发金额</th>
+                    <th>个税</th>
+                    <th>手机号</th>
+                </tr>
+                <tr v-for="(item,index) in employeeArr">
+                    <td>{{item.serviceCompanyAllName}}</td>
+                    <td>{{item.employeeName}}</td>
+                    <td>{{item.employeeCard}}</td>
+                    <td>{{item.employeeCardCN}}</td>
+                    <td>{{item.employeeBankNumber}}</td>
+                    <td>{{item.employeeOpen}}</td>
+                    <td>{{item.employeeOpenNumber}}</td>
+                    <td>￥<span>{{item.employeePrice}}</span></td>
+                    <td>￥<span>{{item.employeeTax}}</span></td>
+                    <td>{{item.employeePhone}}</td>
+                </tr>
+            </table>
+        </div>
+
+        <!--服务明细-->
+        <h3 class="service-title">服务明细</h3>
+        <a :href="expressExcelServiceNumber" class="putout-btn" >导出数据</a>
+        <div class="service-table">
+            <table>
+                <tr>
+                    <th>甲方公司名称</th>
+                    <th>甲方税号</th>
+                    <th>地址</th>
+                    <th>开户行账号</th>
+                    <th>实发金额</th>
+                    <th>个税</th>
+                    <th>付款总额</th>
+                    <th>乙方公司名称</th>
+                    <th>乙方账号</th>
+                    <th>乙方开户行</th>
+                    <th>发票类型</th>
+                    <th>发票类目</th>
+                    <th>打款截图</th>
+                </tr>
+                <tr v-for="(item,index) in serviceArr">
+                    <td>{{item.companyAllName}}</td>
+                    <td>{{item.companyTaxNumber}}</td>
+                    <td>{{item.companyAddress}}</td>
+                    <td>{{item.companyBankCard}}</td>
+                    <td>￥<span>{{item.companyOrderPrice}}</span></td>
+                    <td>￥<span>{{item.companyOrderTaxCount}}</span></td>
+                    <td>￥<span>{{item.companyOrderPriceCount}}</span></td>
+                    <td>{{item.serviceCompanyAllName}}</td>
+                    <td>{{item.serviceOpenNumber}}</td>
+                    <td>{{item.serviceOpenName}}</td>
+                    <td>{{item.serviceTicketType}}</td>
+                    <td>{{item.serviceTicketCategory}}</td>
+                    <td>
+                        <a href="companyorderpayimg.html" v-show="payImgNoUpload">点击上传</a>
+                        <!--<a href="javascrit:;">预览</a>-->
+                        <p v-show="payImgUpload" v-show="payImgUpload">已上传</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <a class="back-btn" href="companyorder.html">返回订单管理</a>
+    </div>
+</div>
+
+</body>
+</html>

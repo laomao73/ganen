@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>审核信息</title>
+    <link rel="stylesheet" href="css/basemsgex.css">
+    <script src="../../tooljs/jquery.min.js"></script>
+    <script src="../../tooljs/vue.min.js"></script>
+    <script src="../../tooljs/vue-resource.min.js"></script>
+    <script>
+        $(function(){
+            var exFrame = new Vue({
+                el:'#ex-frame',
+                data:{
+                    pageNow:null, //当前页
+                    companyAllName:null,  //公司名
+                    companyAdopt:null, //审核状态
+                    companyArr:[],   //公司集合
+                    totalPageCount:'',   //总页数
+                    pageNumber:[],   //页标
+                    now:0,   //当前now
+                    companyName:'', //搜索时的公司名
+                    adopt:''    //搜索时审核状态
+                },
+                created:function(){
+                    if(!sessionStorage.getItem('userPhone')){
+                        $(window.parent).attr('location','baselogin.html');
+                    }
+
+                    this.pageNow = 1;
+                    this.getCompanyMsg(this.pageNow);
+                },
+                methods:{
+                    getCompanyMsg:function(page){   //获取企业公司信息
+                        this.$http.post('/ganen/getCompany.do',{
+                            pageNow:page,
+                            companyAllName:this.companyAllName,
+                            companyAdopt:this.companyAdopt
+                        },{
+                            emulateJSON:true
+                        }).then(function(res){
+                            var bodyText = eval('('+res.bodyText+')');
+                            this.companyArr = bodyText.companyInfo;
+                            this.totalPageCount = bodyText.totalPageCount;
+
+                            for(var i=0;i<this.totalPageCount;i++){
+                                this.pageNumber.push(i+1);
+                            }
+                        },function(res){
+                            console.log(res);
+                        });
+                    },
+                    checkPage:function(index){   //点击页标切换
+                        this.now = index;
+                        this.pageNow = this.now+1;
+                        this.pageNumber = [];
+                        this.getCompanyMsg(this.pageNow);
+                    },
+                    prevPage:function(){    //点击上一页
+                        this.now--;
+                        if(this.now < 0){
+                            this.now = 0;
+                        }
+                        this.pageNow = this.now+1;
+                        this.pageNumber = [];
+                        this.getCompanyMsg(this.pageNow);
+                    },
+                    nextPage:function(){    //点击下一页
+                        this.now++;
+                        if(this.now > this.totalPageCount-1){
+                            this.now = this.totalPageCount-1;
+                        }
+                        this.pageNow = this.now+1;
+                        this.pageNumber = [];
+                        this.getCompanyMsg(this.pageNow);
+                    },
+                    getAdopt:function(event){   //获取审核状态
+                        this.adopt = event.target.value;
+
+                        switch (this.adopt){
+                            case '审核中':
+                                this.companyAdopt = 0;
+                                break;
+                            case '审核成功':
+                                this.companyAdopt = 1;
+                                break;
+                            case '审核失败':
+                                this.companyAdopt = 2;
+                                break;
+                        }
+                    },
+                    select:function(){  //点击查询
+                        this.pageNow = 1;
+
+                        if(this.companyAdopt == null){
+                            this.companyAdopt = 1;
+                        }
+
+                        if(this.companyName == ''){
+                            this.companyAllName = null;
+                        }else{
+                            this.companyAllName = this.companyName;
+                        }
+
+                        this.pageNumber = [];
+                        this.getCompanyMsg(this.pageNow);
+                    },
+                    baseInit:function(){    //点击清空重置
+                        this.companyName = '';
+                        this.pageNow = 1;
+                        this.companyAllName = null;
+                        this.companyAdopt = null;
+                        this.pageNumber = [];
+
+                        this.getCompanyMsg(this.pageNow)
+                    },
+                    locationExing:function(id,adopt){   //点进查看详情
+                        localStorage.setItem('companyID',id);
+                        localStorage.setItem('companyAdopt',adopt);
+                        $(window).attr('location','exing.html');
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+<!--审核信息-->
+<div id="ex-frame">
+    <div class="ex">
+        <!--选项卡按钮区-->
+        <div class="ex-btn-box">
+            <a class="ex-btn active" href="javascript:;">企业</a>
+        </div>
+
+        <!--选项卡一-->
+        <div class="ex-tab active">
+            <div class="ex-fn-box">
+                <div class="ex-search-box">
+                    企业名称：
+                    <input type="text" class="txt" v-model="companyName">
+                </div>
+                <div class="ex-search-box">
+                    审核状态：
+                    <select name="" class="txt" @change="getAdopt($event)">
+                        <option value="审核成功">审核成功</option>
+                        <option value="审核中">审核中</option>
+                        <option value="审核失败">审核失败</option>
+                    </select>
+                </div>
+                <div class="ex-search-box">
+                    <a href="javascript:;" class="search-btn" @click="select()">查询</a>
+                    <a href="javascript:;" class="clear" @click="baseInit()">还原所有</a>
+                </div>
+            </div>
+            <div class="table-box">
+                <table>
+                    <tr>
+                        <th>序号</th>
+                        <th>企业名称</th>
+                        <th>审核状态</th>
+                        <th>操作</th>
+                    </tr>
+                    <tr v-for="(item,key,index) in companyArr">
+                        <td>{{index+1}}</td>
+                        <td>{{item.companyName}}</td>
+                        <td>{{item.companyAdopt}}</td>
+                        <td>
+                            <a href="javascript:;" class="more" @click="locationExing(item.companyID,item.companyAdopt)">详情</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="btn-box">
+                <a href="javascript:;" class="prev" @click="prevPage()">上一页</a>
+                <span v-for="(item,index) in pageNumber" :class="{active:index==now}" @click="checkPage(index)">{{item}}</span>
+                <a href="javascript:;" class="next" @click="nextPage()">下一页</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>信息审核页面</title>
+    <link rel="stylesheet" href="css/exing.css">
+    <script src="../../tooljs/jquery.min.js"></script>
+    <script src="../../tooljs/vue.min.js"></script>
+    <script src="../../tooljs/vue-resource.min.js"></script>
+    <script>
+        $(function(){
+            var msgFrame = new Vue({
+                el:'#msg-frame',
+                data:{
+                    companyID:'',   //公司ID
+                    companyName:'', //公司名称
+                    companyAllName:'',  //公司名称
+                    companyLegalName:'',    //法人姓名
+                    companyLegalPhone:'',   //法人手机号
+                    companyLegalCard:'',    //法人身份证号
+                    companyLegalImage:'',    //法人身份证照片
+                    companyBusinessNumber:'',   //社会统一信用代码
+                    companyBusinessImage:'',    //营业执照照片
+                    btnBlock:true,   //功能操作按钮是否显示
+                    btnSuccess:false, //返回是否显示
+                    companyAdopt:'', //审核状态
+                    imgPath:'' //图片路径
+                },
+                created:function(){
+                    if(!sessionStorage.getItem('userPhone')){
+                        $(window).attr('location','baselogin.html');
+                    }
+
+                    if(localStorage.getItem('companyID') && localStorage.getItem('companyAdopt')){
+                        this.setMask();
+
+                        this.companyID = localStorage.getItem('companyID');
+                        this.companyAdopt = localStorage.getItem('companyAdopt');
+
+                        if(this.companyAdopt == '审核中' || this.companyAdopt == '审核失败'){
+                            this.btnBlock = true;
+                            this.btnSuccess = false;
+                        }else{
+                            this.btnBlock = false;
+                            this.btnSuccess = true;
+                        }
+
+                        this.$http.get('/ganen/companyById.do',{
+                            params:{
+                                companyID:this.companyID
+                            }
+                        }).then(function(res){
+                            var bodyText = eval('('+res.bodyText+')');
+                            console.log(bodyText);
+                            this.companyAllName = bodyText.companyAllName;
+                            this.companyLegalName = bodyText.companyLegalName;
+                            this.companyLegalPhone = bodyText.companyLegalPhone;
+                            this.companyLegalCard = bodyText.companyLegalCard;
+                            this.companyLegalImage = bodyText.companyLegalImage;
+                            this.companyBusinessNumber = bodyText.companyBusinessNumber;
+                            this.companyBusinessImage = bodyText.companyBusinessImage
+                        },function(res){
+                            console.log(res);
+                        });
+                    }
+                },
+                methods:{
+                    setMask:function(){ //设置遮罩层大小
+                        $('#mask').width($(window).width());
+                        $('#mask').height($(window).height());
+                    },
+                    back:function(){    //点击返回公司审核
+                        $(window).attr('location','basemsgex.html');
+                    },
+                    seeImgOne:function(){   //营业执照点击
+                        localStorage.setItem('img1',this.companyBusinessImage);
+                        $(window).attr('location','exingimg.html');
+                    },
+                    seeImgTwo:function(){   //身份证点击
+                        localStorage.setItem('img1',this.companyLegalImage);
+                        $(window).attr('location','exingimg.html');
+                    },
+                    successMsg:function(){  //点击通过审核
+                        if(confirm('确认通过审核吗？')){
+                            this.$http.post('/ganen/updateCompanyAdopt.do',{
+                                companyID:this.companyID
+                            },{
+                                emulateJSON:true
+                            }).then(function(res){
+                                var bodyText = eval('('+res.bodyText+')');
+
+                                if(bodyText.result == 1){
+                                    alert(bodyText.content);
+                                    $(window).attr('location','basemsgex.html');
+                                }else{
+                                    alert(bodyText.content);
+                                }
+                            },function(res){
+                                console.log(res);
+                            });
+                        }
+                    },
+                    errorMsg:function(){    //点击未通过审核
+                        if(confirm('确认驳回吗？')){
+                            this.$http.post('/ganen/deleteCompanyAdopt.do',{
+                                companyID:this.companyID
+                            },{
+                                emulateJSON:true
+                            }).then(function(res){
+                                var bodyText = eval('('+res.bodyText+')');
+
+                                if(bodyText.result == 1){
+                                    alert(window.content);
+                                    $(window).attr('location','basemsgex.html');
+                                }else{
+                                    alert(bodyText.content);
+                                }
+                            },function(res){
+                                console.log(res);
+                            });
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+<!--信息审核页-->
+<div id="msg-frame">
+    <div class="msg">
+        <p class="msg-title">某某公司企业A信息</p>
+        <div class="msg-content">
+            <table>
+                <tr>
+                    <td class="txt">企业全称：</td>
+                    <td class="content">{{companyAllName}}</td>
+                </tr>
+                <tr>
+                    <td class="txt">手机号：</td>
+                    <td class="content">{{companyLegalPhone}}</td>
+                </tr>
+                <tr>
+                    <td class="txt">联系人：</td>
+                    <td class="content">{{companyLegalName}}</td>
+                </tr>
+                <tr>
+                    <td class="txt">统一社会信息代码证：</td>
+                    <td class="content">{{companyBusinessNumber}}</td>
+                </tr>
+                <tr>
+                    <td class="txt">营业执照副本扫描件：</td>
+                    <td class="content">
+                        <div class="img-box">
+                            <img :src="companyBusinessImage" width="100%" alt="" @click="seeImgOne()">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="txt">法人代表姓名：</td>
+                    <td class="content">{{companyLegalName}}</td>
+                </tr>
+                <tr>
+                    <td class="txt">法人代表电话：</td>
+                    <td class="content">{{companyLegalPhone}}</td>
+                </tr>
+                <tr>
+                    <td class="txt">法人代表身份证号码：</td>
+                    <td class="content">{{companyLegalCard}}</td>
+                </tr>
+                <tr>
+                    <td class="txt">身份证证件照：</td>
+                    <td class="content">
+                        <div class="img-box2">
+                            <img :src="companyLegalImage" width="100%" alt="" @click="seeImgTwo()">
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="btn-box" v-show="btnBlock">
+            <a href="javascript:;" class="success" @click="successMsg()">通过</a>
+            <a href="basemsgex.html" class="error" @click="errorMsg()">否决</a>
+        </div>
+        <div class="btn-box" v-show="btnSuccess">
+            <a href="basemsgex.html" class="success" @click="back()">返回</a>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

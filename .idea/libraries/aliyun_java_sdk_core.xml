@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="aliyun-java-sdk-core">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../java/api_sdk/aliyun-java-sdk-core" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../java/api_sdk/aliyun-java-sdk-core/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../java/api_sdk/aliyun-java-sdk-core/src/test/java" />
+    </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/../java/api_sdk/aliyun-java-sdk-core" recursive="false" />
+  </library>
+</component>

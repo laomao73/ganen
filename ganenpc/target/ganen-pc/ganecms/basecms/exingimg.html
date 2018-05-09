@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>审核图片查看</title>
+    <link rel="stylesheet" href="css/exingimg.css">
+    <script src="../../tooljs/jquery.min.js"></script>
+    <script src="../../tooljs/vue.min.js"></script>
+    <script src="../../tooljs/vue-resource.min.js"></script>
+    <script>
+        $(function(){
+            var imgFrame = new Vue({
+                el:'#img-frame',
+                data:{
+                    imgPath:''
+                },
+                created:function(){
+                    this.imgPath = localStorage.getItem('img1');
+                },
+                methods:{
+                    back:function(){
+                        $(window).attr('location','exing.html');
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+<!--图片查看-->
+<div id="img-frame">
+    <div class="img-main">
+        <div class="img-box">
+            <img :src="imgPath" width="100%" alt="">
+        </div>
+    </div>
+    <div class="img-btn-box">
+        <a href="javascript:;" class="img-btn" @click="back()">返回</a>
+    </div>
+</div>
+
+</body>
+</html>

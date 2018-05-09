@@ -1,0 +1,77 @@
+*{
+    margin:0;
+    padding:0;
+    list-style: none;
+    font-family: 微软雅黑;
+}
+
+#error-frame{
+    width:100%;
+    border:0px solid black;
+    position:relative;
+}
+
+.error{
+    width:1200px;
+    border:0px solid black;
+    margin:0 auto;
+    position:relative;
+}
+
+.error table{
+    border:1px solid #909090;
+    border-collapse: collapse;
+}
+
+.error table th{
+    width:100px;
+    border:1px solid #909090;
+    border-collapse: collapse;
+    height:50px;
+    background:#e2e5ea;
+    font-size:12px;
+}
+
+.error table td{
+    border:1px solid #909090;
+    height:50px;
+    font-size:12px;
+    text-align: center;
+}
+
+.error table td p{
+    color:green;
+}
+
+.error table td.error{
+    color:red;
+}
+
+.save-btn{
+    display: block;
+    width:300px;
+    height:50px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 50px;
+    font-size:24px;
+    color:#fff;
+    background: #4c5d7b;
+    border-radius: 5px;
+    margin:50px auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

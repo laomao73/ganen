@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>感恩有你总部平台登录页</title>
+    <link rel="stylesheet" href="css/baselogin.css">
+    <script src="../../tooljs/jquery.min.js"></script>
+    <script src="../../tooljs/vue.min.js"></script>
+    <script src="../../tooljs/vue-resource.min.js"></script>
+    <script>
+        $(function(){
+            var login = new Vue({
+                el:'#login-frame',
+                data:{
+                    userName:'',
+                    userPwd:''
+                },
+                created:function(){
+                    sessionStorage.clear();
+                    localStorage.clear();
+                },
+                methods:{
+                    login:function(){   //点击登录
+                        this.loginHttp();
+                    },
+                    keyLogin:function(event){   //回车登录
+                        if(event.keyCode == 13){
+                            this.loginHttp();
+                        }
+                    },
+                    loginHttp:function(){   //登录功能
+                        this.$http.post('/ganen/login.do',{
+                            userName:this.userName,
+                            userPwd:this.userPwd
+                        },{
+                            emulateJSON:true
+                        }).then(function(res){
+                            var bodyText = eval('('+res.bodyText+')');
+
+                            if(bodyText.result){
+                                sessionStorage.setItem('userPhone',this.userName);
+                                $(window).attr('location','baseframe.html');
+                            }else{
+                                alert(bodyText.content);
+                            }
+                        },function(res){
+                            console.log(res);
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+<!--感恩有你平台登录-->
+<a href="../../index.html" class="back-pc">返回官网1</a>
+
+<!--登录-->
+<div id="login-frame">
+    <h3>感恩有你平台账号登录</h3>
+    <input type="text" placeholder="管理员账号" v-model="userName">
+    <input type="password" placeholder="管理员密码" v-model="userPwd" @keyup="keyLogin($event)"><br/>
+    <a href="javascript:;" class="login-btn" @click="login()">登录</a>
+</div>
+
+</body>
+</html>

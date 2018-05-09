@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ganen.dao.CompanyDao">
+    <resultMap id="serviceOrderID" type="com.ganen.entity.ServiceOrder">
+        <id property="serviceOrderID" column="serviceOrderID"/>
+        <result property="serviceOrderPrice" column="serviceOrderPrice"/>
+        <result property="serviceOrderServicePrice" column="serviceOrderServicePrice"/>
+        <result property="serviceOrderTicketType" column="serviceOrderTicketType"/>
+        <result property="serviceOrderTicketCategory" column="serviceOrderTicketCategory"/>
+        <result property="serviceOrderImage" column="serviceOrderImage"/>
+        <association property="serviceExpress" javaType="com.ganen.entity.ServiceExpress">
+            <id property="serviceEcpressID" column="serviceEcpressID"/>
+            <result property="serviceExpress" column="serviceExpress"/>
+        </association>
+        <association property="service" javaType="com.ganen.entity.Service">
+            <id property="serviceID" column="serviceID"/>
+            <result property="serviceCompanyName" column="serviceCompanyName"/>
+            <result property="serviceOpenNumber" column="serviceOpenNumber"/>
+            <result property="serviceOpenName" column="serviceOpenName"/>
+        </association>
+        <association property="companyOrder" javaType="com.ganen.entity.CompanyOrder">
+            <id property="companyOrderID" column="companyOrderID"/>
+            <result property="companyOrderTaxCount" column="companyOrderTaxCount"/>
+            <result property="companyOrderNumber" column="companyOrderNumber"/>
+            <association property="company" javaType="com.ganen.entity.Company">
+                <id property="companyID" column="companyID"/>
+                <result property="companyAllName" column="companyAllName"/>
+            </association>
+        </association>
+        <collection property="employeeOrderList" column="serviceOrderID" ofType="com.ganen.entity.EmployeeOrder">
+            <id property="employeeOrderID" column="employeeOrderID"/>
+            <result property="employeePrice" column="employeePrice" />
+            <association property="employee" javaType="com.ganen.entity.Employee">
+                <id property="employeeID" column="employeeID"/>
+                <result property="employeeName" column="employeeName"/>
+                <result property="employeePhone" column="employeePhone"/>
+                <result property="employeeCard" column="employeeCard"/>
+                <result property="employeeCardType" column="employeeCardType"/>
+                <result property="employeeOpen" column="employeeOpen"/>
+                <result property="employeeOpenNumber" column="employeeOpenNumber"/>
+                <result property="employeeBankNumber" column="employeeBankNumber"/>
+            </association>
+        </collection>
+    </resultMap>
+    <resultMap id="company" type="com.ganen.entity.Company">
+        <id property="companyID" column="companyID"/>
+        <result property="companyName" column="companyName"/>
+        <result property="companyAllName" column="companyAllName"/>
+        <result property="companyLegalName" column="companyLegalName"/>
+        <result property="companyLegalPhone" column="companyLegalPhone"/>
+        <result property="companyLegalCard" column="companyLegalCard"/>
+        <result property="companyLegalImage" column="companyLegalImage"/>
+        <result property="companyBusinessNumber" column="companyBusinessNumber"/>
+        <result property="companyBusinessImage" column="companyBusinessImage"/>
+        <result property="companyAdopt" column="companyAdopt"/>
+        <association property="companyLogin" javaType="com.ganen.entity.CompanyLogin">
+            <id property="companyLoginID" column="companyLoginID"/>
+        </association>
+    </resultMap>
+    <resultMap id="companyOrderAll" type="com.ganen.entity.CompanyOrder">
+        <id property="companyOrderID" column="companyOrderID"/>
+        <result property="companyOrderNumber" column="companyOrderNumber"/>
+        <result property="companyOrderPrice" column="companyOrderPrice"/>
+        <result property="companyOrderTaxCount" column="companyOrderTaxCount"/>
+        <result property="companyOrderPriceCount" column="companyOrderPriceCount"/>
+        <association property="company" javaType="com.ganen.entity.Company">
+            <id property="companyID" column="companyID"/>
+            <result property="companyAllName" column="companyAllName"/>
+        </association>
+        <collection property="serviceOrderList" column="companyOrderID" ofType="com.ganen.entity.ServiceOrder">
+            <id property="serviceOrderID" column="serviceOrderID"/>
+            <result property="serviceOrderImage" column="serviceOrderImage"/>
+            <association property="service" javaType="com.ganen.entity.Service">
+                <id property="serviceID" column="serviceID"/>
+                <result property="serviceTicketType" column="serviceTicketType"/>
+                <result property="serviceTicketCategory" column="serviceTicketCategory"/>
+                <result property="serviceOpenName" column="serviceOpenName"/>
+                <result property="serviceCompanyName" column="serviceCompanyName"/>
+                <result property="serviceOpen" column="serviceOpen"/>
+                <result property="serviceOpenNumber" column="serviceOpenNumber"/>
+            </association>
+        </collection>
+    </resultMap>
+    <resultMap id="employeeOrderGant" type="com.ganen.entity.EmployeeOrder">
+        <id property="employeeOrderID" column="employeeOrderID"/>
+        <result property="employeeSalary" column="employeeSalary"/>
+        <result property="employeePrice" column="employeePrice"/>
+        <result property="employeeTax" column="employeeTax"/>
+        <association property="employee" javaType="com.ganen.entity.Employee">
+            <id property="employeeID" column="employeeID"/>
+            <result property="employeeName" column="employeeName"/>
+            <result property="employeeCard" column="employeeCard"/>
+            <result property="employeeCardType" column="employeeCardType"/>
+            <result property="employeeBankNumber" column="employeeBankNumber"/>
+            <result property="employeeOpen" column="employeeOpen"/>
+            <result property="employeePhone" column="employeePhone"/>
+            <result property="employeeOpenNumber" column="employeeOpenNumber"/>
+        </association>
+    </resultMap>
+    <insert id="companyAuthOne" parameterType="company">
+        INSERT INTO company(companyAllName,companyBusinessNumber,companyBusinessImage,companyAdopt,companyLoginID)
+        VALUES(#{companyAllName},#{companyBusinessNumber},#{companyBusinessImage},0,#{companyLogin.companyLoginID})
+    </insert>
+    <insert id="newCompanyOrder" parameterType="CompanyOrder">
+        INSERT INTO companyOrder(companyOrderNumber,companyOrderCount,companyOrderPrice,companyOrderTaxCount,companyOrderPriceCount,companyOrderTime,companyOrderType,companyOrderState,companyOrderTax,companyID)
+        VALUES(#{companyOrderNumber},${companyOrderCount},${companyOrderPrice},${companyOrderTaxCount},${companyOrderPriceCount},"${companyOrderTime}",${companyOrderType},"${companyOrderState}",${companyOrderTax},${company.companyID})
+    </insert>
+    <select id="companyBillingByID" parameterType="int" resultType="CompanyBilling">
+          SELECT companyBillingID,companyTaxNumber,companyAddress,companyPhone,companyOpenBank,companyBankCard FROM companyBilling WHERE companyID=#{companyID}
+    </select>
+    <select id="getCompanyID" parameterType="String" resultType="Integer">
+        SELECT companyLoginID FROM companyLogin WHERE contactsPhone="${phone}"
+    </select>
+    <select id="companyByName" parameterType="String" resultType="int">
+        SELECT companyID FROM company WHERE companyAllName=#{name}
+    </select>
+    <select id="companyIsAuthOne" parameterType="int" resultType="String">
+        SELECT c.companyBusinessImage FROM company c WHERE c.companyID=#{id}
+    </select>
+    <select id="companyIsAuthTwo" parameterType="int" resultType="String">
+        SELECT c.companyLegalImage FROM company c WHERE c.companyID=#{id}
+    </select>
+    <select id="CompanyID" resultType="Integer">
+          SELECT MAX(companyOrderID) FROM companyOrder
+    </select>
+    <select id="companyOrderByID" parameterType="String" resultType="int">
+          SELECT companyOrderID FROM companyOrder WHERE companyOrderNumber=#{companyOrderNumber}
+    </select>
+    <select id="getCompanyOrder" parameterType="int" resultMap="serviceOrderID">
+        SELECT *FROM serviceOrder so,companyOrder co,employeeOrder eo, employee e,company c,service s
+        WHERE so.companyOrderID=co.companyOrderID
+        AND so.serviceOrderID=eo.serviceOrderID
+        AND eo.employeeID=e.employeeID
+        AND co.companyID=c.companyID
+        AND so.serviceID=s.serviceID
+        AND so.companyOrderID=#{companyOrderID}
+    </select>
+    <select id="orderByID" parameterType="int" resultMap="companyOrderAll">
+    SELECT *FROM company c,service s,companyOrder co,serviceOrder so WHERE	c.companyID=co.companyID AND co.companyOrderID=so.companyOrderID AND so.serviceID=s.serviceID AND co.companyOrderID=#{companyOrderID}
+    </select>
+    <select id="expressGant" parameterType="String" resultMap="employeeOrderGant">
+        SELECT *FROM companyOrder co,serviceOrder so,employeeOrder eo,employee e
+        WHERE co.companyOrderID=so.companyOrderID
+         AND so.serviceOrderID=eo.serviceOrderID
+         AND eo.employeeID=e.employeeID
+         AND co.companyOrderNumber=#{companyOrderNumber}
+    </select>
+    <update id="companyUpdatePwd">
+        UPDATE companyLogin SET contactsPwd="${pwd}" WHERE companyLoginID=${id}
+    </update>
+    <update id="companyAuthTwo" parameterType="Company">
+        UPDATE company SET companyLegalName=#{companyLegalName},companyLegalPhone=#{companyLegalPhone}
+        ,companyLegalCard=#{companyLegalCard},companyLegalImage=#{companyLegalImage} WHERE companyID=#{companyID}
+    </update>
+</mapper>

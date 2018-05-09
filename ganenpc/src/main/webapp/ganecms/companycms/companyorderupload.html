@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>上传薪酬明细表（灵活用工）</title>
+    <link rel="stylesheet" href="css/companyorderupload.css">
+    <script src="../../tooljs/jquery.min.js"></script>
+    <script src="../../tooljs/vue.min.js"></script>
+    <script src="../../tooljs/vue-resource.min.js"></script>
+    <script>
+        $(function(){
+            var orderUpload = new Vue({
+                el:'#order-upload-frame',
+                data:{
+                    num:'',  //用工单选按钮选择
+                    fn:'',   //formData对象
+                    excel:'', //excel表
+                    type:1  //用工类型
+                },
+                methods:{
+                    tab:function(){
+                        $(window).attr('location','companyorderupload2.html');
+                    },
+                    getType:function(event){
+                        this.num = event.target.value;
+                    },
+                    cancel:function(){
+                        $(window).attr('location','companyorder.html');
+                    },
+                    next:function(){
+                        this.fn = new FormData();
+                        this.fn.append('userType',Number(this.type));
+                        this.fn.append('type',Number(this.num));
+                        this.fn.append('file',this.excel);
+
+                        console.log(this.fn.get('type'));
+                        console.log(this.fn.get('file'));
+
+                        this.$http.post('/company/chooseBear.do',this.fn,{
+                            emulateJSON:true,
+                            headers:{
+                                'Content-Type':'multipart/form-data'
+                            }
+                        }).then(function(res){
+                            var bodyText = eval('('+res.bodyText+')');
+
+                            if(bodyText.result == '读取成功'){
+                                $(window).attr('location','companyordercheck.html');
+                            }else if(bodyText.result == '证件类型错误' || bodyText.result == '不可修改表格内容'){
+                                alert(bodyText.result);
+                                $(window).attr('location').reload();
+                            }
+                        },function(res){
+                            console.log(res);
+                        });
+                    },
+                    getExcel:function(event){
+                        this.excel = event.target.files[0];
+                        console.log(this.excel);
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+<!--上传薪酬明细表-->
+<div id="order-upload-frame">
+    <div class="order-upload">
+        <h3 class="order-upload-title">您正在创建订单</h3>
+        <div class="order-bc-box">
+            <img src="images/bc.png" width="100%" alt="">
+        </div>
+        <div class="category">
+            <p class="category-txt">发放人员类别：</p>
+            <p class="category-option active" >灵活用工</p>
+            <p class="category-option" @click="tab()">企业用工</p>
+        </div>
+
+        <!--选项卡一灵活用工-->
+        <div class="complate-table-tab active">
+            <!--完善薪酬明细表-->
+            <div class="complate-table">
+                <h3 class="complate-table-title">完善薪酬明细表</h3>
+                <div class="complate-table-down-box">
+                    <img class="excelimg" src="images/excelimg.png" alt="">
+                    <div class="down-txt">
+                        <a class="down-link" href="/file/download.do">下载模板</a>
+                        <p class="down-warning">您需要下载薪酬明细表，才能上传</p>
+                    </div>
+                </div>
+            </div>
+
+            <!--上传薪酬明细表-->
+            <div class="complate-table">
+                <h3 class="complate-table-title">上传薪酬明细表</h3>
+                <div class="complate-table-down-box">
+                    <div class="uploading-box">
+                        <img class="uploadimg" src="images/uploadimg.png" alt="">
+                    </div>
+                    <input class="file-btn" type="file" name="file" @change="getExcel($event)">
+                </div>
+                <div class="radio-option-box">
+                    <p class="radio-txt">承担个人所得税：</p>
+                    <p class="radio-option">
+                        <input type="radio" name="linghuo" value="1" @click="getType($event)">企业
+                        <input type="radio" name="linghuo" value="2" @click="getType($event)">个人
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!--按钮操作区-->
+        <div class="upload-btn-box">
+            <a href="javascript:;" class="next" @click="next()">下一步</a>
+            <a href="javascript:;" class="cancel" @click="cancel()">取消</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>企业公司选择</title>
+    <link rel="stylesheet" href="css/companyxuan.css">
+    <script src="../../tooljs/jquery.min.js"></script>
+    <script src="../../tooljs/vue.min.js"></script>
+    <script src="../../tooljs/vue-resource.min.js"></script>
+    <script>
+        $(function(){
+            var company = new Vue({
+                el:'#company-frame',
+                data:{
+                    companyArr:[],
+                    now:-1,
+                    companyID:''
+                },
+                created:function(){ //抓取本地存储
+                    if(!sessionStorage.getItem('companyArr')){
+                        $(window).attr('location','companylogin.html');
+                    }else{
+                        var companyArr = JSON.parse(sessionStorage.getItem('companyArr'));
+
+                        for(var i=0;i<companyArr.length;i++){
+                            this.companyArr.push({id:companyArr[i].companyID,content:companyArr[i].companyAllName});
+                        }
+
+                        console.log(this.companyArr);
+                    }
+                },
+                methods:{
+                    tab:function(index,id){    //选项卡切换
+                        this.now = index;
+                        this.companyID = id;
+                        console.log(this.companyID);
+                    },
+                    send:function(){    //点击确定选择分公司
+                        this.$http.post('/companyLogin/chooseCompany.do',{
+                            companyID:this.companyID
+                        },{
+                            emulateJSON:true
+                        }).then(function(res){
+                            console.log(res);
+                            var bodyText = eval('('+res.bodyText+')');
+                            if(bodyText.result == '请等待审核'){
+                                alert(bodyText.result);
+                            }else if(bodyText.result == '请先认证一'){
+                                $(window).attr('location','companyrz1.html');
+                            }else if(bodyText.result == '请先认证二'){
+                                $(window).attr('location','companyrz2.html');
+                            }else if(bodyText.result == '登录成功'){
+                                $(window).attr('location','companyframe.html');
+                            }
+                        });
+                    }
+                }
+            });
+        });
+
+    </script>
+</head>
+<body>
+
+<!--企业公司选择-->
+<div id="company-frame">
+    <h3 class="company-title">公司选择</h3>
+    <ul>
+        <li v-for="(item,index) in companyArr" @click="tab(index,item.id)" :class="{active:now==index}" >{{item.content}}</li>
+    </ul>
+    <a href="javascript:;" class="btn" @click="send()">确定</a>
+</div>
+
+</body>
+</html>

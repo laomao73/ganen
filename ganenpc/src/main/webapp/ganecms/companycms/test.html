@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test1</title>
+    <script src="../../tooljs/jquery.min.js"></script>
+    <script src="../../tooljs/vue.min.js"></script>
+    <script src="../../tooljs/vue-resource.min.js"></script>
+    <script>
+        $(function(){
+            var app = new Vue({
+                el:'#from',
+                data:{
+                    username:''
+                },
+                methods:{
+                    sub:function(){
+                        sessionStorage.setItem('username',this.username);
+                        $(window).attr('location','test2.html');
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+<div id="from">
+    <input type="text" name="username" v-model="username">
+    <input type="button" value="按钮" @click="sub()">
+</div>
+
+</body>
+</html>

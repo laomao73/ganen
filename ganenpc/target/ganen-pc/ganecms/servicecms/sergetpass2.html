@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>服务公司找回密码</title>
+    <link rel="stylesheet" href="css/sergetpass2.css">
+    <script src="../../tooljs/jquery.min.js"></script>
+    <script src="../../tooljs/vue.min.js"></script>
+    <script src="../../tooljs/vue-resource.min.js"></script>
+    <script>
+        $(function(){
+            var checkpass = new Vue({
+                el:'#checkpass-frame',
+                data:{
+                    type:2,
+                    pwd:'',
+                    pwd2:''
+                },
+                created:function(){
+                    if(localStorage.getItem('result')){
+                        localStorage.removeItem('result');
+                    }else{
+                        $(window).attr('location','serlogin.html');
+                    }
+                },
+                methods:{
+                    next:function(event){   //点击修改密码
+                        event.preventDefault();
+                        this.$http.post('/public/forgetPwd2.do',{
+                            type:this.type,
+                            pwd:this.pwd,
+                            pwd2:this.pwd2
+                        },{
+                            emulateJSON:true
+                        }).then(function(res){
+                            var bodyText = eval('('+res.bodyText+')');
+
+                            if(bodyText.result){
+                                alert(bodyText.result);
+                                $(window).attr('location','serlogin.html')
+                            }else{
+                                alert(bodyText.result);
+                                $(window).attr('location').reload();
+                            }
+                        },function(res){
+                            console.log(res);
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+<!--服务公司找回密码步骤二-->
+<a href="../../index.html" class="back-pc">返回官网</a>
+<div id="checkpass-frame">
+    <h3>找回密码</h3>
+    <input type="password" class="tel" v-model="pwd" placeholder="请输新密码"><br/>
+    <input type="password" class="tel" v-model="pwd2" placeholder="请再次输入新密码">
+    <a href="javascript:;" class="next" @click="next($event)">完成</a>
+</div>
+
+</body>
+</html>

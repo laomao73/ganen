@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="SMS">
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../v3.1.1/SMSSDK/ShortMessageSDKGUI/src" />
+    </SOURCES>
+  </library>
+</component>

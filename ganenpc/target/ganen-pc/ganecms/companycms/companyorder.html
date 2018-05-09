@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>订单管理1</title>
+    <link rel="stylesheet" href="css/companyorder.css">
+    <script src="../../tooljs/jquery.min.js"></script>
+    <script src="../../tooljs/vue.min.js"></script>
+    <script src="../../tooljs/vue-resource.min.js"></script>
+    <script>
+        $(function(){
+            var companyOrder = new Vue({
+                el:'#company-order-frame',
+                data:{
+                    orderNone:true, //无订单显示
+                    orderBlock:false,   //订单显示
+                    pageNow:null,  //获取第几页
+                    companyOrderNumber:null,    //订单号
+                    companyName:null,   //公司名称
+                    companyOrderState:null, //订单状态
+                    orderArr:[],    //所有订单
+                    pageCount:'',   //总页数
+                    pageArr:[],     //页数集合
+                    now:0,           //当前now
+                },
+                created:function(){
+                    if(!sessionStorage.getItem('userPhone')){
+                        $(window).attr('location','companylogin.html');
+                    }
+                    this.pageNow = 1;
+                    this.orderAll(this.pageNow);
+                },
+                filters:{
+                    Date:function(value){   //时间过滤器
+                        var oDate = new Date();
+                        oDate.setTime(value);
+
+                        var oY = oDate.getFullYear();
+                        var oM = oDate.getMonth()+1;
+                        var oD = oDate.getDate();
+
+                        var h = oDate.getHours();
+                        var m = oDate.getMinutes();
+                        var s = oDate.getSeconds();
+
+                        return oY+'-'+toDou(oM)+'-'+toDou(oD)+' '+toDou(h)+':'+toDou(m)+':'+toDou(s);
+
+                        function toDou(num){
+                            return num<10?'0'+num:num;
+                        }
+                    }
+                },
+                methods:{
+                    addOrder:function(){    //点击新增订单跳转
+                        $(window).attr('location','companyorderupload.html');
+                    },
+                    selectOrder:function(){ //点击查询订单
+                        this.pageArr = [];
+                        this.pageNow = null;
+                        this.orderAll(this.pageNow);
+                    },
+                    clear:function(){   //点击清空所有条件
+                        this.companyOrderNumber = null;
+                        this.companyOrderState = null;
+                        this.pageArr = [];
+                        this.pageNow = 1;
+
+                        this.orderAll(this.pageNow);
+                    },
+                    addCompany:function(){  //新增公司
+                        localStorage.setItem('company','true');
+                        $(window.parent).attr('location','companyrz1.html');
+                    },
+                    checkPage:function(index){  //点击换页
+                        this.pageArr = [];
+                        this.now = index;
+                        this.pageNow = this.now+1;
+                        this.orderAll(this.pageNow);
+                    },
+                    nextPage:function(){    //点击下一页
+                        this.pageArr = [];
+                        this.now++;
+                        if(this.now > this.pageCount-1){
+                            this.now = this.pageCount-1;
+                        }
+
+                        this.orderAll(this.now+1);
+                    },
+                    prevPage:function(){    //点击上一页
+                        this.pageArr = [];
+                        this.now--;
+                        if(this.now < 0){
+                            this.now = 0;
+                        }
+
+                        this.orderAll(this.now+1);
+                    },
+                    changOrderState:function(event){    //改变订单查询状态
+                        this.companyOrderState = event.target.value;
+                    },
+                    seeMain:function(id,orderNumber){   //查看订单详情
+                        $(window).attr('location','companyordergoing.html');
+                        localStorage.setItem('orderID',id);
+                        localStorage.setItem('orderNumber',orderNumber);
+                    },
+                    orderAll:function(page){    //获取所有订单信息
+                        this.$http.post('/company/orderAll.do',{
+                            pageNow:page,
+                            companyOrderNumber:this.companyOrderNumber,
+                            companyName:this.companyName,
+                            companyOrderState:this.companyOrderState
+                        },{
+                            emulateJSON:true
+                        }).then(function(res){
+                            var bodyText = eval('('+res.bodyText+')');
+
+                            this.pageCount = bodyText.totalPageCount;
+
+                            for(var i=0;i<this.pageCount;i++){
+                                this.pageArr.push(i+1);
+                            }
+
+                            console.log(this.pageArr);
+
+                            if(bodyText.result){
+                                this.orderNone = false;
+                                this.orderBlock = true;
+
+                                this.orderArr = bodyText.content;
+                                console.log(this.orderArr);
+                            }else{
+                                this.orderNone = true;
+                                this.orderBlock = false;
+                            }
+                        },function(res){
+                            console.log(res);
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+<!--订单管理-->
+<div id="company-order-frame">
+    <div class="company-order-box">
+        <!--条件筛选查询功能区-->
+        <div class="company-order1">
+            <div class="order-fn-area1">
+                <span class="area1-txt">订单号</span>
+                <input type="text" class="area1-input" v-model="companyOrderNumber">
+            </div>
+            <div class="order-fn-area2">
+                <span class="area1-txt">订单状态</span>
+                <select name="" id="order-state" @change="changOrderState($event)">
+                    <option value="执行中">执行中</option>
+                    <option value="发放中">发放中</option>
+                    <option value="部份发放失败">部份发放失败</option>
+                    <option value="发放失败">发放失败</option>
+                    <option value="已发放">已发放</option>
+                </select>
+            </div>
+            <div class="order-fn-area3">
+                <a href="javascript:;" class="select-btn" @click="selectOrder()">查询</a>
+            </div>
+            <div class="order-fn-area4">
+                <a href="javascript:;" class="select-clear" @click="clear()">清空条件恢复所有订单查询</a>
+            </div>
+        </div>
+
+        <!--订单及新添公司操作功能区-->
+        <div class="company-order2">
+            <a href="javascript:;" class="add-order-btn" @click="addOrder()">+新增订单</a>
+            <a href="javascript:;" class="add-order-company" @click="addCompany()">+新增公司</a>
+        </div>
+
+        <!--订单区-无-->
+        <div class="company-order3" v-show="orderNone">
+            <p>暂无订单，请点击新建订单按钮创建</p>
+        </div>
+
+        <!--订单区-表格-->
+        <div class="company-order4" v-show="orderBlock">
+            <table>
+                <tr>
+                    <th class="th-little">订单号</th>
+                    <th class="th-big">订单金额</th>
+                    <th class="th-big">订单时间</th>
+                    <th class="th-big">状态</th>
+                    <th class="th-little">操作</th>
+                </tr>
+                <tr v-for="(item,index) in orderArr">
+                    <td>{{item.companyOrderNumber}}</td>
+                    <td>{{item.companyOrderPriceCount}}</td>
+                    <td>{{item.companyOrderTime|Date}}</td>
+                    <td>{{item.companyOrderState}}</td>
+                    <td>
+                        <!--根据状态动态改变链接-->
+                        <a href="javascript:;" @click="seeMain(item.companyOrderID,item.companyOrderNumber)">查看详情</a>
+                        <!--<a href="companyordererror.html">查看详情</a>-->
+                    </td>
+                </tr>
+            </table>
+
+            <!--分页区-->
+            <div class="page-btn-box">
+                <a href="javascript:;" class="prev" @click="prevPage()">上一页</a>
+                <strong :class="{active:now==index}" v-for="(item,index) in pageArr" @click="checkPage(index)">{{item}}</strong>
+                <a href="javascript:;" class="next" @click="nextPage()">下一页</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

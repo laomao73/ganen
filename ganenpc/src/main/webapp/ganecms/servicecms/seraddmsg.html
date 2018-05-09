@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>服务公司新增企业信息</title>
+    <link rel="stylesheet" href="css/seraddmsg.css">
+    <script src="../../tooljs/jquery.min.js"></script>
+    <script src="../../tooljs/vue.min.js"></script>
+    <script src="../../tooljs/vue-resource.min.js"></script>
+    <script>
+        $(function(){
+            var addCompanyMsg = new Vue({
+                el:'#addcompanymsg-frame',
+                data:{
+                    serviceTicketType:'',   //发票类型
+                    servicePeople:'', //服务人员属性
+                    serviceIndustry:'', //服务行业
+                    serviceTicketCategory:'',   //发票类目
+                    serviceOpenName:'', //开户名称
+                    serviceOpen:'', //开户行名称
+                    serviceOpenNumber:''    //银行账户
+                },
+                created:function(){
+                    if(!sessionStorage.getItem('userPhone')){
+                        $(window).attr('location','serlogin.html');
+                    }
+
+                    if(localStorage.getItem('serviceMsgArr')){
+                        var serviceMsgArr = JSON.parse(localStorage.getItem('serviceMsgArr'));
+
+                        this.serviceIndustry = serviceMsgArr.serviceIndustry;
+                        this.serviceOpen = serviceMsgArr.serviceOpen;
+                        this.serviceOpenName = serviceMsgArr.serviceOpenName;
+                        this.serviceOpenNumber = serviceMsgArr.serviceOpenNumber;
+                        this.serviceTicketCategory = serviceMsgArr.serviceTicketCategory;
+                    }
+                },
+                methods:{
+                    invoiceLX:function(event){  //获取发票类型
+                        this.invoiceLXData = event.target.value;
+                    },
+                    serviceSX:function(event){  //获取服务人员属性
+                        this.serviceSXData = event.target.value;
+                    },
+                    save:function(){    //点击修改或保存
+                        this.$http.post('/service/updateInfo.do',{
+                            serviceTicketType:this.invoiceLXData,
+                            servicePeople:this.serviceSXData,
+                            serviceIndustry:this.serviceIndustry,
+                            serviceTicketCategory:this.serviceTicketCategory,
+                            serviceOpenName:this.serviceOpenName,
+                            serviceOpen:this.serviceOpen,
+                            serviceOpenNumber:this.serviceOpenNumber
+                        },{
+                            emulateJSON:true
+                        }).then(function(res){
+                            var bodyText = eval('('+res.bodyText+')');
+                            if(bodyText.result){
+                                alert(bodyText.content);
+                                $(window).attr('location','sermsg.html');
+                            }
+                        },function(res){
+                            console.log(res);
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+<!--服务平台添加企业信息-->
+<div id="addcompanymsg-frame">
+    <div class="addcompanymsg">
+        <h3 class="big-title">新增企业信息</h3>
+        <div class="kp-msg-box">
+            <div class="kp-msg">
+                <table>
+                    <tr>
+                        <td class="td-name">服务公司行业：</td>
+                        <td class="td-input">
+                            <input class="msg-txt" type="text" v-model="serviceIndustry">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td-name">开户银行：</td>
+                        <td class="td-input">
+                            <input class="msg-txt" type="text" v-model="serviceOpen">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td-name">开户名称：</td>
+                        <td class="td-input">
+                            <input class="msg-txt" type="text" v-model="serviceOpenName">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td-name">银行账号：</td>
+                        <td class="td-input">
+                            <input class="msg-txt" type="text" v-model="serviceOpenNumber">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td-name">发票类目：</td>
+                        <td class="td-input">
+                            <input class="msg-txt" type="text" v-model="serviceTicketCategory">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td-name">发票类型：</td>
+                        <td class="td-input">
+                            <input type="radio" name="se" value="增值税专用发票3%" @click="invoiceLX($event)">增值税专用发票3%
+                            <input type="radio" name="se" value="增值税普通发票3%" @click="invoiceLX($event)">增值税普通发票3%<br/>
+                            <input type="radio" name="se" value="增值税专用发票6%" @click="invoiceLX($event)">增值税专用发票6%
+                            <input type="radio" name="se" value="增值税普通发票6%" @click="invoiceLX($event)">增值税普通发票6%
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td-name">服务人员属性：</td>
+                        <td class="td-input">
+                            <input type="radio" name="sei" value="1" @click="serviceSX($event)">灵活用工
+                            <input type="radio" name="sei" value="2" @click="serviceSX($event)">企业用工
+                            <input type="radio" name="sei" value="3" @click="serviceSX($event)">两者均可
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!--保存按钮-->
+        <a href="javascript:;" class="save-btn" @click="save()">保存</a>
+    </div>
+</div>
+
+</body>
+</html>

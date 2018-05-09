@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ganen.dao.ServiceDao">
+
+    <resultMap id="serviceLogin"  type="com.ganen.entity.Service">
+        <id property="serviceID" column="serviceID"/>
+        <result property="serviceName" column="serviceName"/>
+        <result property="servicePhone" column="servicePhone"/>
+        <result property="serviceCompanyName" column="serviceCompanyName"/>
+    </resultMap>
+    <insert id="serviceRegister"  parameterType="Service">
+         INSERT INTO service(serviceName,servicePhone,servicePwd,serviceCompanyName,serviceAdopt)
+         VALUE("${serviceName}","${servicePhone}","${servicePwd}","${serviceCompanyName}",0)
+    </insert>
+    <select id="phoneIsExist"     parameterType="String" resultType="int">
+        SELECT COUNT(*)FROM service WHERE servicePhone="${phone}"
+    </select>
+    <select id="serviceIsExist"   parameterType="String" resultType="int">
+         SELECT COUNT(*)FROM service WHERE serviceCompanyName="${company}"
+     </select>
+    <select id="serviceLogin"     parameterType="String" resultMap="serviceLogin">
+        SELECT s.serviceID,s.serviceName,s.servicePhone,s.serviceCompanyName FROM service s WHERE servicePhone="${userPhone}" AND servicePwd="${userPwd}"
+    </select>
+    <select id="getService"       parameterType="String" resultType="Service">
+        SELECT *FROM service  WHERE servicePhone="${phone}"
+    </select>
+    <select id="getServiceID"     parameterType="String" resultType="Integer">
+        SELECT serviceID FROM service WHERE servicePhone="${phone}"
+    </select>
+    <select id="serviceIsAuthOne" parameterType="String" resultType="String">
+          SELECT  serviceBusinessImage FROM service WHERE  servicePhone=#{userPhone}
+    </select>
+    <select id="serviceIsAuthTwo" parameterType="String" resultType="String">
+          SELECT  serviceLegalCard FROM service WHERE servicePhone=#{userPhone}
+    </select>
+    <update id="serviceAuthOne"   parameterType="Service">
+    UPDATE service SET  serviceCompanyAllName="${serviceCompanyAllName}", serviceBusinessNumber="${serviceBusinessNumber}"
+    ,serviceBusinessImage="${serviceBusinessImage}",serviceIndustry="${serviceIndustry}", servicePeople=${servicePeople}
+    ,serviceTicketType=${serviceTicketType},serviceTicketCategory="${serviceTicketCategory}" WHERE serviceID=${serviceID}
+</update>
+    <update id="serviceAuthTwo"   parameterType="Service">
+        UPDATE service SET serviceLegalName="${serviceLegalName}",serviceLegalPhone="${serviceLegalPhone}"
+         ,serviceLegalCard="${serviceLegalCard}",serviceLegalImage="${serviceLegalImage}" WHERE serviceID=${serviceID}
+    </update>
+    <update id="updateInfo"       parameterType="Service">
+        UPDATE service SET serviceOpenName=#{serviceOpenName},serviceOpen=#{serviceOpen}
+        ,serviceOpenNumber=#{serviceOpenNumber},serviceContract=#{serviceContract} WHERE serviceID=#{serviceID}
+    </update>
+    <update id="serviceUpdatePwd">
+        UPDATE service SET servicePwd="${pwd}" WHERE serviceID=${id}
+    </update>
+</mapper>

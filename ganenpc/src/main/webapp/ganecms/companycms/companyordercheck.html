@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据校对</title>
+    <link rel="stylesheet" href="css/companyordercheck.css">
+    <script src="../../tooljs/jquery.min.js"></script>
+    <script src="../../tooljs/vue.min.js"></script>
+    <script src="../../tooljs/vue-resource.min.js"></script>
+    <script>
+        $(function(){
+            var putInCheck = new Vue({
+                el:'#putin-check-frame',
+                data:{
+                    elistArr:[],    //用户信息
+                    elistArrNum:'', //人数
+                    elistArrMoney:0    //应发总金额
+                },
+                methods:{
+                    cancel:function(){  //点击返回订单管理
+                        $(window).attr('location','companyorder.html');
+                    },
+                    next:function(){    //点击进入确认发放明细
+                        $(window).attr('location','companyorderconfirm.html');
+                    },
+                    checkMsg:function(item){    //修改员工信息点击后跳转传ID
+                        localStorage.setItem('employeeItem',JSON.stringify(item));
+                        $(window).attr('location','companycheckonemsg.html');
+                    },
+                    delateMsg:function(id){ //点击删除
+                        if(confirm('确定要删除此员工信息吗?')){
+                            this.$http.post('/company/deleteEmployee.do',{
+                                employeeID:id
+                            },{
+                                emulateJSON:true
+                            }).then(function(res){
+                                var bodyText = eval('('+res.bodyText+')');
+
+                                if(bodyText.result == '删除失败'){
+                                    alert(bodyText.result);
+                                }else{
+                                    alert('删除成功');
+                                    $(window).attr('location').reload();
+                                }
+                            },function(res){
+                                console.log(res);
+                            });
+                        }else{
+                            $(window).attr('location').reload();
+                        }
+                    }
+                },
+                created:function(){     //加载时同步Excel数据
+                    if(!sessionStorage.getItem('userPhone')){
+                        $(window).attr('location','companylogin.html');
+                    }
+
+                    this.$http.get('/company/checkInfo.do',{
+
+                    }).then(function(res){
+                        var elist = eval('('+res.bodyText+')');
+                        this.elistArr = elist.elist;
+                        this.elistArrNum = this.elistArr.length+1;
+
+                        //计算应发总金额
+                        for(var i=0;i<this.elistArr.length;i++){
+                            this.elistArrMoney += Number(this.elistArr[i].employeeSalary);
+                        }
+                    },function(res){
+                        console.log(res);
+                    });
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+<!--导入数据校对-->
+<div id="putin-check-frame">
+    <div class="putin-check">
+        <h3 class="putin-check-title">您正在创建订单</h3>
+        <div class="bc-box">
+            <img class="bc-img" src="images/bc2.png" width="100%" alt="">
+        </div>
+        <!--校对表格-->
+        <div class="putin-table">
+            <table>
+                <tr>
+                    <th class="putin-little">收款方账户名称</th>
+                    <th class="putin-big">证件号</th>
+                    <th class="putin-little">证件类型</th>
+                    <th class="putin-big">银行账号</th>
+                    <th class="putin-big">开户行全称</th>
+                    <th class="putin-big">开户行识别号</th>
+                    <th class="putin-big">金额</th>
+                    <th class="putin-little">手机号</th>
+                    <th class="putin-little">操作</th>
+                </tr>
+                <tr v-for="(item,index) in elistArr">
+                    <td>{{item.employee.employeeName}}</td>
+                    <td>{{item.employee.employeeCard}}</td>
+                    <td>{{item.employee.employeeCardCN}}</td>
+                    <td>{{item.employee.employeeBankNumber}}</td>
+                    <td>{{item.employee.employeeOpen}}</td>
+                    <td>{{item.employee.employeeOpenNumber}}</td>
+                    <td>{{item.employeeSalary}}</td>
+                    <td>{{item.employee.employeePhone}}</td>
+                    <td>
+                        <a class="putin-cont" href="javascript:;" @click="checkMsg(item)">修改</a>
+                        <a class="putin-cont" href="javascript:;" @click="delateMsg(item.employee.employeeID)">删除</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <!--上传数据统计-->
+        <div class="putin-data-box">
+            <h3 class="putin-data-title">上传数据统计</h3>
+            <p>人数：<span>{{elistArrNum}}</span>人</p>
+            <p>应发金额：￥<span>{{elistArrMoney}}</span></p>
+        </div>
+
+        <!--验证一下步按钮-->
+        <div class="putin-btn-box">
+            <a href="javascript:;" class="next" @click="next()">下一步</a>
+            <a href="javascript:;" class="cancel" @click="cancel()">取消</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

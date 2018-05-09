@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ganen.dao.GanenUserDao">
+
+
+
+
+    <select id="companyByID"        parameterType="Integer"   resultType="Company">
+        SELECT *FROM company WHERE companyID=#{companyID}
+    </select>
+    <select id="serviceByID"        parameterType="Integer"   resultType="Service">
+        SELECT *FROM service WHERE serviceID=#{serviceID}
+    </select>
+    <select id="getCompany"         resultType="Company">
+        SELECT *FROM company  WHERE  companyBusinessImage!= ""
+        AND companyLegalImage!=""
+          <if test="companyAllName!=null and companyAllName!=''">
+            AND companyAllName like  CONCAT('%','${companyAllName}','%' )
+          </if>
+          <if test="companyAdopt!=null">
+             AND companyAdopt=#{companyAdopt}
+          </if>
+          LIMIT #{startPos},#{pageSize}
+    </select>
+    <select id="getCompanyCount"    resultType="int">
+      SELECT COUNT(*) FROM company WHERE   companyBusinessImage!= ""
+            AND companyLegalImage!=""
+        <if test="companyAllName!=null and companyAllName!=''">
+            AND companyAllName like CONCAT('%','${companyAllName}','%' )
+        </if>
+        <if test="companyAdopt!=null">
+            AND companyAdopt=#{companyAdopt}
+        </if>
+    </select>
+    <select id="getSetvice"         resultType="Service">
+        SELECT *FROM service WHERE  1=1
+        <if test="serviceCompanyAllName!=null and serviceCompanyAllName!=''">
+            AND serviceCompanyAllName like  CONCAT('%','${serviceCompanyAllName}','%' )
+        </if>
+        <if test="serviceAdopt!=null">
+            AND serviceAdopt=#{serviceAdopt}
+        </if> LIMIT #{startPos},#{pageSize}
+    </select>
+    <select id="getServiceCount"    resultType="int">
+       SELECT COUNT(*) FROM service WHERE  1=1
+        <if test="serviceCompanyAllName!=null and serviceCompanyAllName!=''">
+            AND serviceCompanyAllName like  CONCAT('%','${serviceCompanyAllName}','%' )
+        </if>
+        <if test="serviceAdopt!=null">
+            AND serviceAdopt=#{serviceAdopt}
+        </if>
+    </select>
+    <select id="ganenLogin"         resultType="GanenUser">
+       SELECT *FROM ganenUser WHERE ganenName="${userName}" AND ganenPwd="${userPwd}"
+   </select>
+    <update id="updateCompanyAdopt" parameterType="int">
+        UPDATE company SET companyAdopt=1 WHERE companyID=#{companyID}
+    </update>
+    <delete id="deleteCompanyAdopt" parameterType="int">
+        DELETE FROM company WHERE companyID=#{companyID}
+    </delete>
+
+
+</mapper>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>认证页面2</title>
+    <link rel="stylesheet" href="css/companyrz2.css">
+    <script src="../../tooljs/jquery.min.js"></script>
+    <script src="../../tooljs/vue.min.js"></script>
+    <script src="../../tooljs/vue-resource.min.js"></script>
+    <script>
+        function imgPreview(fileDom){
+            //判断是否支持FileReader
+            if (window.FileReader) {
+                var reader = new FileReader();
+            } else {
+                alert("您的设备不支持图片预览功能，如需该功能请升级您的设备！");
+            }
+
+            //获取文件
+            var file = fileDom.files[0];
+            var imageType = /^image\//;
+            //是否是图片
+            if (!imageType.test(file.type)) {
+                alert("请选择图片！");
+                return;
+            }
+            //读取完成
+            reader.onload = function(e) {
+                //获取图片dom
+                var img = document.getElementById("preview");
+                //图片路径设置为读取的图片
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+
+        $(function(){
+            if(!sessionStorage.getItem('userPhone')){
+                $(window).attr('location','companylogin.html');
+            }
+
+            if(!localStorage.getItem('company')){   //第一次填写公司认证
+                console.log('第一次公司认证第二步');
+                var companyrz2 = new Vue({
+                    el:'#companyrz1-frame',
+                    data:{
+                        companyLegalName:'',
+                        companyLegalPhone:'',
+                        companyLegalCard:'',
+                        file:'',
+                        fn:''
+                    },
+                    created:function(){
+                        if(!sessionStorage.getItem('userPhone')){
+                            $(window).attr('location','companylogin.html');
+                        }
+                    },
+                    methods:{
+                        triggerClick:function(){    //模拟点击
+                            $('.file').trigger('click');
+                        },
+                        getImg:function(event){
+                            this.file = event.target.files[0];
+                        },
+                        next:function(){
+                            this.fn = new FormData();
+                            this.fn.append('companyLegalName',this.companyLegalName);
+                            this.fn.append('companyLegalPhone',this.companyLegalPhone);
+                            this.fn.append('companyLegalCard',this.companyLegalCard);
+                            this.fn.append('file',this.file);
+
+                            this.$http.post('/companyLogin/authTwo.do',this.fn,{
+                                emulateJSON:true,
+                                headers:{
+                                    'Content-Type':'multipart/form-data'
+                                }
+                            }).then(function(res){
+                                console.log(res);
+                                var bodyText = eval('('+res.bodyText+')');
+                                if(
+                                    bodyText.result == '输入内容不包含空项，请您重新输入。'||
+                                    bodyText.result == '身份证格式不正确,请您重新输入'||
+                                    bodyText.result == '手机格式不正确,请您重新输入'
+                                ){
+                                    alert(bodyText.result);
+                                    $(window).attr('location').reload();
+                                }else{
+                                    $(window).attr('location','companyrz3.html');
+                                }
+                            },function(res){
+                                console.log(res);
+                            });
+                        }
+                    }
+                });
+            }else{
+                console.log('分公司认证第二步');
+                var companyrz2 = new Vue({  //填写分公司认证
+                    el:'#companyrz1-frame',
+                    data:{
+                        companyLegalName:'',
+                        companyLegalPhone:'',
+                        companyLegalCard:'',
+                        file:'',
+                        fn:''
+                    },
+                    created:function(){
+                        if(!sessionStorage.getItem('userPhone')){
+                            $(window).attr('location','companylogin.html');
+                        }
+                    },
+                    methods:{
+                        triggerClick:function(){    //模拟点击
+                            $('.file').trigger('click');
+                        },
+                        getImg:function(event){
+                            this.file = event.target.files[0];
+                        },
+                        next:function(){
+                            this.fn = new FormData();
+                            this.fn.append('companyLegalName',this.companyLegalName);
+                            this.fn.append('companyLegalPhone',this.companyLegalPhone);
+                            this.fn.append('companyLegalCard',this.companyLegalCard);
+                            this.fn.append('file',this.file);
+
+                            this.$http.post('/company/authTwo.do',this.fn,{
+                                emulateJSON:true,
+                                headers:{
+                                    'Content-Type':'multipart/form-data'
+                                }
+                            }).then(function(res){
+                                console.log(res);
+                                var bodyText = eval('('+res.bodyText+')');
+                                if(
+                                    bodyText.result == '输入内容不包含空项，请您重新输入。'||
+                                    bodyText.result == '身份证格式不正确,请您重新输入'||
+                                    bodyText.result == '手机格式不正确,请您重新输入'
+                                ){
+                                    alert(bodyText.result);
+                                    $(window).attr('location').reload();
+                                }else{
+                                    $(window).attr('location','companyrz3.html');
+                                }
+                            },function(res){
+                                console.log(res);
+                            });
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</head>
+<body>
+
+<!--企业认证第二步-->
+<div id="companyrz1-frame">
+    <h3 class="rz1-title">实名认证</h3>
+    <div class="rz-bu-img">
+        <div class="bu-ball active">1</div>
+        <div class="bu-line"></div>
+        <div class="bu-ball active">2</div>
+        <div class="bu-line"></div>
+        <div class="bu-ball">3</div>
+    </div>
+    <div class="rz-bu-txt">
+        <p>单位信息</p>
+        <p>法人代表</p>
+        <p>完成</p>
+    </div>
+    <div class="rz1-msg">
+        <div class="rz1-line">
+            <div class="rz1-txt">法定代表人姓名：</div>
+            <div class="rz1-input">
+                <input class="txt" type="text" v-model="companyLegalName" placeholder="法定代表人姓名">
+            </div>
+        </div>
+        <div class="rz1-line">
+            <div class="rz1-txt">法定代表人电话：</div>
+            <div class="rz1-input">
+                <input class="txt" type="text" v-model="companyLegalPhone" placeholder="法定代表人电话">
+            </div>
+        </div>
+        <div class="rz1-line">
+            <div class="rz1-txt">法定代表人身份证号码：</div>
+            <div class="rz1-input">
+                <input class="txt" type="text" v-model="companyLegalCard" placeholder="法定代表人身份证号码">
+            </div>
+        </div>
+        <div class="rz1-line" style="height:180px;margin-bottom:10px;">
+            <div class="rz1-txt" style="text-align: center">上传身份证证件照<br/>（正反面请打印到一张纸）</div>
+            <div class="rz1-input">
+                <div class="preview-box">
+                    <img src="images/addimg.png" id="preview" width="100%" @click="triggerClick()">
+                </div>
+                <input class="file" type="file" name="file" onchange="imgPreview(this)" @change="getImg($event)" />
+            </div>
+        </div>
+        <a href="javascript:;" class="next" @click="next()">下一步</a>
+    </div>
+</div>
+
+</body>
+</html>

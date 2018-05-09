@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>确认发放明细</title>
+    <link rel="stylesheet" href="css/companyorderconfirm.css">
+    <script src="../../tooljs/jquery.min.js"></script>
+    <script src="../../tooljs/vue.min.js"></script>
+    <script src="../../tooljs/vue-resource.min.js"></script>
+    <script>
+        $(function(){
+            var comfirm = new Vue({
+                el:'#confirm-frame',
+                data:{
+                    employeeArr:[],
+                    serviceArr:{},
+                    ticketCategoryArr:[],
+                    idsArr:[],
+                    ticketTypeArr:[],
+                    ticketCategoryArr:[]
+                },
+                created:function(){
+                    this.$http.post('/company/checkAll.do',{
+
+                    },{
+                        emulateJSON:true
+                    }).then(function(res){
+                        var bodyText = eval('('+res.bodyText+')');
+
+                        this.employeeArr = bodyText.employeeInfo;
+                        this.serviceArr = bodyText.serviceInfo;
+
+                    },function(res){
+                        console.log(res);
+                    });
+                },
+                methods:{
+                    subOrder:function(){    //提交订单
+                        var that = this;
+
+                        for(i in this.serviceArr){
+                            this.idsArr.push(this.serviceArr[i].serviceID);
+                            this.ticketTypeArr.push(this.serviceArr[i].serviceTicketType);
+                        }
+
+                        $('.sel').each(function(index){
+                            that.ticketCategoryArr.push($('.sel').eq(index).val());
+                        });
+
+                        // console.log(typeof this.idsArr);
+                        // console.log(typeof this.ticketTypeArr);
+                        // console.log(this.ticketCategoryArr);
+
+                        this.$http.get('/company/newOrder.do',{
+                            params:{
+                                ids:JSON.stringify(this.idsArr),
+                                ticketType:JSON.stringify(this.ticketTypeArr),
+                                ticketCategory:JSON.stringify(this.ticketCategoryArr)
+                            }
+                        }).then(function(res){
+                            var bodyText = eval('('+res.bodyText+')');
+
+                            if(bodyText.result){
+                                alert(bodyText.content);
+                                $(window).attr('location','companyorder.html');
+                            }
+                        },function(res){
+                            console.log(res);
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+<!--确认发放明细-->
+<div id="confirm-frame">
+    <div class="confirm">
+        <h3 class="confirm-title">您正在创建订单</h3>
+        <div class="bc-box">
+            <img class="bc-img" src="images/bc3.png" width="100%" alt="">
+        </div>
+
+        <!--发放明细头-->
+        <h3 class="confirm-send-title">发放明细</h3>
+
+        <!--发放明细-->
+        <div class="send-table">
+            <table>
+                <tr>
+                    <th>服务公司</th>
+                    <th>收款人姓名</th>
+                    <th>证件号</th>
+                    <th>证件类型</th>
+                    <th>银行账号</th>
+                    <th>开户银行全称</th>
+                    <th>开户行识别号</th>
+                    <th>应发金额</th>
+                    <th>个税</th>
+                    <th>手机号</th>
+                </tr>
+                <tr v-for="(item,index) in employeeArr">
+                    <td>{{item.serviceCompanyAllName}}</td>
+                    <td>{{item.employeeName}}</td>
+                    <td>{{item.employeeCard}}</td>
+                    <td>{{item.employeeCardCN}}</td>
+                    <td>{{item.employeeBankNumber}}</td>
+                    <td>{{item.employeeOpen}}</td>
+                    <td>{{item.employeeOpenNumber}}</td>
+                    <td>￥<span>{{item.employeePrice}}</span></td>
+                    <td>￥<span>{{item.employeeTax}}</span></td>
+                    <td>{{item.employeePhone}}</td>
+                </tr>
+            </table>
+        </div>
+
+        <!--服务明细-->
+        <div class="confirm-service-table">
+            <h3 class="confirm-service-title">服务明细</h3>
+            <div class="confirm-service-table-box">
+                <table>
+                    <tr>
+                        <th>甲方公司</th>
+                        <th>甲方税号</th>
+                        <th>地址电话</th>
+                        <th>开户账号</th>
+                        <th>实发金额</th>
+                        <th>个税</th>
+                        <th>付款总额</th>
+                        <th>乙方公司</th>
+                        <th>乙方账号</th>
+                        <th>乙方开户行</th>
+                        <th>发票类型</th>
+                        <th>发票类目</th>
+                    </tr>
+                    <tr v-for="(item,index) in serviceArr">
+                        <td>{{item.companyAllName}}</td>
+                        <td>{{item.companyTaxNumber}}</td>
+                        <td>{{item.companyAddress}}</td>
+                        <td>{{item.companyBankCard}}</td>
+                        <td>￥<span>{{item.companyOrderPrice}}</span></td>
+                        <td>￥<span>{{item.companyOrderTaxCount}}</span></td>
+                        <td>￥<span>{{item.companyOrderPriceCount}}</span></td>
+                        <td>{{item.serviceCompanyAllName}}</td>
+                        <td>{{item.serviceOpenNumber}}</td>
+                        <td>{{item.serviceOpen}}</td>
+                        <td>{{item.serviceTicketType}}</td>
+                        <td>
+                            <select name="" class="sel">
+                                <option v-for="(item2,index) in item.s" :value="item2">{{item2}}</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!--提交订单区域-->
+        <div class="send-btn-box">
+            <a href="javascript:;" class="send" @click="subOrder()">提交订单</a>
+            <a href="companyorder.html" class="cancel">取消</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

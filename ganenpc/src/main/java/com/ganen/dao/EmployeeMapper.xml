@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ganen.dao.EmployeeDao">
+    <resultMap id="employeeOrder" type="com.ganen.entity.EmployeeOrder">
+        <id property="employeeOrderID" column="employeeOrderID" />
+        <result property="employeePrice" column="employeePrice"/>
+        <association property="employee" javaType="com.ganen.entity.Employee">
+            <id property="employeeID" column="employeeID"/>
+            <result property="employeeName" column="employeeName"/>
+            <result property="employeePhone" column="employeePhone"/>
+            <result property="employeeCard" column="employeeCard"/>
+            <result property="employeeCardType" column="employeeCardType"/>
+            <result property="employeeOpen" column="employeeOpen"/>
+            <result property="employeeOpenNumber" column="employeeOpenNumber"/>
+        </association>
+    </resultMap>
+    <insert id="newEmployee"      parameterType="Employee">
+        INSERT INTO employee(employeeName,employeePhone,employeeCard,employeeCardType,employeeOpen,employeeOpenNumber,employeeBankNumber,employeeContract,employeeContractState,companyID)
+        VALUES(#{employeeName},#{employeePhone},#{employeeCard},#{employeeCardType},#{employeeOpen},#{employeeOpenNumber},#{employeeBankNumber},#{employeeContract},#{employeeContractState},#{company.companyID})
+    </insert>
+    <insert id="newEmployeeOrder" parameterType="EmployeeOrder">
+        INSERT INTO employeeOrder(employeeOrderTime,employeeOrderState,employeeSalary,employeePrice,employeeTax,serviceOrderID,employeeID)
+        VALUES(#{employeeOrderTime},#{employeeOrderState},#{employeeSalary},#{employeePrice},#{employeeTax},#{serviceOrder.serviceOrderID},#{employee.employeeID})
+    </insert>
+    <select id="getEmployeeID"    parameterType="String" resultType="Integer">
+        SELECT employeeID FROM employee WHERE employeeCard=#{employeeCard}
+    </select>
+    <select id="maxEmployeeID"                           resultType="Integer">
+        SELECT MAX(employeeID)FROM employee
+    </select>
+    <select id="employeeOrderByServiceOrderID" parameterType="int" resultMap="employeeOrder">
+         SELECT eo.employeeOrderID,eo.employeePrice,e.employeeID,e.employeeName,e.employeePhone
+        ,e.employeeCard,e.employeeCardType,e.employeeOpen,e.employeeOpenNumber
+        FROM employeeOrder eo,employee e  WHERE eo.employeeID=e.employeeID
+      AND eo.serviceOrderID=#{serviceOrderID}
+    </select>
+    <select id="employeeSpring" parameterType="String" resultType="BigDecimal">
+        SELECT SUM(eo.employeePrice) FROM employeeOrder eo,employee e WHERE eo.employeeID=e.employeeID AND e.employeeCard=#{employeeCard}
+        AND DATE_FORMAT(employeeOrderTime,"%m-%d") &gt;= "01-01" AND DATE_FORMAT(employeeOrderTime,"%m-%d") &lt;= "03-31";
+    </select>
+    <select id="employeeSummer" parameterType="String" resultType="BigDecimal">
+        SELECT SUM(eo.employeePrice) FROM employeeOrder eo,employee e WHERE eo.employeeID=e.employeeID AND e.employeeCard=#{employeeCard}
+        AND DATE_FORMAT(employeeOrderTime,"%m-%d") &gt;= "04-01" AND DATE_FORMAT(employeeOrderTime,"%m-%d") &lt;= "06-30";
+    </select>
+    <select id="employeeFall" parameterType="String" resultType="BigDecimal">
+        SELECT SUM(eo.employeePrice) FROM employeeOrder eo,employee e WHERE eo.employeeID=e.employeeID AND e.employeeCard=#{employeeCard}
+        AND DATE_FORMAT(employeeOrderTime,"%m-%d") &gt;= "07-01" AND DATE_FORMAT(employeeOrderTime,"%m-%d") &lt;= "09-30";
+    </select>
+    <select id="employeeWinter" parameterType="String" resultType="BigDecimal">
+        SELECT SUM(eo.employeePrice) FROM employeeOrder eo,employee e WHERE eo.employeeID=e.employeeID AND e.employeeCard=#{employeeCard}
+        AND DATE_FORMAT(employeeOrderTime,"%m-%d") &gt;= "10-01" AND DATE_FORMAT(employeeOrderTime,"%m-%d") &lt;= "12-31";
+    </select>
+</mapper>

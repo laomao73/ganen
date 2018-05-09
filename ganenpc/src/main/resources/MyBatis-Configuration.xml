@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <!-- 打印查询语句 -->
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
+
+    <typeAliases>
+        <typeAlias type="com.ganen.entity.CardType"             alias="CardType"/>
+        <typeAlias type="com.ganen.entity.Company"              alias="Company"/>
+        <typeAlias type="com.ganen.entity.CompanyBilling"       alias="CompanyBilling"/>
+        <typeAlias type="com.ganen.entity.CompanyLogin"         alias="CompanyLogin"/>
+        <typeAlias type="com.ganen.entity.CompanyOrder"         alias="CompanyOrder"/>
+        <typeAlias type="com.ganen.entity.CompanyTicket"        alias="CompanyTicket"/>
+        <typeAlias type="com.ganen.entity.Employee"             alias="Employee"/>
+        <typeAlias type="com.ganen.entity.EmployeeOrder"        alias="EmployeeOrder"/>
+        <typeAlias type="com.ganen.entity.GanenUser"            alias="GanenUser"/>
+        <typeAlias type="com.ganen.entity.Service"              alias="Service"/>
+        <typeAlias type="com.ganen.entity.ServiceOrder"         alias="ServicesOrder"/>
+        <typeAlias type="com.ganen.entity.ServiceExpress"         alias="ServiceExpress"/>
+    </typeAliases>
+
+    <mappers>
+        <mapper resource="com/ganen/dao/CompanyLoginMapper.xml"/>
+        <mapper resource="com/ganen/dao/CompanyMapper.xml"/>
+        <mapper resource="com/ganen/dao/EmployeeMapper.xml"/>
+        <mapper resource="com/ganen/dao/GanenUserMapper.xml"/>
+        <mapper resource="com/ganen/dao/CardTypeMapper.xml"/>
+        <mapper resource="com/ganen/dao/LimitMapper.xml"/>
+        <mapper resource="com/ganen/dao/ServiceMapper.xml"/>
+        <mapper resource="com/ganen/dao/ServiceExpressMapper.xml"/>
+    </mappers>
+
+</configuration>

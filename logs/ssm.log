@@ -1,0 +1,1 @@
+[INFO] [2018-04-20 16:44:59][com.ganen.util.RestTemplateConfig]call post interface error: I/O error on POST request for "http://169.8.160.201:8080/xx/Webservice/Submit": connect timed out; nested exception is java.net.SocketTimeoutException: connect timed out

@@ -1,0 +1,89 @@
+平台接口
+	 1.登录 /ganen/login.do
+	        参数: userName=xx&userPwd=xx
+	        参数类型:userName-用户名 userPwd-密码
+	        提交方式:POST
+	        返回结果:
+                    {"result":0,"content":"登录失败"}
+                    {"result":1,"content":"登录成功"}
+
+
+     2.查询全部企业审核 /ganen/getCompany.do
+	        参数:pageNow=1&companyAllName=x&companyAdopt=0
+	        参数类型:pageNow-当前页 companyAllName-公司名 companyAdopt-状态(0审核中 1审核成功 2 审核失败)
+	        提交方式:GET
+	        返回结果:
+	                {"result":0,"content":"暂无企业"}
+	                {"result":1,"companyInfo":{"company0":{"companyID":42,"companyName":"qweqwe","companyAdopt":"审核成功"},"company1":{"companyID":43,"companyName":"345","companyAdopt":"审核成功"},"company2":{"companyID":44,"companyName":"三杯鸡米饭","companyAdopt":"审核成功"},"company3":{"companyID":45,"companyName":null,"companyAdopt":"审核成功"}},"totalPageCount":2}
+
+     3.根据ID企业审核信息 /ganen/companyById.do?companyID=40
+	        参数:companyID=x
+	        参数类型:companyID-公司ID
+	        提交方式:GET
+	        返回结果:
+                    {"companyID":40,"companyName":"ABC公司","companyAllName":"ABC公司","companyLegalName":"新胖子","companyLegalPhone":"13366800988","companyLegalCard":"110104198701311614","companyLegalImage":"companyImage新胖子身份证.png","companyBusinessNumber":"789465132798465132","companyBusinessImage":"\\companyImage\\ABC公司营业执照.png","companyEmail":null,"companyAdopt":1,"companyLogin":null}
+
+
+     4.通过审核 /ganen/updateCompanyAdopt.do
+	        参数:companyID=x
+	        参数类型:companyID-企业ID
+	        提交方式:POST
+	        返回结果:
+                    {"result":0,"content":"状态修改成功"}
+                    {"result":1,"content":"修改状态失败"}
+
+
+
+     4.未通过审核 /ganen/deleteCompanyAdopt.do
+	        参数:companyID=x
+	        参数类型:companyID-企业ID
+	        提交方式:POST
+	        返回结果:
+                    {"result":0,"content":"状态修改成功"}
+                    {"result":1,"content":"修改状态失败"}
+
+     5.服务是否通过审核  /ganen/updateServiceAdopt.do
+            参数：serviceID
+            参数类型：serviceID-服务公司ID
+            提交方式：POST
+
+
+     28.导出服务明细 /company/expressExcelService.do
+            参数:companyOrderNumber=12123456
+            参数类型:companyOrderNumber-企业订单号
+            提交方式:GET
+            返回结果
+
+
+     29.根据ID查看订单内容 /company/orderByID.do
+            参数:?companyOrderID=1
+            参数类型: companyOrderID-服务订单ID
+            提交方式:GET
+            返回结果:
+
+
+     30.下载截图 /service/downloadImage.do
+            参数:?serviceOrdereID=1
+            参数类型:serviceOrdereID-服务订单ID
+            提交方式:GET
+            返回结果:
+
+     31. 查询全部订单 /ganen/orderAll.do
+            参数：pageNow companyOrderNumber companyName companyOrderState
+            参数类型：pageNow-当前页 companyOrderNumber-订单单号 companyName-公司名 companyOrderState-状态
+            提交方式：GET
+            返回结果:
+
+     32 全部企业 /ganen/companyAll.do
+            参数:pageNow companyName
+            参数类型：pageNow-当前页 companyName-公司名
+            提交方式:GET
+     33 全部服务B /ganen/serviceAll.do
+            参数:pageNow companyName
+            参数类型：pageNow-当前页 serviceName-公司名
+            提交方式:GET
+
+     34 下载发票 /ganen/downloadImage.do
+            参数：serviceOrdereID
+            参数类型：serviceOrdereID-服务订单ID
+            提交方式:GET

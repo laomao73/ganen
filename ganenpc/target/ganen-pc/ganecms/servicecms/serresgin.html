@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>服务平台注册页</title>
+    <link rel="stylesheet" href="css/serresgin.css">
+    <script src="../../tooljs/jquery.min.js"></script>
+    <script src="../../tooljs/vue.min.js"></script>
+    <script src="../../tooljs/vue-resource.min.js"></script>
+    <script>
+        $(function(){
+            var resgin = new Vue({
+                el:'#resgin-frame',
+                data:{
+                    type:'',
+                    companyName:'',
+                    contactsName:'',
+                    contactsPhone:'',
+                    code:'',
+                    contactsPwd:'',
+                    timeStr:'获取验证码',
+                    disabled:false
+                },
+                methods:{
+                    getCode:function(){ //获取验证码
+                        this.disabled = true;
+                        var num = 60;
+                        var that = this;
+                        var timer = setInterval(function(){
+                            num--;
+                            that.timeStr = '重新发送('+num+')';
+                            if(num<=0){
+                                clearInterval(timer);
+                                that.timeStr = '获取验证码';
+                                that.disabled = false;
+                            }
+                        },1000);
+
+                        this.$http.get('/public/sendNumber.do',{
+                            params:{
+                                contactsPhone:this.contactsPhone
+                            }
+                        }).then(function(res){
+                            console.log(res);
+                            var bodyText = eval('('+res.bodyText+')');
+                            if(bodyText.result == '手机号格式不正确'){
+                                alert(bodyText.result);
+                            }else if(bodyText.result == '发送成功'){
+                                alert(bodyText.result);
+                            }
+                        });
+                    },
+                    resgin:function(event){     //点击注册
+                        event.preventDefault();
+
+                        this.$http.post('/public/register.do',{
+                            type:this.type,
+                            companyName:this.companyName,
+                            contactsName:this.contactsName,
+                            contactsPhone:this.contactsPhone,
+                            code:this.code,
+                            contactsPwd:this.contactsPwd
+                        },{
+                            emulateJSON:true
+                        }).then(function(res){
+                            console.log(res);
+                            var bodyText = eval('('+res.bodyText+')');
+                            if(bodyText.result){
+                                alert(bodyText.content);
+                                $(window).attr('location','serlogin.html');
+                            }else{
+                                alert(bodyText.content);
+                                $(window).attr('location','serresgin.html');
+                            }
+                        },function(res){
+                            console.log(res);
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+<a href="../../index.html" class="back-pc">返回官网</a>
+
+<!--注册-->
+<div id="resgin-frame">
+    <h3>企业账号注册</h3>
+    <input type="text" class="company-name" v-model="companyName" placeholder="请输入公司名称">
+    <input type="text" class="user-name" v-model="contactsName" placeholder="请输入您的姓名">
+    <input type="text" class="user-tel" v-model="contactsPhone" placeholder="请输入您的手机号"><br/>
+    <input type="text" class="check-number" v-model="code" placeholder="请输入手机验证码">
+    <button class="get-check-number" @click="getCode()" :disabled="disabled" v-text="timeStr"></button><br/>
+    <input type="password" class="password" v-model="contactsPwd" placeholder="请输入密码"><br/>
+    <input type="text" class="user-tel" v-model="type" placeholder="请输入邀请码">
+    <a href="javascript:;" class="resgin-btn" @click="resgin($event)">注册</a>
+</div>
+
+</body>
+</html>

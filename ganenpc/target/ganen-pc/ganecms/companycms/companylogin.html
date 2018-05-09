@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>企业客户平台登录页</title>
+    <link rel="stylesheet" href="css/companylogin.css">
+    <script src="../../tooljs/jquery.min.js"></script>
+    <script src="../../tooljs/vue.min.js"></script>
+    <script src="../../tooljs/vue-resource.min.js"></script>
+    <script>
+        $(function(){
+            var login = new Vue({
+                el:'#login-frame',
+                data:{
+                    userPhone:'',
+                    userPwd:''
+                },
+                created:function(){
+                    localStorage.clear();
+                    sessionStorage.clear();
+                },
+                methods:{
+                    login:function(event){ //点击按钮登录
+                        event.preventDefault();
+                        this.loginHttp();
+                    },
+                    keyup:function(event){ //回车登录
+                        if(event.keyCode == 13){
+                            this.loginHttp();
+                        }
+                    },
+                    loginHttp:function(){   //登录功能
+                        this.$http.post('/public/login.do',{
+                            type:1,
+                            userPhone:this.userPhone,
+                            userPwd:this.userPwd
+                        },{
+                            emulateJSON:true
+                        }).then(function(res){
+                            console.log(res);
+                            var bodyText = eval('('+res.bodyText+')');
+                            if(
+                                bodyText.result == '输入内容不包含空项，请您重新输入。'||
+                                bodyText.result == '登录失败'||bodyText.result == '登录失败'
+                            ){
+                                alert(bodyText.result);
+                                return;
+                            }else if(bodyText.result == '请先认证一'){
+                                sessionStorage.setItem('userPhone',this.userPhone);
+                                $(window).attr('location','companyrz1.html');
+                            }else if(bodyText.result == '请先认证二'){
+                                sessionStorage.setItem('userPhone',this.userPhone);
+                                $(window).attr('location','companyrz2.html');
+                            }else if(bodyText.result == '请等待审核'){
+                                alert(bodyText.result);
+                                $(window).attr('location','companylogin.html');
+                            }else if(bodyText.result == '请选择分公司'){
+                                if(bodyText.elist != ''){
+                                    $(window).attr('location','companyxuan.html');
+                                    sessionStorage.setItem('userPhone',this.userPhone);
+                                    sessionStorage.setItem('companyArr',JSON.stringify(bodyText.elist));
+                                }
+                            }else if(bodyText.result == '登录成功'){
+                                sessionStorage.setItem('userPhone',this.userPhone);
+                                $(window).attr('location','companyframe.html');
+                            }
+                        },function(res){
+                            console.log(res);
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+<a href="../../index.html" class="back-pc">返回官网</a>
+
+<!--登录-->
+<div id="login-frame">
+    <h3>企业账号登录</h3>
+    <input type="text" v-model="userPhone" placeholder="请输入手机号" @keyup="keyup($event)">
+    <input type="password" v-model="userPwd" placeholder="请输入密码" @keyup="keyup($event)"><br/>
+    <a href="checkpass.html" class="forgot-pass">忘记密码</a>
+    <a href="companyresgin.html" class="login-link">立即注册</a><br/>
+    <a href="javascript:;" class="login-btn" @click="login($event)">登录</a>
+</div>
+
+
+</body>
+</html>

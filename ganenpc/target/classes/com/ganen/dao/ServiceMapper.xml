@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ganen.dao.ServiceDao">
+    <resultMap id="serviceOrderID" type="com.ganen.entity.ServiceOrder">
+        <id property="serviceOrderID" column="serviceOrderID"/>
+        <result property="serviceOrderPrice" column="serviceOrderPrice"/>
+        <result property="serviceOrderServicePrice" column="serviceOrderServicePrice"/>
+        <result property="serviceOrderTicketType" column="serviceOrderTicketType"/>
+        <result property="serviceOrderTicketCategory" column="serviceOrderTicketCategory"/>
+        <result property="serviceOrderImage" column="serviceOrderImage"/>
+        <association property="service" javaType="com.ganen.entity.Service">
+            <id property="serviceID" column="serviceID"/>
+            <result property="serviceCompanyName" column="serviceCompanyName"/>
+            <result property="serviceOpenNumber" column="serviceOpenNumber"/>
+            <result property="serviceOpenName" column="serviceOpenName"/>
+        </association>
+        <association property="companyOrder" javaType="com.ganen.entity.CompanyOrder">
+            <id property="companyOrderID" column="companyOrderID"/>
+            <result property="companyOrderTaxCount" column="companyOrderTaxCount"/>
+            <association property="company" javaType="com.ganen.entity.Company">
+                <id property="companyID" column="companyID"/>
+                <result property="companyAllName" column="companyAllName"/>
+            </association>
+        </association>
+        <collection property="employeeOrderList" column="serviceOrderID" ofType="com.ganen.entity.EmployeeOrder">
+            <id property="employeeOrderID" column="employeeOrderID"/>
+            <result property="employeePrice" column="employeePrice" />
+            <result property="employeeSalary" column="employeeSalary" />
+            <result property="employeeTax" column="employeeTax" />
+            <association property="employee" javaType="com.ganen.entity.Employee">
+                <id property="employeeID" column="employeeID"/>
+                <result property="employeeName" column="employeeName"/>
+                <result property="employeePhone" column="employeePhone"/>
+                <result property="employeeCard" column="employeeCard"/>
+                <result property="employeeCardType" column="employeeCardType"/>
+                <result property="employeeOpen" column="employeeOpen"/>
+                <result property="employeeOpenNumber" column="employeeOpenNumber"/>
+                <result property="employeeBankNumber" column="employeeBankNumber"/>
+            </association>
+        </collection>
+    </resultMap>
+
+    <resultMap id="serviceLogin" type="com.ganen.entity.Service">
+        <id property="serviceID" column="serviceID"/>
+        <result property="serviceName" column="serviceName"/>
+        <result property="servicePhone" column="servicePhone"/>
+        <result property="serviceCompanyName" column="serviceCompanyName"/>
+    </resultMap>
+    <resultMap id="serviceExcel" type="com.ganen.entity.ServiceOrder">
+        <!--{"甲方全称","",,"",,"","","",""};-->
+        <id property="serviceOrderID" column="serviceOrderID"/>
+        <result property="serviceOrderServicePrice" column="serviceOrderServicePrice"/>
+        <result property="serviceOrderPrice" column="serviceOrderPrice"/>
+        <result property="serviceOrderTicketCategory" column="serviceOrderTicketCategory"/>
+        <association property="service" javaType="com.ganen.entity.Service">
+            <id property="serviceID" column="serviceID"/>
+            <result property="serviceCompanyName" column="serviceCompanyName"/>
+            <result property="serviceOpenNumber" column="serviceOpenNumber"/>
+        </association>
+        <association property="companyOrder" javaType="com.ganen.entity.CompanyOrder">
+            <id property="companyOrderID" column="companyOrderID"/>
+            <result property="companyOrderTaxCount" column="companyOrderTaxCount"/>
+            <result property="companyOrderTaxCount" column="companyOrderTaxCount"/>
+            <association property="company" javaType="com.ganen.entity.Company">
+                <id property="companyID" column="companyID"/>
+                <result property="companyAllName" column="companyAllName"/>
+            </association>
+        </association>
+    </resultMap>
+    <insert id="serviceRegister" parameterType="Service">
+         INSERT INTO service(serviceName,servicePhone,servicePwd,serviceCompanyName,serviceAdopt)
+         VALUE("${serviceName}","${servicePhone}","${servicePwd}","${serviceCompanyName}",0)
+    </insert>
+    <insert id="newServiceOrder" parameterType="ServicesOrder">
+        INSERT INTO serviceOrder(serviceOrderCount,serviceOrderPrice,serviceOrderServicePrice,serviceOrderTime,serviceOrderState,serviceOrderTicketType,serviceOrderTicketCategory,serviceID,companyOrderID)
+         VALUES(#{serviceOrderCount},#{serviceOrderPrice},#{serviceOrderServicePrice},#{serviceOrderTime},#{serviceOrderState},#{serviceOrderTicketType},#{serviceOrderTicketCategory},#{service.serviceID},#{companyOrder.companyOrderID})
+
+    </insert>
+    <select id="phoneIsExist" parameterType="String" resultType="int">
+        SELECT COUNT(*)FROM service WHERE servicePhone="${phone}"
+    </select>
+    <select id="serviceIsExist" parameterType="String" resultType="int">
+         SELECT COUNT(*)FROM service WHERE serviceCompanyName="${company}"
+     </select>
+    <select id="serviceLogin" parameterType="String" resultMap="serviceLogin">
+        SELECT * FROM service s WHERE servicePhone="${userPhone}" AND servicePwd="${userPwd}"
+    </select>
+    <select id="getService" parameterType="String" resultType="Service">
+        SELECT *FROM service  WHERE servicePhone="${phone}"
+    </select>
+    <select id="getServiceID" parameterType="String" resultType="Integer">
+        SELECT serviceID FROM service WHERE servicePhone="${phone}"
+    </select>
+    <select id="serviceIsAuthOne" parameterType="String" resultType="String">
+          SELECT  serviceBusinessImage FROM service WHERE  servicePhone=#{userPhone}
+    </select>
+    <select id="serviceIsAuthTwo" parameterType="String" resultType="String">
+          SELECT  serviceLegalCard FROM service WHERE servicePhone=#{userPhone}
+    </select>
+    <select id="serviceByPeople" parameterType="int" resultType="Service">
+  SELECT serviceID,serviceCompanyAllName,serviceOpenName,serviceOpen,serviceOpenNumber,serviceTicketType,serviceTicketCategory FROM service WHERE servicePeople=#{serviePeople}
+      </select>
+    <select id="servieceID" resultType="Integer">
+        SELECT s.serviceOrderID FROM serviceOrder s,companyOrder c WHERE s.companyOrderID=c.companyOrderID AND c.companyOrderNumber=#{serviceOrderNumber}
+        AND s.serviceID=#{serviceID}
+    </select>
+    <select id="selectImage" parameterType="int" resultType="String">
+        SELECT serviceOrderImage FROM serviceOrder WHERE serviceOrderID=#{serviceOrderID}
+    </select>
+    <select id="servicePriceCount" parameterType="int" resultType="BigDecimal">
+          SELECT SUM(serviceOrderPrice)FROM serviceOrder so WHERE so.serviceID=#{serviceID}
+    </select>
+    <select id="serviceOrderByID" parameterType="int" resultMap="serviceOrderID">
+        SELECT *FROM serviceOrder so,companyOrder co,employeeOrder eo, employee e,company c,service s
+        WHERE so.companyOrderID=co.companyOrderID
+        AND so.serviceOrderID=eo.serviceOrderID
+        AND eo.employeeID=e.employeeID
+        AND co.companyID=c.companyID
+        AND so.serviceID=s.serviceID
+        AND so.serviceOrderID=#{serviceOrderID}
+    </select>
+    <select id="downloadImage"    parameterType="int" resultType="String">
+        SELECT serviceOrderImage FROM serviceOrder WHERE serviceOrderID=#{serviceOrderID}
+    </select>
+    <select id="expressExcelService" parameterType="String" resultMap="serviceExcel">
+        SELECT *FROM serviceOrder so,service s,companyOrder co,company c
+        WHERE so.companyOrderID=co.companyOrderID
+        AND   co.companyID=c.companyID
+        AND   so.serviceID=s.serviceID
+        AND   co.companyOrderNumber=#{companyOrderNumber}
+    </select>
+    <update id="updatePhone">
+        UPDATE service SET servicePhone=#{phone} WHERE serviceID=#{serviceID}
+    </update>
+    <update id="serviceAuthOne" parameterType="Service">
+    UPDATE service SET  serviceCompanyAllName="${serviceCompanyAllName}", serviceBusinessNumber="${serviceBusinessNumber}"
+    ,serviceBusinessImage="${serviceBusinessImage}",serviceIndustry="${serviceIndustry}", servicePeople=${servicePeople}
+    ,serviceTicketType=${serviceTicketType},serviceTicketCategory="${serviceTicketCategory}" WHERE serviceID=${serviceID}
+</update>
+    <update id="serviceAuthTwo" parameterType="Service">
+        UPDATE service SET serviceLegalName="${serviceLegalName}",serviceLegalPhone="${serviceLegalPhone}"
+         ,serviceLegalCard="${serviceLegalCard}",serviceLegalImage="${serviceLegalImage}" WHERE serviceID=${serviceID}
+    </update>
+    <update id="updateInfo" parameterType="Service">
+        UPDATE service SET serviceOpenName=#{serviceOpenName},serviceOpen=#{serviceOpen}
+        ,serviceOpenNumber=#{serviceOpenNumber},serviceContract=#{serviceContract} WHERE serviceID=#{serviceID}
+    </update>
+    <update id="updateInfo2" parameterType="Service">
+        UPDATE service SET
+        serviceIndustry=#{serviceIndustry}
+        ,servicePeople=#{servicePeople}
+        ,serviceTicketType=#{serviceTicketType}
+        ,serviceTicketCategory=#{serviceTicketCategory}
+        ,serviceOpenName=#{serviceOpenName}
+        ,serviceOpen=#{serviceOpen}
+        ,serviceOpenNumber=#{serviceOpenNumber}
+         WHERE serviceID=#{serviceID}
+    </update>
+    <update id="serviceUpdatePwd">
+        UPDATE service SET servicePwd="${pwd}" WHERE serviceID=${id}
+    </update>
+    <update id="uploadImage">
+        UPDATE serviceOrder SET serviceOrderImage=#{file} WHERE serviceOrderID=#{serviceOrderID}
+    </update>
+    <update id="deleteImage" parameterType="int">
+        UPDATE serviceOrder SET serviceOrderImage=NULL WHERE serviceOrderID=#{serviceOrderID}
+    </update>
+</mapper>

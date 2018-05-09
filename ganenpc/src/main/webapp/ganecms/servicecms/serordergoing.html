@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>订单管理执行中1</title>
+    <link rel="stylesheet" href="css/serordergoing.css">
+    <script src="../../tooljs/jquery.min.js"></script>
+    <script src="../../tooljs/vue.min.js"></script>
+    <script src="../../tooljs/vue-resource.min.js"></script>
+    <script>
+        $(function(){
+            var orderGoing = new Vue({
+                el:'#order-going-frame',
+                data:{
+                    serviceOrderID:'',  //订单ID
+                    payImgNoUpload:true,    //点击上传
+                    payImgUpload:false,     //已上传
+                    employeeArr:'',         //发放明细集合
+                    serviceArr:'',           //服务明细集合
+                    downLoadPath:'',         //下载地址
+                    expressExcelGantPath:'',    //下载发放明细地址
+                    expressExcelServicePath:''  //下载服务明细地址
+                },
+                created:function(){
+                    if(!sessionStorage.getItem('userPhone') || !localStorage.getItem('orderID')){
+                        $(window.parent).attr('location','serlogin.html');
+                    }
+
+                    this.serviceOrderID = localStorage.getItem('orderID');
+
+                    this.expressExcelGant();    //下载发放明细
+                    this.expressExcelService(); //下载服务明细
+
+                    this.$http.get('/service/orderByID.do',{
+                        params:{
+                            serviceOrderID:this.serviceOrderID
+                        }
+                    }).then(function(res){
+                        var bodyText = eval('('+res.bodyText+')');
+                        console.log(bodyText);
+                        this.employeeArr = bodyText.employeeInfo;
+                        this.serviceArr = bodyText.serviceInfo;
+
+                        if(this.serviceArr.serviceOrderImage){
+                            this.payImgNoUpload = false;
+                            this.payImgUpload = true;
+                        }else{
+                            this.payImgNoUpload = true;
+                            this.payImgUpload = false;
+                        }
+                    },function(res){
+                        console.log(res);
+                    });
+                },
+                methods:{
+                    locationPayImg:function(){  //跳转到查看打款截图
+                        $(window).attr('location','serconfirmpayimg.html');
+                    },
+                    expressExcelGant:function(){    //发放明细导出
+                        if(localStorage.getItem('orderID')){
+                            this.expressExcelGantPath = '/service/expressExcelGant.do?serviceOrderID='+localStorage.getItem('orderID');
+                        }
+                    },
+                    expressExcelService:function(){ //服务明细导出
+                        if(localStorage.getItem('orderID')){
+                            this.expressExcelServicePath = '/service/expressExcelService.do?serviceOrderID='+localStorage.getItem('orderID');
+                        }
+                    },
+                    uploadExpress:function(){   //上传发票跳转
+                        $(window).attr('location','serexpressupload.html');
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+<!--订单管理执行中-->
+<div id="order-going-frame">
+    <div class="order-going">
+        <!--发放明细-->
+        <h3 class="order-send-title">发放明细</h3>
+        <a :href="expressExcelGantPath" class="putout-btn">导出数据</a>
+        <div class="send-table">
+            <table>
+                <tr>
+                    <th>服务公司</th>
+                    <th>收款人姓名</th>
+                    <th>证件号</th>
+                    <th>证件类型</th>
+                    <th>银行账号</th>
+                    <th>开户银行全称</th>
+                    <th>开户行识别号</th>
+                    <th>应发金额</th>
+                    <th>个税</th>
+                    <th>手机号</th>
+                </tr>
+                <tr v-for="(item,index) in employeeArr">
+                    <td>{{item.serviceCompanyAllName}}</td>
+                    <td>{{item.employeeName}}</td>
+                    <td>{{item.employeeCard}}</td>
+                    <td>{{item.employeeCardCN}}</td>
+                    <td>{{item.employeeBankNumber}}</td>
+                    <td>{{item.employeeOpen}}</td>
+                    <td>{{item.employeeOpenNumber}}</td>
+                    <td>￥<span>{{item.employeePrice}}</span></td>
+                    <td>￥<span>{{item.employeeTax}}</span></td>
+                    <td>{{item.employeePhone}}</td>
+                </tr>
+            </table>
+        </div>
+
+        <!--服务明细-->
+        <h3 class="service-title">服务明细</h3>
+        <a :href="expressExcelServicePath" class="putout-btn">导出数据</a>
+        <div class="service-table">
+            <table>
+                <tr>
+                    <th>甲方公司名称</th>
+                    <th>甲方税号</th>
+                    <th>地址</th>
+                    <th>开户行账号</th>
+                    <th>实发金额</th>
+                    <th>个税</th>
+                    <th>付款总额</th>
+                    <th>乙方公司名称</th>
+                    <th>乙方账号</th>
+                    <th>乙方开户行</th>
+                    <th>发票类型</th>
+                    <th>发票类目</th>
+                    <th>打款截图</th>
+                    <th>发票</th>
+                </tr>
+                <tr>
+                    <td>{{serviceArr.companyAllName}}</td>
+                    <td>{{serviceArr.companyTaxNumber}}</td>
+                    <td>{{serviceArr.companyAddress}}</td>
+                    <td>{{serviceArr.companyBankCard}}</td>
+                    <td>￥<span>{{serviceArr.companyOrderPrice}}</span></td>
+                    <td>￥<span>{{serviceArr.companyOrderTaxCount}}</span></td>
+                    <td>￥<span>{{serviceArr.companyOrderPriceCount}}</span></td>
+                    <td>{{serviceArr.serviceCompanyAllName}}</td>
+                    <td>{{serviceArr.serviceOpenNumber}}</td>
+                    <td>{{serviceArr.serviceOpenName}}</td>
+                    <td>{{serviceArr.serviceTicketType}}</td>
+                    <td>{{serviceArr.serviceTicketCategory}}</td>
+                    <td>
+                        <a href="javascript:;" v-show="payImgUpload" @click="locationPayImg()">查看截图</a>
+                        <!--<a href="javascrit:;">预览</a>-->
+                        <p style="color:red" v-show="payImgNoUpload">未上传</p>
+                    </td>
+                    <td>
+                        <a href="javascript:;" v-show="payImgUpload" @click="uploadExpress()">上传发票</a>
+                        <!--<a href="javascrit:;">预览</a>-->
+                        <p style="color:red" v-show="payImgNoUpload">未上传</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <a class="back-btn" href="serorder.html">返回订单管理</a>
+    </div>
+</div>
+
+</body>
+</html>

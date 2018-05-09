@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="aliyun-java-sdk-dysmsapi">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../java/api_sdk/aliyun-java-sdk-dysmsapi" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../java/api_sdk/aliyun-java-sdk-dysmsapi/src/main/java" />
+    </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/../java/api_sdk/aliyun-java-sdk-dysmsapi" recursive="false" />
+  </library>
+</component>

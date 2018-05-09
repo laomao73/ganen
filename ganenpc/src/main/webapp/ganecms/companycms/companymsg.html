@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>企业信息</title>
+    <link rel="stylesheet" href="css/companymsg.css">
+    <script src="../../tooljs/jquery.min.js"></script>
+    <script src="../../tooljs/vue.min.js"></script>
+    <script src="../../tooljs/vue-resource.min.js"></script>
+    <script>
+        $(function(){
+            var addCompanyMsg = new Vue({
+                el:'#add-company-msg',
+                data:{
+                    addViewBlock:true,
+                    msgViewBlock:false,
+                    billing:{},
+                    ticket:{},
+                },
+                created:function(){
+                    if(!sessionStorage.getItem('userPhone')){
+                        $(window).attr('location','companylogin.html');
+                    }
+
+                    localStorage.clear();
+
+                    this.$http.post('/companyLogin/isAuthFinish.do',{
+
+                    },{
+                        emulateJSON:true
+                    }).then(function(res){
+                        console.log(res);
+                        var bodyText = eval('('+res.bodyText+')');
+
+                        if(bodyText.result == '请先去创建'){
+                            this.addViewBlock = true;
+                            this.msgViewBlock = false;
+                        }else{
+                            this.addViewBlock = false;
+                            this.msgViewBlock = true;
+
+                            this.billing = bodyText.companyBilling;
+                            this.ticket = bodyText.companyTicket;
+                        }
+                    },function(res){
+                        console.log(res);
+                    });
+                },
+                methods:{
+                    addMsgPage:function(){  //跳转新增页面
+                        $(window).attr('location','companyaddmsg.html');
+                    },
+                    checkMsg:function(){    //点击修改
+                        localStorage.setItem('billing',JSON.stringify(this.billing));
+                        localStorage.setItem('ticket',JSON.stringify(this.ticket));
+
+                        $(window).attr('location','companyaddmsg.html');
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+<div id="add-company-msg">
+    <!--未增加公司-->
+    <div id="add-company-frame" v-show="addViewBlock">
+        <img class="no-add" src="images/noadd.png" alt="">
+        <a href="javascript:;" class="add-btn" @click="addMsgPage()">新增</a>
+    </div>
+
+    <!--企业信息-->
+    <div id="companyselect-frame" v-show="msgViewBlock">
+        <div class="companyselect">
+            <h3 class="big-title">企业信息</h3>
+
+            <!--开票信息-->
+            <h3 class="little-title">开票信息</h3>
+            <div class="kpmsg-box">
+                <div class="kpmsg">
+                    <table>
+                        <tr>
+                            <td class="kp-txt1">纳税人识别号：</td>
+                            <td class="kp-txt2">{{billing.companyTaxNumber}}</td>
+                        </tr>
+                        <tr>
+                            <td class="kp-txt1">单位地址：</td>
+                            <td class="kp-txt2">{{billing.companyAddress}}</td>
+                        </tr>
+                        <tr>
+                            <td class="kp-txt1">电话号码：</td>
+                            <td class="kp-txt2">{{billing.companyPhone}}</td>
+                        </tr>
+                        <tr>
+                            <td class="kp-txt1">开户银行：</td>
+                            <td class="kp-txt2">{{billing.companyOpenBank}}</td>
+                        </tr>
+                        <tr>
+                            <td class="kp-txt1">银行账号：</td>
+                            <td class="kp-txt2">{{billing.companyBankCard}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <!--收票信息-->
+            <h3 class="little-title">收票信息</h3>
+            <div class="kpmsg-box">
+                <div class="kpmsg">
+                    <table>
+                        <tr>
+                            <td class="kp-txt1">收件人姓名：</td>
+                            <td class="kp-txt2">{{ticket.ticketName}}</td>
+                        </tr>
+                        <tr>
+                            <td class="kp-txt1">收件人联系电话：</td>
+                            <td class="kp-txt2">{{ticket.ticketPhone}}</td>
+                        </tr>
+                        <tr>
+                            <td class="kp-txt1">收件地址：</td>
+                            <td class="kp-txt2">{{ticket.ticketAddress}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <!--修改按钮-->
+            <a href="javascript:;" class="checked-btn" @click="checkMsg()">修改</a>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+</html>

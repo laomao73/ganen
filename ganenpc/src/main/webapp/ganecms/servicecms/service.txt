@@ -1,0 +1,211 @@
+服务公司接口（内部邀请码8427）
+      1.注册 /public/register.do
+            参数: type=xxx&companyName=xxx&contactsName=xxx&contactsPhone=xxx&code=xxx&contactsPwd=xxx
+            参数值: type-类型  8427=服务 companyName-企业名称 contactsName-联系人名称 contactsPhone-联系人电话 联系人密码-contactsPwd
+            提交方式: POST
+            返回结果: 1.{"result":0,"content":"失败原因"}
+                     2.{"result":1,"content":"注册成功"}
+
+      2.登录 /public/login.do
+            参数: type=xx&userPhone=xxx&userPwd=xxx
+            参数值: type-类型(2=企业)  userPhone-手机号 userPwd-密码
+            提交方式: POST
+
+
+      3.发送短信验证码 /public/sendNumber.do
+            参数: contactsPhone=xx
+            参数值:contactsPhone-手机号
+            提交方式:GET
+            返回结果:{"result":"手机号格式不正确"}
+                    {"result":"手机号不能为空"}
+                    {"result":"发送成功"}
+                    {"result":"发送失败"}
+      4.查询企业信息 /service/selectInfo.do
+            参数:无
+            参数类型:无
+            提交方式:GET
+            返回结果: {"result":1,"content":{"serviceID":2,"serviceName":"徐宇恒","servicePhone":"15110101756","servicePwd":"19910909i","serviceCompanyAllName":"安徽知恩人力资源有限公司","serviceCompanyName":"安徽知恩","serviceBusinessNumber":"\\companyImage\\安徽知恩有限公司营业执照.png","serviceBusinessImage":"sss","serviceIndustry":"2","servicePeople":1,"serviceTicketType":1,"serviceTicketCategory":"s","serviceLegalName":null,"serviceLegalPhone":null,"serviceLegalCard":null,"serviceLegalImage":null,"serviceOpenName":"ss","serviceOpen":"ss","serviceOpenNumber":"1","serviceContract":"38815246404191535","serviceAdopt":1}}
+                    {"result":0,"content":"请先去创建"}
+
+      5.新建修改企业信息 /service/updateInfo.do
+            参数:?serviceIndustry=2&servicePeople=1&serviceTicketType=1&serviceTicketCategory=s&serviceOpenName=ss&serviceOpen=ss&serviceOpenNumber=sd
+            参数类型: serviceIndustry-服务行业 servicePeople-服务人员属性(1.灵活用工,2.企业用工 3.两者均可)
+                    serviceTicketType-发票类型 serviceTicketCategory-发票类目 serviceOpenName-开户名称  serviceOpen-开户行名称 serviceOpenNumber-银行账户
+            提交方式:POST
+            返回结果:{"result":1,"content":"保存成功"}
+                    {"result":1,"content":"修改成功"}
+                    {"result":0,"content":"保存失败"}
+                    {"result":0,"content":"修改失败"}
+                    {"result":0,"content":"输入内容不包含空项，请您重新输入"}
+      6.查询全部订单 /service/orderAll.do
+            参数:无
+            参数类型:无
+            提交方式:GET
+            返回结果:[
+                     {
+                         "serviceOrderID":1,
+                         "serviceOrderCount":0,
+                         "serviceOrderPrice":null,
+                         "serviceOrderServicePrice":null,
+                         "serviceOrderTime":null,
+                         "serviceOrderState":null,
+                         "serviceOrderImage":null,
+                         "service":{
+                             "serviceID":2,
+                             "serviceName":null,
+                             "servicePhone":null,
+                             "servicePwd":null,
+                             "serviceCompanyAllName":null,
+                             "serviceCompanyName":null,
+                             "serviceBusinessNumber":null,
+                             "serviceBusinessImage":null,
+                             "serviceIndustry":null,
+                             "servicePeople":0,
+                             "serviceTicketType":0,
+                             "serviceTicketCategory":null,
+                             "serviceLegalName":null,
+                             "serviceLegalPhone":null,
+                             "serviceLegalCard":null,
+                             "serviceLegalImage":null,
+                             "serviceOpenName":null,
+                             "serviceOpen":null,
+                             "serviceOpenNumber":null,
+                             "serviceContract":null,
+                             "serviceAdopt":0
+                         },
+                         "companyOrder":{
+                             "companyOrderID":1,
+                             "companyOrderNumber":"180425721",
+                             "companyOrderCount":0,
+                             "companyOrderPrice":null,
+                             "companyOrderTaxCount":null,
+                             "companyOrderPriceCount":66666.67,
+                             "companyOrderTime":null,
+                             "companyOrderType":0,
+                             "companyOrderState":"执行中",
+                             "companyOrderTax":0,
+                             "company":{
+                                 "companyID":7,
+                                 "companyName":null,
+                                 "companyAllName":"感恩有你有限公司",
+                                 "companyLegalName":null,
+                                 "companyLegalPhone":null,
+                                 "companyLegalCard":null,
+                                 "companyLegalImage":null,
+                                 "companyBusinessNumber":null,
+                                 "companyBusinessImage":null,
+                                 "companyEmail":null,
+                                 "companyAdopt":0,
+                                 "companyLogin":null
+                             },
+                             "serviceOrderList":null
+                         },
+                         "employeeOrderList":null
+                     }
+                 ]
+
+      7.根据企业订单ID获得企业订单的发放明细和服务明细  /company/orderByID.do
+            参数:?companyOrderID=0
+            参数类型:companyOrderID-企业订单ID
+            提交方式:POST
+            返回结果: 服务明细内容
+                   {"companyBilling":{"companyBillingID":2,"companyTaxNumber":"1","companyAddress":"1","companyPhone":"s","companyOpenBank":"s","companyBankCard":"s","company":null,"service":null}
+                   {"companyOrder":{"companyOrderID":1,"companyOrderNumber":null,"companyOrderCount":0,"companyOrderPrice":60000.00,"companyOrderTaxCount":1224.48,"companyOrderPriceCount":66666.67,"companyOrderTime":null,"companyOrderType":0,"companyOrderState":null,"companyOrderTax":0,"company":{"companyID":7,"companyName":null,"companyAllName":"感恩有你有限公司","companyLegalName":null,"companyLegalPhone":null,"companyLegalCard":null,"companyLegalImage":null,"companyBusinessNumber":null,"companyBusinessImage":null,"companyEmail":null,"companyAdopt":0,"companyLogin":null},"serviceOrderList":[{"serviceOrderID":1,"serviceOrderCount":0,"serviceOrderPrice":null,"serviceOrderServicePrice":null,"serviceOrderTime":null,"serviceOrderState":null,"serviceOrderImage":null,"service":{"serviceID":2,"serviceName":null,"servicePhone":null,"servicePwd":null,"serviceCompanyAllName":null,"serviceCompanyName":null,"serviceBusinessNumber":null,"serviceBusinessImage":null,"serviceIndustry":null,"servicePeople":0,"serviceTicketType":1,"serviceTicketCategory":"餐饮","serviceLegalName":null,"serviceLegalPhone":null,"serviceLegalCard":null,"serviceLegalImage":null,"serviceOpenName":"安徽知恩","serviceOpen":"招商","serviceOpenNumber":"123456789","serviceContract":null,"serviceAdopt":0},"companyOrder":null,"employeeOrderList":null}]}
+                    发放明细
+                    {"employeeOrders":[
+                         {
+                             "employeeOrderID":1,
+                               "employeeOrderTime":null,
+                                        "employeeOrderState":null,
+                                        "employeeSalary":null,
+                                        "employeePrice":10000,
+                                        "employeeTax":null,
+                                        "serviceOrder":null,
+                                        "employee":{
+                                            "employeeID":1,
+                                            "employeeName":"张三",
+                                            "employeePhone":"12341234567",
+                                            "employeeCard":"34082419950928",
+                                            "employeeCardType":1,
+                                            "employeeOpen":"北京招商银行通州支行",
+                                            "employeeOpenNumber":"10000",
+                                            "employeeBankNumber":null,
+                                            "employeeContract":null,
+                                            "employeeContractState":0,
+                                            "company":null
+                                        }
+                                    },
+                                    Object{...},
+                                    Object{...},
+                                    Object{...},
+                                    Object{...},
+                                    Object{...}
+                                ]
+                            }
+
+
+      8.修改手机号 /service/updatePhone.do
+            参数:phoneOne=x&phoneTwo=x&strCode=x
+            参数类型: phoneOne-手机号 phoneTwo-手机号 strCode=验证码
+            提交方式:POST
+            返回结果:
+                    {"result":1,"content":"修改成功"}
+                    {"result":0,"content":"修改失败"}
+                    {"result":0,"content":"验证码不正确,请重新输入"}
+                    {"result":0,"content":"请发送验证码"}
+                    {"result":0,"content":"手机格式不正确,请重新输入"}
+                    {"result":0,"content":"两次手机号不同,请重新输入"}
+                    {"result":0,"content":"输入内容不包含空项，请您重新输入。"}
+
+      9.查询全部订单 /service/orderAll.do
+            参数:?pageNow=1&companyOrderNumber=&companyName=&companyOrderState=
+            参数类型:pageNow-当前页数 companyOrderNumber-订单号 companyName-公司名称 companyOrderState-订单状态
+            提交方式:POST
+            返回结果:
+                    {"result":0,"content":"暂无订单"}
+                    {"result":1,"totalPageCount":2,"content":{"companyOrder0":{"companyOrderPriceCount":143804.35,"companyOrderState":"执行中","companyAllName":"北京水晶石数字科技有限公司","companyOrderID":8,"companyOrderNumber":"1805043618","companyOrderTime":1525473118000,"serviceOrderID":8}}}
+
+
+      10.根据ID查看订单内容 /service/orderByID.do
+            参数:?serviceOrderID=1
+            参数类型: serviceOrderID-服务订单ID
+            提交方式:GET
+            返回结果:
+
+
+      11.下载截图 /service/downloadImage.do
+            参数:?serviceOrdereID=1
+            参数类型:serviceOrdereID-服务订单ID
+            提交方式:GET
+            返回结果:
+
+      12.删除截图 /service/deleteImage.do
+            参数:serviceOrderID=1
+            参数类型:serviceOrderID-服务订单ID
+            提交方式:GET
+            返回结果:
+                    {"result":1,"content":"删除成功"}
+
+      13.上传发票 /service/newExpress.do
+            参数:serviceOrderID=4&serviceExpress=12467
+            参数类型:serviceOrderID-服务订单ID serviceExpress-file文件
+            提交方式:GET
+            返回结果:
+                    {"result":1,"content":"创建成功"}
+
+      14 查看打款截图  /public/image.do
+            参数:serviceOrderID=x
+            参数类型:serviceOrderID-服务订单ID
+            提交方式:GET
+            返回结果:
+
+      15 服务发放导出  /service/expressExcelGant.do
+            参数:serviceOrderID=x
+            参数类型:serviceOrderID-服务订单ID
+            提交方式:GET
+            返回结果:
+      16.服务明细导出 /service/expressExcelService.do
+            参数:serviceOrderID=x
+            参数类型:serviceOrderID-服务订单ID
+            提交方式:GET
+            返回结果:

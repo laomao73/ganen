@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改密码1</title>
+    <script src="../../tooljs/jquery.min.js"></script>
+    <script src="../../tooljs/vue.min.js"></script>
+    <script src="../../tooljs/vue-resource.min.js"></script>
+    <link rel="stylesheet" href="css/checkpass2.css">
+    <script>
+        $(function(){
+            var checkPass = new Vue({
+                el:'#checkpass-frame',
+                data:{
+                    pwd:'',
+                    pwd2:''
+                },
+                created:function(){
+                    var result = localStorage.getItem('result');
+                    if(!result){
+                        $(window).attr('location','companylogin.html');
+                    }
+                },
+                methods:{
+                    chackpass:function(){
+                        this.$http.post('/public/forgetPwd2.do',{
+                            type:1,
+                            pwd:this.pwd,
+                            pwd2:this.pwd2
+                        },{
+                            emulateJSON:true
+                        }).then(function(res){
+                            console.log(res);
+                            var bodyText = eval('('+res.bodyText+')');
+                            if(bodyText.result){
+                                alert(bodyText.result);
+                                $(window).attr('location','companylogin.html');
+                                localStorage.removeItem('result');
+                            }else{
+                                alert(bodyText.content);
+                                $(window).attr('checkpass2.html');
+                            }
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+<a href="../../index.html" class="back-pc">返回官网1</a>
+<div id="checkpass-frame">
+    <h3>找回密码</h3>
+    <input type="password" class="tel" v-model="pwd" placeholder="请输新密码(不小于8位)"><br/>
+    <input type="password" class="tel" v-model="pwd2" placeholder="请再次输入新密码">
+    <a href="javascript:;" class="next" @click="chackpass()">完成</a>
+</div>
+
+</body>
+</html>

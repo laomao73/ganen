@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="alicom-dysms-api">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../java/api_demo/alicom-dysms-api" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../java/api_demo/alicom-dysms-api/src/main/java" />
+    </SOURCES>
+  </library>
+</component>
