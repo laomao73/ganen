@@ -7,6 +7,49 @@
     <script src="../../tooljs/jquery.min.js"></script>
     <script src="../../tooljs/vue.min.js"></script>
     <script src="../../tooljs/vue-resource.min.js"></script>
+    <script>
+        $(function(){
+            var companyOrderFrame = new Vue({
+                el:'#company-order-frame',
+                data:{
+                    pageNow:null, //当前页
+                    companyOrderNumber:null,  //订单号
+                    companyName:null, //公司名称
+                    companyOrderState:null,   //订单状态
+                },
+                created:function(){
+                    if(!sessionStorage.getItem('userPhone')){
+                        $(window).attr('location','baselogin.html');
+                    }
+
+                    this.pageNow = 1;
+                    this.getOrderMsg(this.pageNow);
+                },
+                methods:{
+                    getOrderMsg:function(page){
+                        this.$http.get('/ganen/orderAll.do',{
+                            params:{
+                                pageNow:this.pageNow,
+                                companyOrderNumber:this.companyOrderNumber,
+                                companyName:this.companyName,
+                                companyOrderState:this.companyOrderState
+                            }
+                        }).then(function(res){
+                            var bodyText = eval('('+res.bodyText+')');
+
+                            if(bodyText.result){
+                                console.log(bodyText.content);
+                            }else{
+                                console.log(bodyText.content);
+                            }
+                        },function(res){
+                            console.log(res);
+                        });
+                    }
+                }
+            });
+        });
+    </script>
 </head>
 <body>
 

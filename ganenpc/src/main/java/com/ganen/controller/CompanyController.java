@@ -579,7 +579,7 @@ public class CompanyController {
             if (!filepath.getParentFile().exists()) {
                 filepath.getParentFile().mkdirs();
             }
-            filename = companyOrder.getCompanyOrderNumber() + "" + serviceOrderID + "打款截图.png";
+            filename = companyOrder.getCompanyOrderNumber() + "" + serviceOrderID + ".png";
             // 将上传文件保存到一个目标文件当中
             File file1 = new File(path + File.separator + filename);
             try {
