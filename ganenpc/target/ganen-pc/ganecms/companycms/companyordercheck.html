@@ -60,7 +60,7 @@
                     }).then(function(res){
                         var elist = eval('('+res.bodyText+')');
                         this.elistArr = elist.elist;
-                        this.elistArrNum = this.elistArr.length+1;
+                        this.elistArrNum = this.elistArr.length;
 
                         //计算应发总金额
                         for(var i=0;i<this.elistArr.length;i++){
