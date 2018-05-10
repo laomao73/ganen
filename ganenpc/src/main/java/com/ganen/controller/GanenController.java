@@ -315,6 +315,7 @@ public class GanenController {
             serviceChild.put("serviceTicketType", serviceOrder.getServiceOrderTicketType());
             serviceChild.put("serviceTicketCategory", serviceOrder.getServiceOrderTicketCategory());
             serviceChild.put("serviceOrderImage", serviceOrder.getServiceOrderImage());
+            serviceChild.put("serviceOrderID", serviceOrder.getServiceOrderID());
             if(serviceExpress!=null){
                 serviceChild.put("serviceExpress", serviceExpress.getServiceExpress());
             }else{

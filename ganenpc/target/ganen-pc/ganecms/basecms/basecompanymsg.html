@@ -7,30 +7,119 @@
     <script src="../../tooljs/jquery.min.js"></script>
     <script src="../../tooljs/vue.min.js"></script>
     <script src="../../tooljs/vue-resource.min.js"></script>
+    <script>
+        $(function(){
+            var companyMsg = new Vue({
+                el:'#company-order-frame',
+                data:{
+                    pageNow:null,   //当前页
+                    companyName:null,   //公司名
+                    companyArr:[],  //公司集合
+                    pageCount:'',    //总页数
+                    pageArr:[],  //页码集合
+                    companyMsgNone:true,    //无订单状态
+                    companyMsgBlock:false,   //有计单状态
+                    now:0,
+                    companySelectTxt:'' //搜索输入问题
+                },
+                created:function(){
+                    this.pageNow = 1;
+                    this.getCompanyMsg(this.pageNow);
+                },
+                methods:{
+                    getCompanyMsg:function(page){   //获取企业信息
+                        this.$http.get('/ganen/companyAll.do',{
+                            params:{
+                                pageNow:this.pageNow,
+                                companyName:this.companyName
+                            }
+                        }).then(function(res){
+                            var bodyText = eval('('+res.bodyText+')');
+                            this.companyArr = bodyText.companyInfo;
+                            this.pageCount = bodyText.totalPageCount;
+
+                            if(bodyText){
+                                this.companyMsgNone = false;
+                                this.companyMsgBlock = true;
+                            }
+
+                            for(var i=0;i<this.pageCount;i++){
+                                this.pageArr.push(i+1);
+                            }
+                        },function(res){
+                            console.log(res);
+                        });
+                    },
+                    checkPage:function(index){   //点击页标
+                        this.now = index;
+                        this.pageNow = this.now+1;
+                        this.pageArr = [];
+                        this.getCompanyMsg(this.pageNow);
+                    },
+                    prev:function(){    //点击上一页
+                        this.now--;
+                        if(this.now < 0){
+                            this.now = 0;
+                        }
+                        this.pageNow = this.now+1;
+                        this.pageArr = [];
+                        this.getCompanyMsg(this.pageNow);
+                    },
+                    next:function(){    //点击下一页
+                        this.now++;
+                        if(this.now > this.pageCount-1){
+                            this.now = this.pageCount-1;
+                        }
+                        this.pageNow = this.now+1;
+                        this.pageArr = [];
+                        this.getCompanyMsg(this.pageNow);
+                    },
+                    companySelect:function(){   //点击查询
+                        if(this.companySelectTxt){
+                            this.now = 0
+                            this.pageNow = this.now+1;
+                            this.pageArr = [];
+                            this.companyName = this.companySelectTxt
+                            this.getCompanyMsg(this.pageNow);
+                        }
+                    },
+                    msgInit:function(){     //清空恢复所有订单
+                        this.companySelectTxt = '';
+                        this.pageNow = null;
+                        this.companyName = null;
+                        this.getCompanyMsg(this.pageNow);
+                    }
+                }
+            });
+        });
+    </script>
 </head>
 <body>
 
 <!--感恩有你企业信息-->
 <div id="company-order-frame">
     <div class="company-order-box">
-        <!--条件筛选查询功能区-->
-        <div class="company-order1">
-            <div class="order-fn-area1">
-                <span class="area1-txt">企业名称</span>
-                <input type="text" class="area1-input">
-            </div>
-            <div class="order-fn-area1">
-                <a href="javascript:;" class="select-btn">查询</a>
-            </div>
-        </div>
-
         <!--订单区-无-->
-        <div class="company-order3" style="display: none;">
-            <p>暂无订单，请点击新建订单按钮创建</p>
+        <div class="company-order3" v-show="companyMsgNone">
+            <p>暂无企业信息</p>
         </div>
 
         <!--订单区-表格-->
-        <div class="company-order4">
+        <div class="company-order4" v-show="companyMsgBlock">
+            <!--条件筛选查询功能区-->
+            <div class="company-order1">
+                <div class="order-fn-area1">
+                    <span class="area1-txt">企业名称</span>
+                    <input type="text" class="area1-input" v-model="companySelectTxt">
+                </div>
+                <div class="order-fn-area1">
+                    <a href="javascript:;" class="select-btn" @click="companySelect()">查询</a>
+                </div>
+                <div class="order-fn-area1">
+                    <a href="javascript:;" class="clear" @click="msgInit()">清空恢复所有订单</a>
+                </div>
+            </div>
+
             <table>
                 <tr>
                     <th>企业名称</th>
@@ -43,30 +132,25 @@
                     <th>收件人联系电话</th>
                     <th>收件地址</th>
                 </tr>
-                <tr>
-                    <td>北京感恩有你数字科技有限公司</td>
-                    <td>26545687958745212569</td>
-                    <td>北京市西城区大白兔西街180号楼8层8888</td>
-                    <td>13366800988</td>
-                    <td>中国工商银行苹果园分行</td>
-                    <td>6888080800056985269</td>
-                    <td>小白兔</td>
-                    <td>13366800988</td>
-                    <td>北京市西城区大白兔西街180号楼8层8888</td>
+                <tr v-for="(item,index) in companyArr">
+                    <td>{{item.companyAllName}}</td>
+                    <td>{{item.companyTaxNumber}}</td>
+                    <td>{{item.companyAddress}}</td>
+                    <td>{{item.companyPhone}}</td>
+                    <td>{{item.companyOpenBank}}</td>
+                    <td>{{item.companyBankCard}}</td>
+                    <td>{{item.ticketName}}</td>
+                    <td>{{item.ticketPhone}}</td>
+                    <td>{{item.ticketAddress}}</td>
                 </tr>
             </table>
-        </div>
 
-        <!--分页区-->
-        <div class="page-btn-box">
-            <a href="javascript:;" class="prev">上一页</a>
-            <a href="javascript:;" class="page-btn active">1</a>
-            <a href="javascript:;" class="page-btn">2</a>
-            <a href="javascript:;" class="page-btn">3</a>
-            <a href="javascript:;" class="page-btn">4</a>
-            <a href="javascript:;" class="page-btn">5</a>
-            <a href="javascript:;" class="page-btn">6</a>
-            <a href="javascript:;" class="next">下一页</a>
+            <!--分页区-->
+            <div class="page-btn-box">
+                <a href="javascript:;" class="prev" @click="prev()">上一页</a>
+                <span v-for="(item,index) in pageArr" :class="{active:now==index}" @click="checkPage(index)">{{item}}</span>
+                <a href="javascript:;" class="next" @click="next()">下一页</a>
+            </div>
         </div>
     </div>
 </div>

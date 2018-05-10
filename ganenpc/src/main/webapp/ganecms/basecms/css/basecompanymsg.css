@@ -31,7 +31,7 @@
     border:0px solid red;
     position:relative;
     float:left;
-    margin:0 25px;
+    margin:0px 25px 50px 25px;
     overflow: hidden;
 }
 
@@ -147,7 +147,6 @@
     width:100%;
     border:0px solid black;
     position:relative;
-    margin-top:50px;
 }
 
 .company-order4 table{
@@ -161,6 +160,7 @@
 }
 
 .company-order4 table tr th{
+    width:133px;
     height:50px;
     border:1px solid #909090;
     border-collapse: collapse;
@@ -194,7 +194,8 @@
     display: inline-block;
 }
 
-.page-btn{
+.page-btn-box span{
+    display: inline-block;
     width:20px;
     height:20px;
     border:1px solid #909090;
@@ -203,9 +204,11 @@
     font-size:12px;
     text-align: center;
     line-height: 20px;
+    margin:0 3px 0 3px;
+    cursor: pointer;
 }
 
-.page-btn.active{
+.page-btn-box span.active{
     background:#909090;
     color:#fff;
 }
@@ -223,6 +226,17 @@
 
 .prev:active,.next:active{
     background:#ccc;
+}
+
+.clear{
+    font-size:12px;
+    text-decoration: none;
+    color:#3da4a0;
+    line-height: 30px;
+}
+
+.clear:hover{
+    text-decoration: underline;
 }
 
 

@@ -47,12 +47,17 @@
             参数类型：serviceID-服务公司ID
             提交方式：POST
 
+   28.导出发放明细 /company/expressExcelGant.do
+               参数:companyOrderNumber=12123456
+               参数类型:companyOrderNumber-企业订单号
+               提交方式:GET
+               返回结果
 
      28.导出服务明细 /company/expressExcelService.do
-            参数:companyOrderNumber=12123456
-            参数类型:companyOrderNumber-企业订单号
-            提交方式:GET
-            返回结果
+                 参数:companyOrderNumber=12123456
+                 参数类型:companyOrderNumber-企业订单号
+                 提交方式:GET
+                 返回结果
 
 
      29.根据ID查看订单内容 /company/orderByID.do
@@ -78,6 +83,7 @@
             参数:pageNow companyName
             参数类型：pageNow-当前页 companyName-公司名
             提交方式:GET
+
      33 全部服务B /ganen/serviceAll.do
             参数:pageNow companyName
             参数类型：pageNow-当前页 serviceName-公司名
