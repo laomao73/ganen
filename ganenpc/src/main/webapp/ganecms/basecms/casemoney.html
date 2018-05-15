@@ -20,9 +20,10 @@
                         $(window.parent).attr('location','baselogin.html');
                     }
 
-                    $.get('/ganen/employeeIsContant.do');   //判读员工是否签署
                     this.getNoneWrite();
                     this.getMoneyPeople();
+
+                    $.get('/ganen/employeeIsContant.do');   //判读员工是否签署
                 },
                 methods:{
                     getMoneyPeople:function(){  //获取可以发放的员工
@@ -63,6 +64,7 @@
                                console.log(res);
                                alert('发送成功');
                                $.get('/ganen/employeeIsContant.do');    //判断员工是否签署
+                               $(window).attr('location').reload();
                            },function(res){
                                console.log(res);
                            });
@@ -77,6 +79,7 @@
                             }).then(function(res){
                                 alert('发放成功');
                                 console.log(res);
+                                $(window).attr('location').reload();
                             },function(res){
                                 console.log(res);
                             });

@@ -8,11 +8,9 @@
   <component name="ChangeListManager">
     <list default="true" id="9f98f5fc-2edd-4b79-95ea-902f60e28945" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/dao/GanenUserMapper.xml" afterPath="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/dao/GanenUserMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/dao/SignUpMapper.xml" afterPath="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/dao/SignUpMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/controller/GanenController.java" afterPath="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/controller/GanenController.java" />
       <change beforePath="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/service/impl/SignUpService.java" afterPath="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/service/impl/SignUpService.java" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/util/BestsignOpenApiClient.java" afterPath="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/util/BestsignOpenApiClient.java" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/util/Tool.java" afterPath="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/util/Tool.java" />
+      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/casemoney.html" afterPath="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/casemoney.html" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -48,39 +46,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="casemoney.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/casemoney.html">
+      <file leaf-file-name="ganen.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/ganen.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="22" column="42" lean-forward="false" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
+            <state relative-caret-position="418">
+              <caret line="111" column="28" lean-forward="true" selection-start-line="111" selection-start-column="28" selection-end-line="111" selection-end-column="28" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BestsignOpenApiClient.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/util/BestsignOpenApiClient.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="536" column="0" lean-forward="false" selection-start-line="536" selection-start-column="0" selection-end-line="536" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CompanyController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/controller/CompanyController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="436" column="0" lean-forward="false" selection-start-line="436" selection-start-column="0" selection-end-line="436" selection-end-column="0" />
-              <folding>
-                <element signature="method#chooseBear#0;class#CompanyController#0" expanded="false" />
-                <element signature="method#checkAll#0;class#CompanyController#0" expanded="false" />
-                <element signature="method#orderAll#0;class#CompanyController#0" expanded="false" />
-                <element signature="method#authTow#0;class#CompanyController#0" expanded="false" />
-                <element signature="method#checkInfo#0;class#CompanyController#0" expanded="false" />
-                <element signature="method#deleteEmployee#0;class#CompanyController#0" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -88,65 +59,26 @@
       <file leaf-file-name="GanenController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/controller/GanenController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="52">
-              <caret line="464" column="0" lean-forward="false" selection-start-line="464" selection-start-column="0" selection-end-line="464" selection-end-column="0" />
+            <state relative-caret-position="2">
+              <caret line="507" column="23" lean-forward="true" selection-start-line="507" selection-start-column="23" selection-end-line="507" selection-end-column="23" />
               <folding>
                 <element signature="method#getCompany#0;class#GanenController#0" expanded="false" />
                 <element signature="method#getService#0;class#GanenController#0" expanded="false" />
                 <element signature="method#serviceAll#0;class#GanenController#0" expanded="false" />
                 <element signature="method#downloadImage#0;class#GanenController#0" expanded="false" />
-                <element signature="method#grant#0;class#GanenController#0" expanded="false" />
+                <element signature="e#20367#20396#0" expanded="true" />
+                <element signature="e#20508#20524#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Service.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/entity/Service.java">
+      <file leaf-file-name="casemoney.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/casemoney.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="192" column="0" lean-forward="false" selection-start-line="192" selection-start-column="0" selection-end-line="192" selection-end-column="0" />
-              <folding>
-                <element signature="e#6824#6825#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SignUpService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/service/impl/SignUpService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="113" column="0" lean-forward="false" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
-              <folding>
-                <element signature="e#3271#3287#0" expanded="true" />
-                <element signature="e#6114#6130#0" expanded="true" />
-                <element signature="e#8369#8385#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ServiceOrder.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/entity/ServiceOrder.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="142" column="0" lean-forward="false" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
-              <folding>
-                <element signature="e#4480#4481#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EmployeeOrder.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/entity/EmployeeOrder.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="92" column="0" lean-forward="false" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
-              <folding>
-                <element signature="e#2667#2668#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="0">
+              <caret line="0" column="15" lean-forward="true" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -296,17 +228,17 @@
         <option value="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/service/IGanenSevice.java" />
         <option value="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/service/impl/GanenService.java" />
         <option value="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/dao/GanenUserDao.java" />
-        <option value="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/controller/GanenController.java" />
         <option value="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/ganen.txt" />
         <option value="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/basecontract.html" />
         <option value="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/companycms/companyorderconfirm.html" />
         <option value="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/companycms/companyorderpayimg.html" />
-        <option value="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/casemoney.html" />
         <option value="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/util/Tool.java" />
         <option value="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/dao/SignUpMapper.xml" />
         <option value="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/util/BestsignOpenApiClient.java" />
-        <option value="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/service/impl/SignUpService.java" />
         <option value="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/dao/GanenUserMapper.xml" />
+        <option value="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/controller/GanenController.java" />
+        <option value="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/service/impl/SignUpService.java" />
+        <option value="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/casemoney.html" />
       </list>
     </option>
   </component>
@@ -452,7 +384,38 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="ganen" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="part1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ganen" type="462c0819:PsiDirectoryNode" />
+              <item name="ganenpc" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ganen" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="part1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ganen" type="462c0819:PsiDirectoryNode" />
+              <item name="ganenpc" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ganen" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="part1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ganen" type="462c0819:PsiDirectoryNode" />
+              <item name="ganenpc" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ganen" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="part1" type="b2602c69:ProjectViewProjectNode" />
@@ -948,7 +911,7 @@
       <workItem from="1526285009708" duration="3686000" />
       <workItem from="1526288833052" duration="5657000" />
       <workItem from="1526294617629" duration="1767000" />
-      <workItem from="1526347132724" duration="13636000" />
+      <workItem from="1526347132724" duration="18052000" />
     </task>
     <task id="LOCAL-00001" summary="frist commit">
       <created>1521772862848</created>
@@ -989,7 +952,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="874428000" />
+    <option name="totallyTimeSpent" value="878844000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1002,6 +965,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36995828" sideWeight="0.5989717" order="7" side_tool="true" content_ui="tabs" />
@@ -1013,7 +977,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3795424" sideWeight="0.65616965" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38088828" sideWeight="0.65616965" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24221921" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25033647" sideWeight="0.40102828" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1021,7 +985,7 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32823366" sideWeight="0.4974293" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24756606" sideWeight="0.4974293" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42395693" sideWeight="0.8181234" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.44683716" sideWeight="0.8181234" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32746956" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33109018" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1966581" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1205,8 +1169,14 @@
           <properties />
           <option name="timeStamp" value="71" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/controller/GanenController.java</url>
+          <line>477</line>
+          <properties />
+          <option name="timeStamp" value="72" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="72" />
+      <option name="time" value="73" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1413,14 +1383,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/ganen.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="129" column="41" lean-forward="true" selection-start-line="129" selection-start-column="14" selection-end-line="129" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/basecontract.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="386">
@@ -1515,21 +1477,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/casemoney.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="22" column="42" lean-forward="false" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/service/impl/GanenService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="163">
           <caret line="97" column="28" lean-forward="false" selection-start-line="97" selection-start-column="28" selection-end-line="97" selection-end-column="28" />
           <folding>
-            <element signature="e#3316#3317#0" expanded="true" />
-            <element signature="e#3362#3363#0" expanded="true" />
+            <element signature="e#3316#3317#0" expanded="false" />
+            <element signature="e#3362#3363#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1571,10 +1525,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/entity/EmployeeOrder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="92" column="0" lean-forward="false" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
+          <folding>
+            <element signature="e#2667#2668#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/controller/CompanyController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="436" column="0" lean-forward="false" selection-start-line="436" selection-start-column="0" selection-end-line="436" selection-end-column="0" />
+        <state relative-caret-position="5149">
+          <caret line="644" column="0" lean-forward="false" selection-start-line="644" selection-start-column="0" selection-end-line="644" selection-end-column="0" />
           <folding>
             <element signature="method#chooseBear#0;class#CompanyController#0" expanded="false" />
             <element signature="method#checkAll#0;class#CompanyController#0" expanded="false" />
@@ -1586,66 +1550,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/entity/EmployeeOrder.java">
+    <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/entity/Service.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="92" column="0" lean-forward="false" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
+        <state relative-caret-position="136">
+          <caret line="192" column="0" lean-forward="false" selection-start-line="192" selection-start-column="0" selection-end-line="192" selection-end-column="0" />
           <folding>
-            <element signature="e#2667#2668#0" expanded="true" />
+            <element signature="e#6824#6825#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/entity/ServiceOrder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="142" column="0" lean-forward="false" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
+        <state relative-caret-position="470">
+          <caret line="141" column="33" lean-forward="true" selection-start-line="141" selection-start-column="33" selection-end-line="141" selection-end-column="33" />
           <folding>
             <element signature="e#4480#4481#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/entity/Service.java">
+    <entry file="file://$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/casemoney.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="192" column="0" lean-forward="false" selection-start-line="192" selection-start-column="0" selection-end-line="192" selection-end-column="0" />
-          <folding>
-            <element signature="e#6824#6825#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="15" lean-forward="true" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/service/impl/SignUpService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="113" column="0" lean-forward="false" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
+        <state relative-caret-position="183">
+          <caret line="31" column="34" lean-forward="true" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
           <folding>
-            <element signature="e#3271#3287#0" expanded="true" />
-            <element signature="e#6114#6130#0" expanded="true" />
-            <element signature="e#8369#8385#0" expanded="true" />
+            <element signature="e#3269#3285#0" expanded="true" />
+            <element signature="e#6112#6128#0" expanded="true" />
+            <element signature="e#8367#8383#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/util/BestsignOpenApiClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="536" column="0" lean-forward="false" selection-start-line="536" selection-start-column="0" selection-end-line="536" selection-end-column="0" />
+        <state relative-caret-position="1710">
+          <caret line="99" column="0" lean-forward="false" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/ganen.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="111" column="28" lean-forward="true" selection-start-line="111" selection-start-column="28" selection-end-line="111" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/controller/GanenController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="464" column="0" lean-forward="false" selection-start-line="464" selection-start-column="0" selection-end-line="464" selection-end-column="0" />
+        <state relative-caret-position="2">
+          <caret line="507" column="23" lean-forward="true" selection-start-line="507" selection-start-column="23" selection-end-line="507" selection-end-column="23" />
           <folding>
             <element signature="method#getCompany#0;class#GanenController#0" expanded="false" />
             <element signature="method#getService#0;class#GanenController#0" expanded="false" />
             <element signature="method#serviceAll#0;class#GanenController#0" expanded="false" />
             <element signature="method#downloadImage#0;class#GanenController#0" expanded="false" />
-            <element signature="method#grant#0;class#GanenController#0" expanded="false" />
+            <element signature="e#20367#20396#0" expanded="true" />
+            <element signature="e#20508#20524#0" expanded="true" />
           </folding>
         </state>
       </provider>
