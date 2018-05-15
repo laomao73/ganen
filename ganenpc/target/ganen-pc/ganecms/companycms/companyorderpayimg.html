@@ -63,6 +63,7 @@
 
                             if(bodyText.result){
                                 alert(bodyText.content);
+                                $.get('/ganen/employeeIsContant.do');  //判读员工是否签署
                                 $(window).attr('location','companyorder.html');
                             }else{
                                 alert(bodyText.content);

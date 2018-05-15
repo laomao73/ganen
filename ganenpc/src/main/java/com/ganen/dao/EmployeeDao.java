@@ -2,11 +2,15 @@ package com.ganen.dao;
 
 import com.ganen.entity.Employee;
 import com.ganen.entity.EmployeeOrder;
+import org.apache.ibatis.annotations.Param;
 
 import java.math.BigDecimal;
 import java.util.List;
 
 public interface EmployeeDao {
+
+    //电子签合同编号
+    public int updateContants(@Param("employeeID") int employeeID,@Param("employeeContract") String employeeContract);
     //创建个人订单
     public int newEmployeeOrder(EmployeeOrder employeeOrder);
     //创建个人
@@ -24,4 +28,6 @@ public interface EmployeeDao {
     public BigDecimal employeeSummer(String employeeCard);
     public BigDecimal employeeFall(String employeeCard);
     public BigDecimal employeeWinter(String employeeCard);
+
+    int updateContantsState(@Param("employeeID") int employeeID);
 }

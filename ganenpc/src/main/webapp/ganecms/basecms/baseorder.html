@@ -108,6 +108,10 @@
                     locationOrderGoing:function(id){  //点击跳转订单详情
                         localStorage.setItem('orderID',id);
                         $(window).attr('location','baseordergoing.html');
+                    },
+                    locationMoney:function(orderNumber){
+                        localStorage.setItem('orderNumber',orderNumber);
+                        $(window).attr('location','casemoney.html');
                     }
                 }
             });
@@ -175,7 +179,7 @@
                         <a href="javascript:;" @click="locationOrderGoing(item.companyOrderID)">查看详情</a>
                     </td>
                     <td>
-                        <a href="casemoney.html">发放</a>
+                        <a href="casemoney.html" @click="locationMoney(item.companyOrderNumber)">发放</a>
                     </td>
                 </tr>
             </table>

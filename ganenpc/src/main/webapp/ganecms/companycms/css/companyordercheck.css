@@ -63,8 +63,9 @@
 
 .putin-table td{
     border:1px solid #909090;
+    height:50px;
     text-align: center;
-    line-height: 50px;
+    /*line-height: 50px;*/
     font-size:12px;
 }
 

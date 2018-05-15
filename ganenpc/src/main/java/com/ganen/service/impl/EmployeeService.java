@@ -32,16 +32,6 @@ public class EmployeeService implements IEmployeeService {
             order.setServiceOrder(serviceOrder);
             order.setEmployeeOrderState("未发");
             order.setEmployeeOrderTime(timestamp);
-            //员工电子签合同编号
-            Integer integer1 = employeeDao.maxEmployeeID();
-            String employeeContract="";
-            if(integer1==null){
-                employeeContract = companyOrderNumber +"1";
-            }else{
-                employeeContract=companyOrderNumber +(integer1+1);
-            }
-
-            order.getEmployee().setEmployeeContract(employeeContract);
             order.getEmployee().setEmployeeContractState(0);
             //创建员工
             //员工是否存在

@@ -48,13 +48,16 @@ public class MatchService implements IMatchService {
         BigDecimal number = BigDecimal.ZERO;
         //企业订单实发金额
         BigDecimal companyPrice = BigDecimal.ZERO;
+        BigDecimal companySalary = BigDecimal.ZERO;
         //企业订单个税金额
         BigDecimal companyTax = BigDecimal.ZERO;
 
         //服务1订单实发金额
         BigDecimal servicePrice = BigDecimal.ZERO;
+        BigDecimal serviceSalary= BigDecimal.ZERO;
         //服务2订单实发金额
         BigDecimal servicePrice2 = BigDecimal.ZERO;
+        BigDecimal serviceSalary2 = BigDecimal.ZERO;
 
         //1计算订单总金额
         //员工订单
@@ -91,18 +94,25 @@ public class MatchService implements IMatchService {
             employeeOrder.setEmployeeOrderState("未发放");
             number = new BigDecimal("0.02");
             //个税=应发工资*0.02
-            employeeOrder.setEmployeeTax(employeeOrder.getEmployeeSalary().multiply(number).setScale(2, BigDecimal.ROUND_HALF_UP));
+            if(companyOrder.getCompanyOrderTax()==1){
+                employeeOrder.setEmployeeTax(employeeOrder.getEmployeePrice().multiply(number).setScale(2, BigDecimal.ROUND_HALF_UP));
+            }else{
+                employeeOrder.setEmployeeTax(employeeOrder.getEmployeeSalary().multiply(number).setScale(2, BigDecimal.ROUND_HALF_UP));
+            }
             //应发总额
+            companySalary = companySalary.add(employeeOrder.getEmployeeSalary());
             companyPrice = companyPrice.add(employeeOrder.getEmployeePrice());
             //个税总额
             companyTax = companyTax.add(employeeOrder.getEmployeeTax());
             //是否员工超过100万
             if (spring.compareTo(bigDecimal) != 1 && summer.compareTo(bigDecimal) != 1 && fall.compareTo(bigDecimal) != 1 && winter.compareTo(bigDecimal) != 1) {
                 servicePrice = servicePrice.add(employeeOrder.getEmployeePrice());
+                serviceSalary=serviceSalary.add(employeeOrder.getEmployeeSalary());
                 //没超过
             } else {
                 //超过
                 //使用宁波公司
+                serviceSalary2=serviceSalary2.add(employeeOrder.getEmployeeSalary());
                 servicePrice2 = servicePrice.add(employeeOrder.getEmployeePrice());
                 service2 = serverService.serviceByPeople(3);
                 elist.add(employeeOrder);
@@ -117,8 +127,11 @@ public class MatchService implements IMatchService {
         //企业实发总额
         companyOrder.setCompanyOrderPrice(companyPrice);
         //企业付款总额
-        companyOrder.setCompanyOrderPriceCount(companyPrice.divide(number, 2, BigDecimal.ROUND_HALF_UP));
-
+        if(companyOrder.getCompanyOrderTax()==1){
+            companyOrder.setCompanyOrderPriceCount(companyPrice.divide(new BigDecimal("0.9"), 2, BigDecimal.ROUND_HALF_UP));
+        }else{
+            companyOrder.setCompanyOrderPriceCount(companySalary.divide(new BigDecimal("0.92"), 2, BigDecimal.ROUND_HALF_UP));
+        }
         List<ServiceOrder> slist = new ArrayList<ServiceOrder>();
         ServiceOrder serviceOrder = new ServiceOrder();
         //服务B
@@ -126,7 +139,11 @@ public class MatchService implements IMatchService {
         //总人数
         serviceOrder.setServiceOrderCount(employeeList.size());
         //总金额
-        serviceOrder.setServiceOrderPrice(servicePrice.divide(number, 2, BigDecimal.ROUND_HALF_UP));
+        if(companyOrder.getCompanyOrderTax()==1){
+            serviceOrder.setServiceOrderPrice(servicePrice.divide(new BigDecimal("0.9"), 2, BigDecimal.ROUND_HALF_UP));
+        }else{
+            serviceOrder.setServiceOrderPrice(serviceSalary.divide(new BigDecimal("0.92"), 2, BigDecimal.ROUND_HALF_UP));
+        }
         //服务费
         serviceOrder.setServiceOrderServicePrice(serviceOrder.getServiceOrderPrice().subtract(servicePrice));
         //服务订单状态
@@ -149,8 +166,14 @@ public class MatchService implements IMatchService {
             //总人数
             serviceOrder.setServiceOrderCount(elist.size());
             //总金额
-            serviceOrder.setServiceOrderPrice(servicePrice2.divide(number, 2, BigDecimal.ROUND_HALF_UP));
+
+            if(companyOrder.getCompanyOrderTax()==1){
+                serviceOrder.setServiceOrderPrice(servicePrice2.divide(new BigDecimal("0.9"), 2, BigDecimal.ROUND_HALF_UP));
+            }else{
+                serviceOrder.setServiceOrderPrice(serviceSalary2.divide(new BigDecimal("0.92"), 2, BigDecimal.ROUND_HALF_UP));
+            }
             //服务费
+
             serviceOrder.setServiceOrderServicePrice(serviceOrder.getServiceOrderPrice().subtract(servicePrice2));
             //服务订单状态
             serviceOrder.setServiceOrderState("执行中");
@@ -171,6 +194,7 @@ public class MatchService implements IMatchService {
         BigDecimal number = BigDecimal.ZERO;
         //企业订单实发金额
         BigDecimal companyPrice = BigDecimal.ZERO;
+        BigDecimal companySalary = BigDecimal.ZERO;
         //企业订单个税金额
         BigDecimal companyTax = BigDecimal.ZERO;
 
@@ -208,9 +232,13 @@ public class MatchService implements IMatchService {
             }
             number = new BigDecimal("0.02");
             //个税=应发工资*0.02
-            employeeOrder.setEmployeeTax(employeeOrder.getEmployeeSalary().multiply(number).setScale(2, BigDecimal.ROUND_HALF_UP));
-            //应发总额
+            if(companyOrder.getCompanyOrderTax()==1){
+                employeeOrder.setEmployeeTax(employeeOrder.getEmployeePrice().multiply(number).setScale(2, BigDecimal.ROUND_HALF_UP));
+            }else{
+                employeeOrder.setEmployeeTax(employeeOrder.getEmployeeSalary().multiply(number).setScale(2, BigDecimal.ROUND_HALF_UP));
+            }            //应发总额
             companyPrice = companyPrice.add(employeeOrder.getEmployeePrice());
+            companySalary = companySalary.add(employeeOrder.getEmployeeSalary());
             //个税总额
             companyTax = companyTax.add(employeeOrder.getEmployeeTax());
         }
@@ -230,8 +258,11 @@ public class MatchService implements IMatchService {
         //企业实发总额
         companyOrder.setCompanyOrderPrice(companyPrice);
         //企业付款总额
-        companyOrder.setCompanyOrderPriceCount(companyPrice.divide(number, 2, BigDecimal.ROUND_HALF_UP));
-
+        if(companyOrder.getCompanyOrderTax()==1) {
+            companyOrder.setCompanyOrderPriceCount(companyPrice.divide(new BigDecimal("0.9"), 2, BigDecimal.ROUND_HALF_UP));
+        }else{
+            companyOrder.setCompanyOrderPriceCount(companySalary.divide(new BigDecimal("0.92"), 2, BigDecimal.ROUND_HALF_UP));
+        }
         //服务订单
         ServiceOrder serviceOrder = new ServiceOrder();
         //服务公司

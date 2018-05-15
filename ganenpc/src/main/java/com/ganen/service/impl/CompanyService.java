@@ -95,14 +95,4 @@ public class CompanyService implements ICompanyService {
     public List<EmployeeOrder> expressGant(String companyOrderNumber) {
         return companyDao.expressGant(companyOrderNumber);
     }
-
-    @Override
-    public Company getCompanyBillingByNumber(int companyOrderID) {
-        return companyDao.getCompanyBillingByNumber(companyOrderID);
-    }
-
-    @Override
-    public ServiceExpress getServiceExpress(int companyOrderID) {
-        return companyDao.getServiceExpress(companyOrderID);
-    }
 }

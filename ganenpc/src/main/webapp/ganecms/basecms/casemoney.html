@@ -7,6 +7,85 @@
     <script src="../../tooljs/jquery.min.js"></script>
     <script src="../../tooljs/vue.min.js"></script>
     <script src="../../tooljs/vue-resource.min.js"></script>
+    <script>
+        $(function(){
+            var moneyFrame = new Vue({
+                el:'#money-frame',
+                data:{
+                    writeArr:[],    //未电子签用户集合
+                    moneyArr:[],    //可发放用户集合
+                },
+                created:function(){
+                    if(!sessionStorage.getItem('userPhone')){
+                        $(window.parent).attr('location','baselogin.html');
+                    }
+
+                    $.get('/ganen/employeeIsContant.do');   //判读员工是否签署
+                    this.getNoneWrite();
+                    this.getMoneyPeople();
+                },
+                methods:{
+                    getMoneyPeople:function(){  //获取可以发放的员工
+                        if(localStorage.getItem('orderNumber')){
+                            this.$http.get('/ganen/grantEmployee.do',{
+                                params:{
+                                    companyOrderNumber:localStorage.getItem('orderNumber')
+                                }
+                            }).then(function(res){
+                                var bodyText = eval(res.bodyText);
+                                this.moneyArr = bodyText;
+                            },function(res){
+                                console.log(res);
+                            });
+                        }
+                    },
+                    getNoneWrite:function(){    //获取未电子签的员工
+                        if(localStorage.getItem('orderNumber')){
+                            this.$http.get('/ganen/getEmployee.do',{
+                                params:{
+                                    companyOrderNumber:localStorage.getItem('orderNumber')
+                                }
+                            }).then(function(res){
+                                var bodyText = eval('('+res.bodyText+')');
+                                this.writeArr = bodyText;
+                            },function(res){
+                                console.log(res);
+                            });
+                        }
+                    },
+                    sendWrite:function(){   //点击再次发送电子签
+                       if(localStorage.getItem('orderNumber')){
+                           this.$http.get('/ganen/againEmployee.do',{
+                               params:{
+                                   companyOrderNumber:localStorage.getItem('orderNumber')
+                               }
+                           }).then(function(res){
+                               console.log(res);
+                               alert('发送成功');
+                               $.get('/ganen/employeeIsContant.do');    //判断员工是否签署
+                           },function(res){
+                               console.log(res);
+                           });
+                       }
+                    },
+                    sendMoney:function(){   //点击发放
+                        if(localStorage.getItem('orderNumber')){
+                            this.$http.get('/ganen/grant.do',{
+                                params:{
+                                    companyOrderNumber:localStorage.getItem('orderNumber')
+                                }
+                            }).then(function(res){
+                                alert('发放成功');
+                                console.log(res);
+                            },function(res){
+                                console.log(res);
+                            });
+                        }
+                    }
+                }
+            });
+        });
+    </script>
 </head>
 <body>
 
@@ -25,17 +104,17 @@
                     <th>金额</th>
                     <th>员工手机号</th>
                 </tr>
-                <tr>
-                    <td>大白兔</td>
-                    <td>110106589745632569</td>
-                    <td>68882655545236589</td>
-                    <td>中国工商银行苹果园分行</td>
-                    <td>65231457895632456896</td>
-                    <td>￥<span>50000000</span></td>
-                    <td>13366800988</td>
+                <tr v-for="(item,index) in moneyArr">
+                    <td>{{item.employee.employeeName}}</td>
+                    <td>{{item.employee.employeeCard}}</td>
+                    <td>{{item.employee.employeeBankNumber}}</td>
+                    <td>{{item.employee.employeeOpen}}</td>
+                    <td>{{item.employee.employeeOpenNumber}}</td>
+                    <td>￥<span>{{item.employeePrice}}</span></td>
+                    <td>{{item.employee.employeePhone}}</td>
                 </tr>
             </table>
-            <a href="javascript:;" class="send-btn">点击发放工资</a>
+            <a href="javascript:;" class="send-btn" @click="sendMoney()">点击发放工资</a>
         </div>
 
         <!--未完成电子签不能发放-->
@@ -51,17 +130,17 @@
                     <th>金额</th>
                     <th>员工手机号</th>
                 </tr>
-                <tr>
-                    <td>大白兔</td>
-                    <td>110106589745632569</td>
-                    <td>68882655545236589</td>
-                    <td>中国工商银行苹果园分行</td>
-                    <td>65231457895632456896</td>
-                    <td>￥<span>50000000</span></td>
-                    <td>13366800988</td>
+                <tr v-for="(item,index) in writeArr">
+                    <td>{{item.employeeName}}</td>
+                    <td>{{item.employeeCard}}</td>
+                    <td>{{item.employeeBankNumber}}</td>
+                    <td>{{item.employeeOpen}}</td>
+                    <td>{{item.employeeOpenNumber}}</td>
+                    <td>-</td>
+                    <td>{{item.employeePhone}}</td>
                 </tr>
             </table>
-            <a href="javascript:;" class="send-btn">点击发送电子签短信</a>
+            <a href="javascript:;" class="send-btn" @click="sendWrite()">点击发送电子签短信</a>
         </div>
     </div>
 </div>

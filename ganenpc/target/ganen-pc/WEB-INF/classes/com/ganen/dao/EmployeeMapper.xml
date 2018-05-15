@@ -15,8 +15,8 @@
         </association>
     </resultMap>
     <insert id="newEmployee"      parameterType="Employee">
-        INSERT INTO employee(employeeName,employeePhone,employeeCard,employeeCardType,employeeOpen,employeeOpenNumber,employeeBankNumber,employeeContract,employeeContractState,companyID)
-        VALUES(#{employeeName},#{employeePhone},#{employeeCard},#{employeeCardType},#{employeeOpen},#{employeeOpenNumber},#{employeeBankNumber},#{employeeContract},#{employeeContractState},#{company.companyID})
+        INSERT INTO employee(employeeName,employeePhone,employeeCard,employeeCardType,employeeOpen,employeeOpenNumber,employeeBankNumber,employeeContractState,companyID)
+        VALUES(#{employeeName},#{employeePhone},#{employeeCard},#{employeeCardType},#{employeeOpen},#{employeeOpenNumber},#{employeeBankNumber},#{employeeContractState},#{company.companyID})
     </insert>
     <insert id="newEmployeeOrder" parameterType="EmployeeOrder">
         INSERT INTO employeeOrder(employeeOrderTime,employeeOrderState,employeeSalary,employeePrice,employeeTax,serviceOrderID,employeeID)
@@ -50,4 +50,10 @@
         SELECT SUM(eo.employeePrice) FROM employeeOrder eo,employee e WHERE eo.employeeID=e.employeeID AND e.employeeCard=#{employeeCard}
         AND DATE_FORMAT(employeeOrderTime,"%m-%d") &gt;= "10-01" AND DATE_FORMAT(employeeOrderTime,"%m-%d") &lt;= "12-31";
     </select>
+    <update id="updateContants">
+        UPDATE employee SET employeeContract=#{employeeContract} WHERE employeeID=#{employeeID}
+    </update>
+    <update id="updateContantsState" parameterType="int">
+        UPDATE employee SET employeeContractState=1  WHERE employeeID=#{employeeID}
+    </update>
 </mapper>

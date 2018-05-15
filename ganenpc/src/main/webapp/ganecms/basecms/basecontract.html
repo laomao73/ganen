@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>合同下载页面</title>
+    <link rel="stylesheet" href="css/basecontract.css">
+    <script src="../../tooljs/jquery.min.js"></script>
+    <script src="../../tooljs/vue.min.js"></script>
+    <script src="../../tooljs/vue-resource.min.js"></script>
+    <script>
+        $(function(){
+            var money = new Vue({
+                el:'#money-frame',
+                data:{
+                    contractId:'/ganen/downloadPDF.do?contractId=',  //合同ID
+                    contractPeopleArr:[]
+                },
+                created:function(){
+                    this.getContractPeople();
+                },
+                methods:{
+                    getContractPeople:function(){   //获取所有已签人员
+                        this.$http.get('/ganen/getPDF.do',{
+                            params:{
+
+                            }
+                        }).then(function(res){
+                            var bodyText = eval('('+res.bodyText+')');
+                            this.contractPeopleArr = bodyText;
+                        },function(res){
+                            console.log(res);
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+<!--订单信息发放-->
+<div id="money-frame">
+    <div class="money">
+        <!--可以发放-->
+        <div class="money-success-box">
+            <table>
+                <tr>
+                    <th>收款方账户名称</th>
+                    <th>证件号</th>
+                    <th>银行账号</th>
+                    <th>开户银行全称</th>
+                    <th>金额</th>
+                    <th>员工手机号</th>
+                    <th>电子合同</th>
+                </tr>
+                <tr v-for="(item,index) in contractPeopleArr">
+                    <td>{{item.employeeName}}</td>
+                    <td>{{item.employeeCard}}</td>
+                    <td>{{item.employeeBankNumber}}</td>
+                    <td>{{item.employeeOpen}}</td>
+                    <td>-</td>
+                    <td>{{item.employeePhone}}</td>
+                    <td>
+                        <a :href="contractId+item.employeeContract" class="download">下载</a>
+                        <!--<a href="" class="download">下载</a>-->
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,9 +1,6 @@
 package com.ganen.dao;
 
-import com.ganen.entity.Company;
-import com.ganen.entity.CompanyLogin;
-import com.ganen.entity.GanenUser;
-import com.ganen.entity.Service;
+import com.ganen.entity.*;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -32,4 +29,23 @@ public interface GanenUserDao {
     public int updateServiceAdopt(@Param("serviceID") int serviceID);
 
     int deleteCompanyAdopt(int companyID);
+
+
+    public List<EmployeeOrder> employeeIsContant();
+
+    List<Employee> getEmployee(@Param("companyOrderNumber") String companyOrderNumber);
+
+    List<EmployeeOrder> grantEmployee(@Param("companyOrderNumber") String companyOrderNumber);
+
+    List<EmployeeOrder> getEmployeesByID(@Param("companyOrderNumber") String i);
+
+    List<EmployeeOrder> grant(@Param("companyOrderNumber") String companyOrderNumber);
+
+    int updateGrant(@Param("employeeID") int employeeOrderID);
+    int updateCompanyOrder(@Param("companyOrderNumber") String companyOrderNumber);
+
+    int updateOrderState(@Param("serviceOrderID") int serviceOrderID);
+    int selectOrderState(@Param("companyOrderNumber") String companyOrderNumber);
+
+    List<Employee> getPDF();
 }

@@ -2,6 +2,8 @@ package com.ganen.service.impl;
 
 import com.ganen.dao.GanenUserDao;
 import com.ganen.entity.Company;
+import com.ganen.entity.Employee;
+import com.ganen.entity.EmployeeOrder;
 import com.ganen.entity.GanenUser;
 import com.ganen.service.IGanenSevice;
 import com.ganen.util.LimitPageList;
@@ -10,9 +12,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Service("GanenService")
 public class GanenService implements IGanenSevice {
@@ -20,9 +20,9 @@ public class GanenService implements IGanenSevice {
     @Resource
     private GanenUserDao dao;
 
+
     //登录
     public GanenUser ganenLogin(String name, String pwd) {
-        System.out.println(name + pwd);
         GanenUser ganenUser = dao.ganenLogin(name, pwd);
         return ganenUser;
     }
@@ -92,5 +92,50 @@ public class GanenService implements IGanenSevice {
     public int deleteCompanyAdopt(int companyID) {
         return dao.deleteCompanyAdopt(companyID);
     }
+    //员工是否签了电子签
+    @Override
+    public List<EmployeeOrder> employeeIsContant() {
+        return dao.employeeIsContant();
+    }
+
+    @Override
+    public List<Employee> getEmployee(String companyOrderNumber) {
+        return dao.getEmployee(companyOrderNumber);
+    }
+
+    @Override
+    public List<EmployeeOrder> grantEmployee(String companyOrderNumber) {
+        return dao.grantEmployee(companyOrderNumber);
+    }
+
+    @Override
+    public List<EmployeeOrder> getEmployeesByID(String i) {
+        return dao.getEmployeesByID(i);
+    }
+
+
+    @Override
+    public List<EmployeeOrder> grant(String companyOrderNumber) {
+        return dao.grant(companyOrderNumber);
+    }
+
+    @Override
+    public int updateGrant(int employeeID) {
+        return dao.updateGrant(employeeID);
+    }
+
+    @Override
+    public int updateOrderState(String companyOrderNumber) {
+        int i = dao.selectOrderState(companyOrderNumber);
+         dao.updateOrderState(i);
+         dao.updateCompanyOrder(companyOrderNumber);
+        return 1;
+    }
+
+    @Override
+    public List<Employee> getPDF() {
+        return dao.getPDF();
+    }
+
 
 }

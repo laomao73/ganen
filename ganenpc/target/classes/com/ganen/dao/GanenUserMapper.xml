@@ -2,9 +2,85 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.ganen.dao.GanenUserDao">
 
-
-
-
+    <resultMap id="employeeOrder" type="com.ganen.entity.EmployeeOrder">
+        <id property="employeeOrderID" column="employeeOrderID"/>
+        <result property="employeePrice" column="employeePrice"/>
+        <association property="serviceOrder" javaType="com.ganen.entity.ServiceOrder">
+            <id property="serviceOrderID" column="serviceOrderID"/>
+            <association property="service" javaType="com.ganen.entity.Service">
+                <id property="serviceID" column="serviceID"/>
+                <result property="serviceContract" column="serviceContract"/>
+            </association>
+        </association>
+        <association property="employee" javaType="com.ganen.entity.Employee">
+            <id property="employeeID" column="employeeID"/>
+            <result property="employeeName" column="employeeName"/>
+            <result property="employeePhone" column="employeePhone"/>
+            <result property="employeeCard" column="employeeCard"/>
+            <result property="employeeOpen" column="employeeOpen"/>
+            <result property="employeeOpenNumber" column="employeeOpenNumber"/>
+            <result property="employeeContract" column="employeeContract"/>
+            <result property="employeeContractState" column="employeeContractState"/>
+            <result property="employeeBankNumber" column="employeeBankNumber"/>
+        </association>
+    </resultMap>
+    <resultMap id="employeeOrderAll" type="com.ganen.entity.EmployeeOrder">
+        <id property="employeeOrderID" column="employeeOrderID"/>
+        <result property="employeePrice" column="employeePrice"/>
+        <association property="serviceOrder" javaType="com.ganen.entity.ServiceOrder">
+            <id property="serviceOrderID" column="serviceOrderID"/>
+            <association property="service" javaType="com.ganen.entity.Service">
+                <id property="serviceID" column="serviceID"/>
+                <result property="serviceContract" column="serviceContract"/>
+            </association>
+            <association property="companyOrder" javaType="com.ganen.entity.CompanyOrder">
+                <id property="companyOrderID" column="companyOrderID"/>
+                <result property="companyOrderNumber" column="companyOrderNumber"/>
+            </association>
+        </association>
+        <association property="employee" javaType="com.ganen.entity.Employee">
+            <id property="employeeID" column="employeeID"/>
+            <result property="employeeName" column="employeeName"/>
+            <result property="employeePhone" column="employeePhone"/>
+            <result property="employeeCard" column="employeeCard"/>
+            <result property="employeeContract" column="employeeContract"/>
+            <result property="employeeBankNumber" column="employeeBankNumber"/>
+            <result property="employeeContractState" column="employeeContractState"/>
+        </association>
+    </resultMap>
+    <select id="getEmployee" parameterType="String" resultType="Employee">
+        SELECT *FROM employee e,employeeOrder eo,serviceOrder so,companyOrder co
+        WHERE e.employeeID=eo.employeeID
+        AND   so.serviceOrderID=eo.serviceOrderID
+        AND   so.companyOrderID=co.companyOrderID
+        AND   e.employeeContractState=0
+        AND   co.companyOrderNumber=#{companyOrderNumber}
+    </select>
+    <select id="grantEmployee" parameterType="String" resultMap="employeeOrder">
+        SELECT *FROM employee e,employeeOrder eo,serviceOrder so,companyOrder co
+        WHERE e.employeeID=eo.employeeID
+        AND   so.serviceOrderID=eo.serviceOrderID
+        AND   so.companyOrderID=co.companyOrderID
+        AND   e.employeeContractState=1
+        AND   eo.employeeOrderState="未发"
+        AND   co.companyOrderNumber=#{companyOrderNumber}
+    </select>
+    <select id="getEmployeesByID" parameterType="String" resultMap="employeeOrder">
+        SELECT *FROM employee e,employeeOrder eo,service s,serviceOrder so,companyOrder co
+        WHERE e.employeeID=eo.employeeID
+        AND   so.serviceOrderID=eo.serviceOrderID
+        AND   so.serviceID=s.serviceID
+        AND   e.employeeContractState=0
+        AND   so.companyOrderID=co.companyOrderID
+        AND  co.companyOrderNumber=#{companyOrderNumber} GROUP BY e.employeeID
+    </select>
+    <select id="employeeIsContant"  resultMap="employeeOrder">
+        SELECT *FROM employee e,employeeOrder eo,service s,serviceOrder so
+        WHERE e.employeeID=eo.employeeID
+        AND   so.serviceOrderID=eo.serviceOrderID
+        AND   e.employeeContractState=0
+        AND   so.serviceID=s.serviceID GROUP BY e.employeeID
+    </select>
     <select id="companyByID"        parameterType="Integer"   resultType="Company">
         SELECT *FROM company WHERE companyID=#{companyID}
     </select>
@@ -53,12 +129,36 @@
     <select id="ganenLogin"         resultType="GanenUser">
        SELECT *FROM ganenUser WHERE ganenName="${userName}" AND ganenPwd="${userPwd}"
    </select>
+    <select id="grant" parameterType="String" resultMap="employeeOrderAll">
+        SELECT *FROM employee e,employeeOrder eo,serviceOrder so,companyOrder co
+        WHERE e.employeeID=eo.employeeID
+        AND   so.serviceOrderID=eo.serviceOrderID
+        AND   so.companyOrderID=co.companyOrderID
+        AND   e.employeeContractState=1
+        AND   so.companyOrderID=co.companyOrderID
+        AND   co.companyOrderNumber=#{companyOrderNumber}
+    </select>
     <update id="updateCompanyAdopt" parameterType="int">
         UPDATE company SET companyAdopt=1 WHERE companyID=#{companyID}
     </update>
     <delete id="deleteCompanyAdopt" parameterType="int">
         DELETE FROM company WHERE companyID=#{companyID}
     </delete>
-
-
+    <update id="updateGrant" parameterType="int">
+        UPDATE employeeOrder eo SET eo.employeeOrderState="发放成功" WHERE eo.employeeID=#{employeeID}
+    </update>
+    <update id="updateCompanyOrder" parameterType="String">
+        UPDATE companyOrder SET companyOrderState="已完成" WHERE companyOrderNumber=#{companyOrderNumber}
+    </update>
+    <update id="updateOrderState" parameterType="int">
+        UPDATE serviceOrder SET serviceOrderState="已完成" WHERE serviceOrderID=#{serviceOrderID}
+    </update>
+   <select id="selectOrderState" parameterType="String" resultType="int">
+    SELECT so.serviceOrderID FROM companyOrder co,serviceOrder so
+    WHERE co.companyOrderID=so.companyOrderID
+    AND   co.companyOrderNumber=#{companyOrderNumber}
+   </select>
+    <select id="getPDF" resultType="Employee">
+        SELECT *FROM employee WHERE employeeContractState=1
+    </select>
 </mapper>

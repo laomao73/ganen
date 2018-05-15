@@ -30,7 +30,7 @@
                 },
                 methods:{
                     loadOrderMsg:function(){    //读取订单详情
-                        this.$http.get('/ganen/orderByID.do',{
+                        this.$http.get('/company/orderByID.do',{
                             params:{
                                 companyOrderID:this.companyOrderID
                             }
@@ -65,7 +65,7 @@
                     <th>银行账号</th>
                     <th>开户银行全称</th>
                     <th>开户行识别号</th>
-                    <th>应发金额</th>
+                    <th>实发金额</th>
                     <th>个税</th>
                     <th>手机号</th>
                 </tr>

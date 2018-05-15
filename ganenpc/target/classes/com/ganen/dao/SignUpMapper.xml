@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ganen.dao.SignUpDao">
+    <resultMap id="serviceOrderAll" type="com.ganen.entity.ServiceOrder">
+        <id column="serviceOrderID" property="serviceOrderID"/>
+        <association property="service" javaType="com.ganen.entity.Service">
+            <id column="serviceID" property="serviceID"/>
+            <result property="serviceContract" column="serviceContract"/>
+        </association>
+     <collection property="employeeOrderList" column="serviceOrderID" ofType="com.ganen.entity.EmployeeOrder">
+         <id property="employeeOrderID" column="employeeOrderID"/>
+        <association property="employee" javaType="com.ganen.entity.Employee">
+            <id property="employeeID" column="employeeID"/>
+            <result property="employeeName" column="employeeName"/>
+            <result property="employeePhone" column="employeePhone"/>
+            <result property="employeeCard" column="employeeCard"/>
+            <result property="employeeCardType" column="employeeCardType"/>
+            <result property="employeeContract" column="employeeContract"/>
+            <result property="employeeContractState" column="employeeContractState"/>
+        </association>
+     </collection>
+    </resultMap>
+    <select id="getServiceOrder" parameterType="String" resultMap="serviceOrderAll">
+      SELECT *FROM serviceOrder so,service s,companyOrder co,employeeOrder eo,employee e
+       WHERE  so.serviceID=s.serviceID
+       AND    so.companyOrderID=co.companyOrderID
+       AND    so.serviceOrderID=eo.serviceOrderID
+       AND    eo.employeeID=e.employeeID
+       AND    e.employeeContractState=0
+       AND    co.companyOrderNumber=#{companyOrderNumber}
+    </select>
+</mapper>

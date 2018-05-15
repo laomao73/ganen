@@ -1,16 +1,181 @@
 package com.ganen.util;
 
+import org.apache.commons.lang3.StringUtils;
+import sun.misc.BASE64Encoder;
+
 import java.awt.*;
-import java.io.UnsupportedEncodingException;
+import java.io.*;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLEncoder;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+
 public class Tool {
+
+    // 通知短信发送接口的http地址
+    private static String URL_SEND_TZ = "https://api.dingdongcloud.com/v1/sms/notice/send";
+
+    // 编码格式。发送编码格式统一用UTF-8
+    private static String ENCODING = "UTF-8";
+
+
+    public static String getUTF8XMLString(String xml) {
+        // A StringBuffer Object
+        StringBuffer sb = new StringBuffer();
+        sb.append(xml);
+        String xmString = "";
+        String xmlUTF8="";
+        try {
+            xmString = new String(sb.toString().getBytes("UTF-8"));
+            xmlUTF8 = URLEncoder.encode(xmString, "UTF-8");
+            System.out.println("utf-8 编码：" + xmlUTF8) ;
+        } catch (UnsupportedEncodingException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        // return to String Formed
+        return xmlUTF8;
+    }
+
+    public static String executePostByUsual( HashMap<String, String> parameters){
+        String response = "";
+        try{
+            URL url = new URL(URL_SEND_TZ);
+            HttpURLConnection connection = (HttpURLConnection)url.openConnection();
+            //发送post请求需要下面两行
+            connection.setDoInput(true);
+            connection.setDoOutput(true);
+            connection.setUseCaches(false);
+            connection.setRequestMethod("POST");
+            connection.setRequestProperty("Connection", "Keep-Alive");
+            connection.setRequestProperty("Charset", "UTF-8");;
+            connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+            //设置请求数据内容
+            String requestContent = "";
+            Set<String> keys = parameters.keySet();
+            for(String key : keys){
+                requestContent = requestContent + key + "=" + parameters.get(key) + "&";
+            }
+            requestContent = requestContent.substring(0, requestContent.lastIndexOf("&"));
+            DataOutputStream ds = new DataOutputStream(connection.getOutputStream());
+            //使用write(requestContent.getBytes())是为了防止中文出现乱码
+            ds.write(requestContent.getBytes());
+            ds.flush();
+            try{
+                //获取URL的响应
+                BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream(), "utf-8"));
+                String s = "";
+                String temp = "";
+                while((temp = reader.readLine()) != null){
+                    s += temp;
+                }
+                response = s;
+                reader.close();
+            }catch(IOException e){
+                e.printStackTrace();
+                System.out.println("No response get!!!");
+            }
+            ds.close();
+        }catch(IOException e){
+            e.printStackTrace();
+            System.out.println("Request failed!");
+        }
+        return response;
+    }
+
+
+
+    //下载PDF
+    public static void addFile(byte[] bfile, String fileURI) {
+        BufferedOutputStream bos = null;
+        FileOutputStream fos = null;
+        File file = null;
+        File dir = null;
+        try {
+            dir = new File(fileURI.substring(0, fileURI.lastIndexOf("/") + 1).replace("/", "\\"));
+            if (!dir.exists() && dir.isDirectory()) {//判断文件目录是否存在
+                dir.mkdirs();
+            }
+            file = new File(fileURI);
+            fos = new FileOutputStream(file);
+            bos = new BufferedOutputStream(fos);
+            bos.write(bfile);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (bos != null) {
+                try {
+                    bos.close();
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
+            }
+            if (fos != null) {
+                try {
+                    fos.close();
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
+            }
+        }
+    }
+
+    //公章
+    public static String GetImageStr(String imgFile) {// 将图片文件转化为字节数组字符串，并对其进行Base64编码处理
+        InputStream in = null;
+        byte[] data = null;
+        // 读取图片字节数组
+        try {
+            in = new FileInputStream(imgFile);
+            data = new byte[in.available()];
+            in.read(data);
+            in.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        // 对字节数组Base64编码
+        BASE64Encoder encoder = new BASE64Encoder();
+        String replace = encoder.encode(data).replace("\r", "");
+        String replace1 = replace.replace("\n", "");
+        return replace1;// 返回Base64编码过的字节数组字符串
+    }
+
+    /**
+     * 日期格式字符串转换成时间戳
+     *
+     * @param dateStr 字符串日期
+     * @param format  如：yyyy-MM-dd HH:mm:ss
+     * @return
+     */
+    public static String Date2TimeStamp(String dateStr, String format) {
+        try {
+            SimpleDateFormat sdf = new SimpleDateFormat(format);
+            return String.valueOf(sdf.parse(dateStr).getTime() / 1000);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
+
+    public static String getNextDay() throws ParseException {
+        Date date = new Date();//设置日期格式
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        calendar.add(Calendar.DAY_OF_MONTH, +1);//+1今天的时间加一天
+        date = calendar.getTime();
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String value = String.valueOf(df.parse(df.format(date)).getTime() / 1000);
+        return value;
+    }
 
     //加密 sha-1
     public static String getSha1(String str) {
@@ -42,21 +207,19 @@ public class Tool {
     }
 
     //非空
-    public static boolean isFull(String str){
-        if(!str.equals("")&&str!=null){
+    public static boolean isFull(String str) {
+        if (!str.equals("") && str != null) {
             return true;
         }
         return false;
     }
 
-    public static String EncoderByMD5(){
+    public static String EncoderByMD5() {
         return "";
     }
 
-
-
     //验证营业执照号
-    public static boolean isCredit(String credit){
+    public static boolean isCredit(String credit) {
         Pattern pattern1 = Pattern.compile("^[1-9A-GY]{1}[1239]{1}[1-5]{1}[0-9]{5}[0-9A-Z]{10}$");
         Matcher matcher = pattern1.matcher(credit);
         if (matcher.matches()) {
@@ -66,14 +229,14 @@ public class Tool {
     }
 
     //验证手机
-    public static boolean isPhone(String phone){
+    public static boolean isPhone(String phone) {
         Pattern p = Pattern.compile("^((13[0-9])|(15[^4,\\D])|(18[0,5-9]))\\d{8}$");
         Matcher m = p.matcher(phone);
         return m.matches();
     }
 
     //验证邮箱
-    public static boolean isEmail(String email){
+    public static boolean isEmail(String email) {
         Pattern pattern = Pattern.compile("^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\\.[a-zA-Z0-9_-]+)+$");
         Matcher matcher = pattern.matcher(email);
         return matcher.matches();
@@ -176,16 +339,16 @@ public class Tool {
     }
 
 
-    public static Color getRandColor(int fc, int bc){
+    public static Color getRandColor(int fc, int bc) {
         Random random = new Random();
-        if(fc>255)
+        if (fc > 255)
             fc = 255;
-        if(bc>255)
+        if (bc > 255)
             bc = 255;
         int r = fc + random.nextInt(bc - fc);
         int g = fc + random.nextInt(bc - fc);
         int b = fc + random.nextInt(bc - fc);
-        return new Color(r,g,b);
+        return new Color(r, g, b);
     }
 
 }

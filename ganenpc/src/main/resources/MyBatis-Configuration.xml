@@ -31,6 +31,7 @@
         <mapper resource="com/ganen/dao/LimitMapper.xml"/>
         <mapper resource="com/ganen/dao/ServiceMapper.xml"/>
         <mapper resource="com/ganen/dao/ServiceExpressMapper.xml"/>
+        <mapper resource="com/ganen/dao/SignUpMapper.xml"/>
     </mappers>
 
 </configuration>

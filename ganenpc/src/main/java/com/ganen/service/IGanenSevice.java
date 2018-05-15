@@ -1,8 +1,6 @@
 package com.ganen.service;
 
-import com.ganen.entity.Company;
-import com.ganen.entity.GanenUser;
-import com.ganen.entity.Service;
+import com.ganen.entity.*;
 import com.ganen.util.LimitPageList;
 import org.apache.ibatis.annotations.Param;
 
@@ -26,4 +24,21 @@ public interface IGanenSevice {
     public int updateServiceAdopt(int serviceID);
 
     int deleteCompanyAdopt(int companyID);
+    //员工是否签了电子签
+    public List<EmployeeOrder> employeeIsContant();
+
+    List<Employee> getEmployee(String companyOrderNumber);
+
+    List<EmployeeOrder> grantEmployee(String companyOrderNumber);
+
+    List<EmployeeOrder> getEmployeesByID(String i);
+
+    List<EmployeeOrder> grant(String companyOrderNumber);
+
+    int updateGrant(int employeeOrderID);
+
+    int updateOrderState(String companyOrderNumber);
+
+    List<Employee> getPDF();
 }
+

@@ -93,3 +93,38 @@
             参数：serviceOrdereID
             参数类型：serviceOrdereID-服务订单ID
             提交方式:GET
+
+     ----------------------------------------------------------------------
+
+      17. 获取电子签没签人员、  /ganen/getEmployee.do
+                 参数:companyOrderNumber=x
+                 参数类型:companyOrderNumber 订单号
+                 提交方式：GET
+                 返回结果:
+
+   18. 可发放人员、  /ganen/grantEmployee.do
+         参数:companyOrderNumber=
+         参数类型:companyOrderNumber 订单号
+         提交方式：GET
+         返回结果:
+
+   19. 再次发放电子签       /ganen/againEmployee.do
+         参数:int[] employeeID
+         参数类型 employeeID-员工ID
+         提交方式：GET
+
+   20. 判读员工是否签署 /ganen/employeeIsContant.do
+         提交方式：GET
+
+
+     21 下载PDF /ganen/downloadPDF.do
+        提交方式:GET
+        参数：contractId
+        参数类型:合同编号 contractId
+
+
+     22 已签人员展示    /ganen/getPDF.do
+        提交方式:GET
+
+
+      23 自动签署 /ganen/employeeIsContant.do

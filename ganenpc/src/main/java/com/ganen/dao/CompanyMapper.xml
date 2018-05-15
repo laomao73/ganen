@@ -30,7 +30,6 @@
         <collection property="employeeOrderList" column="serviceOrderID" ofType="com.ganen.entity.EmployeeOrder">
             <id property="employeeOrderID" column="employeeOrderID"/>
             <result property="employeePrice" column="employeePrice" />
-            <result property="employeeTax" column="employeeTax" />
             <association property="employee" javaType="com.ganen.entity.Employee">
                 <id property="employeeID" column="employeeID"/>
                 <result property="employeeName" column="employeeName"/>
@@ -98,19 +97,6 @@
             <result property="employeeOpenNumber" column="employeeOpenNumber"/>
         </association>
     </resultMap>
-    <resultMap id="companyOrderBilling" type="com.ganen.entity.Company">
-        <id column="companyID" property="companyID"/>
-        <result column="companyAllName" property="companyAllName"/>
-        <association property="companyBilling" javaType="com.ganen.entity.CompanyBilling">
-            <id column="companyBillingID" property="companyBillingID"/>
-            <result column="companyTaxNumber" property="companyTaxNumber"/>
-            <result column="companyAddress" property="companyAddress"/>
-            <result column="companyPhone" property="companyPhone"/>
-            <result column="companyOpenBank" property="companyOpenBank"/>
-            <result column="companyBankCard" property="companyBankCard"/>
-        </association>
-
-    </resultMap>
     <insert id="companyAuthOne" parameterType="company">
         INSERT INTO company(companyAllName,companyBusinessNumber,companyBusinessImage,companyAdopt,companyLoginID)
         VALUES(#{companyAllName},#{companyBusinessNumber},#{companyBusinessImage},0,#{companyLogin.companyLoginID})
@@ -159,18 +145,6 @@
          AND eo.employeeID=e.employeeID
          AND co.companyOrderNumber=#{companyOrderNumber}
     </select>
-    <select id="getCompanyBillingByNumber" parameterType="int" resultMap="companyOrderBilling">
-        SELECT *FROM companyOrder co,company c,companyBilling cb 
-        WHERE co.companyID=c.companyID
-        AND   c.companyID=cb.companyID 
-        AND   co.companyOrderID=#{companyOrderID}
-    </select>
-    <select id="getServiceExpress" parameterType="int" resultType="ServiceExpress">
-        SELECT *FROM serviceOrder so,companyOrder co,serviceExpress se
-         WHERE so.serviceOrderID=se.serviceOrderID
-         AND co.companyOrderID=so.companyOrderID
-         AND co.companyOrderID=#{companyOrderID}
-    </select>
     <update id="companyUpdatePwd">
         UPDATE companyLogin SET contactsPwd="${pwd}" WHERE companyLoginID=${id}
     </update>
@@ -178,5 +152,4 @@
         UPDATE company SET companyLegalName=#{companyLegalName},companyLegalPhone=#{companyLegalPhone}
         ,companyLegalCard=#{companyLegalCard},companyLegalImage=#{companyLegalImage} WHERE companyID=#{companyID}
     </update>
-    
 </mapper>

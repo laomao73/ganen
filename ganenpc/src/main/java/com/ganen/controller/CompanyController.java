@@ -5,7 +5,9 @@ import com.ganen.entity.*;
 import com.ganen.service.*;
 import com.ganen.service.impl.CompanyService;
 import com.ganen.service.impl.LimitPageService;
+import com.ganen.service.impl.SignUpService;
 import com.ganen.util.*;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -45,6 +47,8 @@ public class CompanyController {
     private ICardTypeService cardTypeService;
     @Autowired
     private LimitPageService pageService;
+    @Autowired
+    private SignUpService signUpService;
 
     /**
      * 企业员工选择税务承担
@@ -219,9 +223,9 @@ public class CompanyController {
                             if (value == null) {
                                 employee.setEmployeePhone("无");
                             } else {
-
                                 employee.setEmployeePhone(value);
                             }
+                            value=null;
                             break;
                     }
                 }
@@ -283,7 +287,7 @@ public class CompanyController {
                 serviceChild.put("companyBankCard", billing.getCompanyBankCard());
                 serviceChild.put("companyOrderPrice", companyOrder.getCompanyOrderPrice());
                 serviceChild.put("companyOrderTaxCount", companyOrder.getCompanyOrderTaxCount());
-                serviceChild.put("companyOrderPriceCount", so.getServiceOrderPrice());
+                serviceChild.put("companyOrderPriceCount", companyOrder.getCompanyOrderPriceCount());
                 serviceChild.put("serviceCompanyAllName", so.getService().getServiceCompanyAllName());
                 serviceChild.put("serviceOpenNumber", so.getService().getServiceOpenNumber());
                 serviceChild.put("serviceOpen", so.getService().getServiceOpen());
@@ -391,8 +395,8 @@ public class CompanyController {
         }
 
         boolean b = false;
-        //企业订单
-//      //创建订单时间
+//        企业订单
+      //创建订单时间
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
         companyOrder.setCompanyOrderTime(timestamp);
         SimpleDateFormat df = new SimpleDateFormat("yyyyMMdd");
@@ -410,11 +414,11 @@ public class CompanyController {
         int j = service.newCompanyOrder(companyOrder);
         for (int i = 0; i < serviceOrder.size(); i++) {
             ServiceOrder so = serviceOrder.get(i);
-            //创建服务订单
+//            创建服务订单
             so.setServiceOrderTime(timestamp);
             so.setCompanyOrder(companyOrder);
             int i1 = serverService.newOrder(so);
-            //创建员工订单
+//            创建员工订单
             int i2 = employeeService.newEmployeeService(so, timestamp, companyOrder.getCompanyOrderNumber());
             if (i2 != 1) {
                 b = true;
@@ -428,6 +432,10 @@ public class CompanyController {
         if (j == 1 && b == false) {
             map.put("result", 1);
             map.put("content", "订单创建成功");
+            if(companyOrder.getCompanyOrderType()==1){
+//                电子签地址
+                String path = signUpService.firstSignUp(companyOrder.getCompanyOrderNumber());
+            }
         } else {
             map.put("result", 0);
             map.put("content", "订单创建失败");
@@ -533,7 +541,6 @@ public class CompanyController {
                 employeeChild.put("employeeName", emps.getEmployee().getEmployeeName());
                 employeeChild.put("employeePhone", emps.getEmployee().getEmployeePhone());
                 employeeChild.put("employeeCard", emps.getEmployee().getEmployeeCard());
-                employeeChild.put("employeeTax", emps.getEmployeeTax());
                 employeeChild.put("employeeBankNumber", emps.getEmployee().getEmployeeBankNumber());
                 employeeChild.put("employeeOpen", emps.getEmployee().getEmployeeOpen());
                 employeeChild.put("employeeOpenNumber", emps.getEmployee().getEmployeeOpenNumber());
