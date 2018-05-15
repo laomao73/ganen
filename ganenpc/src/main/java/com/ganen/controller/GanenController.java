@@ -2,9 +2,12 @@ package com.ganen.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.ganen.bean.BusinessNoticeBean;
+import com.ganen.bean.NotifyResponseBean;
 import com.ganen.bean.PaymentRequestBean;
 import com.ganen.bean.PaymentResponseBean;
 import com.ganen.constant.PaymentConstant;
+import com.ganen.constant.PaymentStatusEnum;
 import com.ganen.constant.RetCodeEnum;
 import com.ganen.entity.*;
 import com.ganen.service.impl.GanenService;
@@ -12,13 +15,17 @@ import com.ganen.service.impl.LimitPageService;
 import com.ganen.service.impl.ServiceExpressService;
 import com.ganen.service.impl.SignUpService;
 import com.ganen.util.*;
+import com.ganen.vo.RetBean;
 import com.lianlianpay.security.utils.LianLianPaySecurity;
 import com.lianpay.api.util.TraderRSAUtil;
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -26,10 +33,7 @@ import java.io.*;
 import java.lang.reflect.Array;
 import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static com.ganen.util.PaymentApiTest.queryPaymentAndDealBusiness;
 
@@ -492,7 +496,7 @@ public class GanenController {
             paymentRequestBean.setFlag_card("0");
             paymentRequestBean.setMemo("代付");
             // 填写商户自己的接收付款结果回调异步通知
-            paymentRequestBean.setNotify_url("http://www.52ganen.com/");
+            paymentRequestBean.setNotify_url("http://47.93.187.226:8080/ganenpc/ganen/receiveNotify.do");
             paymentRequestBean.setOid_partner(PaymentConstant.OID_PARTNER);
             // paymentRequestBean.setPlatform("test.com");
             paymentRequestBean.setApi_version(PaymentConstant.API_VERSION);
@@ -559,6 +563,63 @@ public class GanenController {
             map.put("employeeID" + employeeOrder.getEmployee().getEmployeeID(), map1);
         }
         return map;
+    }
+
+
+
+    /**
+     * 支付平台异步通知更新   用这个demo需要xml配置json转化格式，不然回调接收异常，具体配置参考类注释
+     *
+     * @param request
+     * @return
+     */
+    @RequestMapping(value = "/receiveNotify.do", method = RequestMethod.POST)
+    @ResponseBody
+    public RetBean receiveNotify(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException
+    {
+        resp.setCharacterEncoding("UTF-8");
+        System.out.println("进入支付异步通知数据接收处理");
+        RetBean retBean = new RetBean();
+        String reqStr = YinTongUtil.readReqStr(req);
+        if (YinTongUtil.isnull(reqStr))
+        {
+            retBean.setRet_code("9999");
+            retBean.setRet_msg("交易失败");
+            resp.getWriter().write(JSON.toJSONString(retBean));
+            resp.getWriter().flush();
+            return retBean;
+        }
+        System.out.println("接收支付异步通知数据：【" + reqStr + "】");
+        try
+        {
+            if (!YinTongUtil.checkSign(reqStr, PaymentConstant.PUBLIC_KEY_ONLINE,
+                    PaymentConstant.SIGN_TYPE))
+            {
+                retBean.setRet_code("9999");
+                retBean.setRet_msg("交易失败");
+                resp.getWriter().write(JSON.toJSONString(retBean));
+                resp.getWriter().flush();
+                System.out.println("支付异步通知验签失败");
+                return retBean;
+            }
+        } catch (Exception e)
+        {
+            System.out.println("异步通知报文解析异常：" + e);
+            retBean.setRet_code("9999");
+            retBean.setRet_msg("交易失败");
+            resp.getWriter().write(JSON.toJSONString(retBean));
+            resp.getWriter().flush();
+            return retBean;
+        }
+        retBean.setRet_code("0000");
+        retBean.setRet_msg("交易成功");
+        resp.getWriter().write(JSON.toJSONString(retBean));
+        resp.getWriter().flush();
+        System.out.println("支付异步通知数据接收处理成功");
+        //解析异步通知对象
+        // TODO:更新订单，发货等后续处理
+        return retBean;
     }
 
 

@@ -95,7 +95,7 @@ public class MatchService implements IMatchService {
             number = new BigDecimal("0.02");
             //个税=应发工资*0.02
             if(companyOrder.getCompanyOrderTax()==1){
-                employeeOrder.setEmployeeTax(employeeOrder.getEmployeePrice().multiply(number).setScale(2, BigDecimal.ROUND_HALF_UP));
+                employeeOrder.setEmployeeTax((employeeOrder.getEmployeePrice().divide(new BigDecimal("0.98"),2,BigDecimal.ROUND_HALF_UP).multiply(number).setScale(2, BigDecimal.ROUND_HALF_UP)));
             }else{
                 employeeOrder.setEmployeeTax(employeeOrder.getEmployeeSalary().multiply(number).setScale(2, BigDecimal.ROUND_HALF_UP));
             }
