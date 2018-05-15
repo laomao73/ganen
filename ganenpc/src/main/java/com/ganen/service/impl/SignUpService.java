@@ -79,7 +79,7 @@ public class SignUpService implements ISignUpService {
                         }
                         String account1 = "xuyuheng@52ganen.com";
                         //生成合同
-                        String templateToken = openApiClient.createContractPdf(account1, so.getService().getServiceContract(), eo.getEmployee().getEmployeeName());
+                        String templateToken = openApiClient.createContractPdf(account1, so.getService().getServiceContract(), eo.getEmployee().getEmployeeName(),so.getService().getServiceContract(),so.getService().getServiceCompanyName(),so.getCompanyOrder().getCompany().getCompanyAllName());
                         //创建合同
                         String contractId = openApiClient.createByTemplate(account, so.getService().getServiceContract(), templateToken, "个人电子签");
                         int result = employeeDao.updateContants(eo.getEmployee().getEmployeeID(), contractId);
@@ -111,9 +111,8 @@ public class SignUpService implements ISignUpService {
         String signerStatus = openApiClient.getSignerStatus(employee.getEmployee().getEmployeeContract(), employee.getEmployee().getEmployeePhone());
         if (signerStatus.equals("2")) {
             employeeDao.updateContantsState(employee.getEmployee().getEmployeeID());
-            String fileName = request.getSession().getServletContext().getRealPath("/contract/宁波.jpg");
-            String image = Tool.GetImageStr(fileName);
-            String data = openApiClient.template(employee.getEmployee().getEmployeeContract(), employee.getServiceOrder().getService().getServiceContract(), image);
+            String s = openApiClient.create("xuyuheng@52ganen.com", employee.getServiceOrder().getService().getServiceCompanyName());
+            String data = openApiClient.template(employee.getEmployee().getEmployeeContract(), employee.getServiceOrder().getService().getServiceContract());
             String getlock = openApiClient.getlock(employee.getEmployee().getEmployeeContract());
             String attachment = openApiClient.createAttachment(employee.getEmployee().getEmployeeContract());
         }

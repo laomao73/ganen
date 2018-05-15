@@ -153,23 +153,25 @@ public class BestsignOpenApiClient {
      * @return
      * @throws Exception
      */
-    public String createContractPdf(String account, String tid, String name) throws Exception {
+    public String createContractPdf(String account, String tid, String name,String serviceContract,String serviceName,String companyName) throws Exception {
         String host = this.serverHost;
         String method = "/template/createContractPdf/";
-
-        // 组装请求参数，作为requestbody
         JSONObject requestBody = new JSONObject();
         requestBody.put("account", account);
         requestBody.put("tid", tid);
-
         JSONObject templateValue = new JSONObject();
-        templateValue.put("乙方名称", name);
-        Date day = new Date();
-        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-        String dates = df.format(day);
-        templateValue.put("签署日期2", dates);
-        templateValue.put("签署日期1", dates);
+        if(serviceContract.equals("152635431601000001")){
+            templateValue.put("text", name);
+            templateValue.put("text1", Tool.getNextYear());
+        }else{
+            templateValue.put("text", serviceName);
+            templateValue.put("text1", companyName);
+            templateValue.put("text2", serviceName);
+            templateValue.put("text3", serviceName);
+        }
         requestBody.put("templateValues", templateValue);
+        // 组装请求参数，作为requestbody
+
         // 生成一个时间戳参数
         String rtick = RSAUtils.getRtick();
         // 计算参数签名
@@ -258,7 +260,7 @@ public class BestsignOpenApiClient {
      * @return
      * @throws Exception
      */
-    public String template(String contractId, String tid, String signatureImageData) throws Exception {
+    public String template(String contractId, String tid) throws Exception {
         String host = this.serverHost;
         String method = "/contract/sign/template/";
 
@@ -272,15 +274,23 @@ public class BestsignOpenApiClient {
         Map<String, Object> child = new HashMap<String, Object>();
         Map<String, Map<String, Object>> vars = new HashMap<String, Map<String, Object>>();
         child.put("account", "xuyuheng@52ganen.com");
-        child.put("signatureImageData", signatureImageData);
-        vars.put("甲方盖章", child);
-        child = new JSONObject();
-        child.put("account", "xuyuheng@52ganen.com");
-        vars.put("签署日期2", child);
-        child = new JSONObject();
-        child.put("account", "xuyuheng@52ganen.com");
-        vars.put("签署日期1", child);
-        requestBody.put("vars", vars);
+        child.put("signatureImageData", "");
+       if(tid.equals("152635431601000001")){
+           vars.put("stamp", child);
+           child = new JSONObject();
+           child.put("account", "xuyuheng@52ganen.com");
+           vars.put("date", child);
+           child = new JSONObject();
+           child.put("account", "xuyuheng@52ganen.com");
+           vars.put("date1", child);
+           requestBody.put("vars", vars);
+       }else{
+           vars.put("stamp", child);
+           child = new JSONObject();
+           child.put("account", "xuyuheng@52ganen.com");
+           vars.put("date", child);
+           requestBody.put("vars", vars);
+       }
         // 生成一个时间戳参数
         String rtick = RSAUtils.getRtick();
         // 计算参数签名
@@ -338,7 +348,7 @@ public class BestsignOpenApiClient {
         requestBody.put("dpi", "120");
         requestBody.put("expireTime", Tool.getNextDay());
         requestBody.put("tid", tid);
-        requestBody.put("varNames", "乙方签名");
+        requestBody.put("varNames", "sign");
         requestBody.put("isAllowChangeSignaturePosition", "0");
         requestBody.put("returnUrl", "");
         requestBody.put("vcodeMobile", vcodeMobile);
@@ -520,5 +530,41 @@ public class BestsignOpenApiClient {
                 urlParams);
         // 返回结果解析
         return responseBody;
+    }
+
+
+    public String create(String account, String text) throws Exception {
+        String host = this.serverHost;
+        String method = "/signatureImage/user/create/";
+
+        // 组装请求参数，作为requestbody
+        JSONObject requestBody = new JSONObject();
+        requestBody.put("account", account);
+        requestBody.put("text", text);
+
+        // 生成一个时间戳参数
+        String rtick = RSAUtils.getRtick();
+        // 计算参数签名
+        String paramsSign = RSAUtils.calcRsaSign(this.developerId,
+                this.privateKey, host, method, rtick, null,
+                requestBody.toJSONString());
+        // 签名参数追加为url参数
+        String urlParams = String.format(urlSignParams, this.developerId,
+                rtick, paramsSign);
+        // 发送请求
+        String responseBody = com.ganen.util.HttpClientSender.sendHttpPost(host, method,
+                urlParams, requestBody.toJSONString());
+        // 返回结果解析
+        JSONObject userObj = JSON.parseObject(responseBody);
+        // 返回errno为0，表示成功，其他表示失败
+        if (userObj.getIntValue("errno") == 0) {
+            JSONObject data = userObj.getJSONObject("data");
+            if (data != null) {
+                return data.toString();
+            }
+            return null;
+        } else {
+            throw new Exception(userObj.getIntValue("errno") + userObj.getString("errmsg"));
+        }
     }
 }

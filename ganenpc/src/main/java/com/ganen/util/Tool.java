@@ -177,6 +177,17 @@ public class Tool {
         return value;
     }
 
+    public static String getNextYear() throws ParseException {
+        Date date = new Date();//设置日期格式
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        calendar.add(Calendar.DAY_OF_YEAR, +1);//+1今年的时间加一年
+        date = calendar.getTime();
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        String value = String.valueOf(df.parse(df.format(date)).getTime() / 1000);
+        return value;
+    }
+
     //加密 sha-1
     public static String getSha1(String str) {
         if (null == str || 0 == str.length()) {

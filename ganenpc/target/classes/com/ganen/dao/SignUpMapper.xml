@@ -5,7 +5,15 @@
         <id column="serviceOrderID" property="serviceOrderID"/>
         <association property="service" javaType="com.ganen.entity.Service">
             <id column="serviceID" property="serviceID"/>
+            <result property="serviceCompanyName" column="serviceCompanyName"/>
             <result property="serviceContract" column="serviceContract"/>
+        </association>
+        <association property="companyOrder" javaType="com.ganen.entity.CompanyOrder">
+            <id property="companyOrderID" column="companyOrderID"/>
+            <association property="company"  javaType="com.ganen.entity.Company">
+                <id property="companyID" column="companyID"/>
+                <result property="companyAllName" column="companyAllName"/>
+            </association>
         </association>
      <collection property="employeeOrderList" column="serviceOrderID" ofType="com.ganen.entity.EmployeeOrder">
          <id property="employeeOrderID" column="employeeOrderID"/>
@@ -21,10 +29,11 @@
      </collection>
     </resultMap>
     <select id="getServiceOrder" parameterType="String" resultMap="serviceOrderAll">
-      SELECT *FROM serviceOrder so,service s,companyOrder co,employeeOrder eo,employee e
+      SELECT *FROM serviceOrder so,service s,companyOrder co,company c,employeeOrder eo,employee e
        WHERE  so.serviceID=s.serviceID
        AND    so.companyOrderID=co.companyOrderID
        AND    so.serviceOrderID=eo.serviceOrderID
+       AND    co.companyID=c.companyID
        AND    eo.employeeID=e.employeeID
        AND    e.employeeContractState=0
        AND    co.companyOrderNumber=#{companyOrderNumber}

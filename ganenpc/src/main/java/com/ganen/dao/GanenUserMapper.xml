@@ -10,6 +10,7 @@
             <association property="service" javaType="com.ganen.entity.Service">
                 <id property="serviceID" column="serviceID"/>
                 <result property="serviceContract" column="serviceContract"/>
+                <result property="serviceCompanyName" column="serviceCompanyName"/>
             </association>
         </association>
         <association property="employee" javaType="com.ganen.entity.Employee">

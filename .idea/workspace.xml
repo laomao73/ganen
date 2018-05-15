@@ -7,930 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f98f5fc-2edd-4b79-95ea-902f60e28945" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/ganenpc/src/main/webapp/WEB-INF/lib/lianlianpay-security-1.0.0.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ganenpc/src/main/webapp/WEB-INF/lib/yintong_api_util.jar" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/ganenpc.iml" afterPath="$PROJECT_DIR$/ganenpc/ganenpc.iml" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/controller/CompanyController.java" afterPath="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/controller/CompanyController.java" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/controller/GanenController.java" afterPath="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/controller/GanenController.java" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/dao/CompanyDao.java" afterPath="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/dao/CompanyDao.java" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/dao/CompanyMapper.xml" afterPath="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/dao/CompanyMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/dao/EmployeeDao.java" afterPath="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/dao/EmployeeDao.java" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/dao/EmployeeMapper.xml" afterPath="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/dao/EmployeeMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/dao/GanenUserDao.java" afterPath="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/dao/GanenUserDao.java" />
       <change beforePath="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/dao/GanenUserMapper.xml" afterPath="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/dao/GanenUserMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/service/ICompanyService.java" afterPath="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/service/ICompanyService.java" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/service/IGanenSevice.java" afterPath="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/service/IGanenSevice.java" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/service/impl/CompanyService.java" afterPath="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/service/impl/CompanyService.java" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/service/impl/EmployeeService.java" afterPath="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/service/impl/EmployeeService.java" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/service/impl/GanenService.java" afterPath="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/service/impl/GanenService.java" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/util/MatchService.java" afterPath="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/util/MatchService.java" />
+      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/dao/SignUpMapper.xml" afterPath="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/dao/SignUpMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/service/impl/SignUpService.java" afterPath="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/service/impl/SignUpService.java" />
+      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/util/BestsignOpenApiClient.java" afterPath="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/util/BestsignOpenApiClient.java" />
       <change beforePath="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/util/Tool.java" afterPath="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/util/Tool.java" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/resources/MyBatis-Configuration.xml" afterPath="$PROJECT_DIR$/ganenpc/src/main/resources/MyBatis-Configuration.xml" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/baseframe.html" afterPath="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/baseframe.html" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/baseorder.html" afterPath="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/baseorder.html" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/baseordergoing.html" afterPath="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/baseordergoing.html" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/casemoney.html" afterPath="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/casemoney.html" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/ganen.txt" afterPath="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/ganen.txt" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/companycms/companyorderconfirm.html" afterPath="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/companycms/companyorderconfirm.html" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/companycms/companyordergoing.html" afterPath="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/companycms/companyordergoing.html" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/companycms/companyorderpayimg.html" afterPath="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/companycms/companyorderpayimg.html" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/companycms/css/companyordercheck.css" afterPath="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/companycms/css/companyordercheck.css" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/servicecms/serordergoing.html" afterPath="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/servicecms/serordergoing.html" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/servicecms/service.txt" afterPath="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/servicecms/service.txt" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/README.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/WEB-INF/lib/aliyun-java-sdk-core-3.3.1.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/WEB-INF/lib/aliyun-java-sdk-dysmsapi-1.0.0.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/WEB-INF/web.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/aboutus.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/callus.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/contract/爱员工API对接流程v0.1.docx" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/css/aboutus.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/css/callus.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/css/footer.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/css/fs.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/css/gs.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/css/header.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/css/index.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/css/login.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/css/solvefn.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/css/swjs.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/css/tx.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/dropzone/basic.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/dropzone/dropzone-amd-module.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/dropzone/dropzone.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/dropzone/dropzone.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/dropzone/min/basic.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/dropzone/min/dropzone-amd-module.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/dropzone/min/dropzone.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/dropzone/min/dropzone.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/dropzone/readme.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/excel/企业工资发放表.xlsx" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/excel/企业服务明细.xls" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/excel/发放明细模板表-劳动用工.xlsx" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/excel/发放明细模板表-灵活用工.xlsx" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/fs.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/basecms/basecompanymsg.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/basecms/basedownimg.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/basecms/basedownpayimg.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/basecms/baseframe.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/basecms/baselogin.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/basecms/basemailmsg.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/basecms/basemsgex.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/basecms/baseorder.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/basecms/baseordergoing.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/basecms/basesermsg.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/basecms/casemoney.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/basecms/css/basecompanymsg.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/basecms/css/basedownimg.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/basecms/css/basedownpayimg.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/basecms/css/baselogin.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/basecms/css/basemailmsg.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/basecms/css/basemsgex.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/basecms/css/baseorder.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/basecms/css/baseordergoing.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/basecms/css/basesermsg.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/basecms/css/caseframe.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/basecms/css/casemoney.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/basecms/css/exend.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/basecms/css/exing.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/basecms/exend.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/basecms/exing.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/basecms/images/addimg.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/basecms/images/basebg.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/basecms/images/dd.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/basecms/images/dda.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/basecms/images/downimgsuccess.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/basecms/images/fw.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/basecms/images/fwa.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/basecms/images/logo.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/basecms/images/noadd.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/basecms/images/qy.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/basecms/images/qya.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/basecms/images/serbg.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/basecms/images/sh.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/basecms/images/sha.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/basecms/images/usericon.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/basecms/images/yj.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/basecms/images/yja.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/checkpass.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/checkpass2.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/companyaddmsg.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/companycheckedmsg.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/companycheckonemsg.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/companyframe.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/companylogin.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/companymsg.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/companyorder.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/companyordercheck.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/companyordercomplate.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/companyorderconfirm.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/companyordererror.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/companyordergoing.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/companyorderpayimg.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/companyorderpayimgcomplate.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/companyorderupload.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/companyresgin.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/companyrz1.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/companyrz2.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/companyrz3.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/companyselectmsg.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/companyuserset.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/companyxuan.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/css/checkpass.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/css/checkpass2.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/css/companyaddmsg.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/css/companycheckedmsg.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/css/companycheckonemsg.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/css/companycheckonemsg2.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/css/companyframe.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/css/companylogin.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/css/companymsg.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/css/companyorder.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/css/companyordercheck.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/css/companyordercheck2.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/css/companyordercomplate.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/css/companyorderconfirm.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/css/companyordererror.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/css/companyordergoing.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/css/companyorderpayimg.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/css/companyorderpayimgcomplate.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/css/companyorderupload.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/css/companyresgin.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/css/companyrz1.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/css/companyrz2.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/css/companyrz3.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/css/companyselectmsg.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/css/companyuserset.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/css/companyxuan.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/ganenpc.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/images/addimg.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/images/bc.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/images/bc2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/images/bc3.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/images/companybg.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/images/ddicon1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/images/ddicon2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/images/excelimg.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/images/logo.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/images/noadd.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/images/ordercomplateimg.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/images/qyicon1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/images/qyicon2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/images/uploadimg.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/images/uploadsuccess.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/images/usericon.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/images/zhicon1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/images/zhicon2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/test.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/companycms/test2.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/servicecms/css/seraddmsg.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/servicecms/css/sercheckedmsg.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/servicecms/css/serconfirmpayimg.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/servicecms/css/serdownpayimg.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/servicecms/css/serdownpayimgsuccess.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/servicecms/css/serframe.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/servicecms/css/sergetpass.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/servicecms/css/sergetpass2.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/servicecms/css/serlogin.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/servicecms/css/sermsg.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/servicecms/css/serorder.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/servicecms/css/serorderaddmail.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/servicecms/css/serorderadmins.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/servicecms/css/serorderadmins2.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/servicecms/css/serordergoing.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/servicecms/css/serordermail.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/servicecms/css/serresgin.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/servicecms/css/serrz1.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/servicecms/css/serrz2.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/servicecms/css/serrz3.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/servicecms/css/serselectmsg.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/servicecms/css/seruserset.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/servicecms/images/addimg.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/servicecms/images/ddicon1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/servicecms/images/ddicon2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/servicecms/images/downimgsuccess.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/servicecms/images/logo.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/servicecms/images/noadd.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/servicecms/images/qyicon1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/servicecms/images/qyicon2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/servicecms/images/serbg.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/servicecms/images/usericon.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/servicecms/images/zhicon1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/servicecms/images/zhicon2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/servicecms/seraddmsg.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/servicecms/sercheckedmsg.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/servicecms/serconfirmpayimg.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/servicecms/serdownpayimg.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/servicecms/serdownpayimgsuccess.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/servicecms/serframe.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/servicecms/sergetpass.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/servicecms/sergetpass2.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/servicecms/serlogin.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/servicecms/sermsg.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/servicecms/serorder.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/servicecms/serorderaddmail.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/servicecms/serorderadmins.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/servicecms/serordergoing.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/servicecms/serordermail.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/servicecms/serresgin.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/servicecms/serrz1.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/servicecms/serrz2.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/servicecms/serrz3.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/servicecms/serselectmsg.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/servicecms/seruserset.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/usercms/css/userlogin.css" afterPath="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/css/basecontract.css" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganecms/usercms/userlogin.html" afterPath="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/basecontract.html" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganenmoblie/ganenmobliecss/moblieaboutus.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganenmoblie/ganenmobliecss/mobliebrace.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganenmoblie/ganenmobliecss/mobliecalluse.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganenmoblie/ganenmobliecss/mobliefinishfn.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganenmoblie/ganenmobliecss/mobliefooter.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganenmoblie/ganenmobliecss/moblieheader.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganenmoblie/ganenmobliecss/moblieindex.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganenmoblie/ganenmobliecss/moblieservice.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganenmoblie/ganenmoblieimages/aboutbanner.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganenmoblie/ganenmoblieimages/banner.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganenmoblie/ganenmoblieimages/bracebanner.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganenmoblie/ganenmoblieimages/braceicon1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganenmoblie/ganenmoblieimages/braceicon2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganenmoblie/ganenmoblieimages/braceicon3.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganenmoblie/ganenmoblieimages/companyimg.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganenmoblie/ganenmoblieimages/contenticon1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganenmoblie/ganenmoblieimages/contenticon2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganenmoblie/ganenmoblieimages/contenticon3.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganenmoblie/ganenmoblieimages/erwei.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganenmoblie/ganenmoblieimages/finishbanner.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganenmoblie/ganenmoblieimages/finishimg1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganenmoblie/ganenmoblieimages/finishimg2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganenmoblie/ganenmoblieimages/fnimg.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganenmoblie/ganenmoblieimages/lnimg1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganenmoblie/ganenmoblieimages/lnimg2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganenmoblie/ganenmoblieimages/lnimg3.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganenmoblie/ganenmoblieimages/lnimg4.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganenmoblie/ganenmoblieimages/logo.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganenmoblie/ganenmoblieimages/menu.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganenmoblie/ganenmoblieimages/s1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganenmoblie/ganenmoblieimages/s2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganenmoblie/ganenmoblieimages/s3.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganenmoblie/ganenmoblieimages/s4.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganenmoblie/ganenmoblieimages/s5.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganenmoblie/ganenmoblieimages/s6.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganenmoblie/ganenmoblieimages/s7.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganenmoblie/ganenmoblieimages/s8.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganenmoblie/ganenmoblieimages/servicebanner.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganenmoblie/ganenmoblieimages/sikaoimg1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganenmoblie/ganenmoblieimages/sikaoimg2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganenmoblie/ganenmoblieimages/sikaoimg3.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganenmoblie/ganenmoblieimages/tdimg1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganenmoblie/ganenmoblieimages/tdimg2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganenmoblie/ganenmoblieimages/tdimg3.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganenmoblie/ganenmobliejs/moblieindex.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganenmoblie/ganenmobliejs/moblieindex.js.bak" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganenmoblie/ganenmobliejs/moblieservice.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganenmoblie/index.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganenmoblie/moblieaboutus.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganenmoblie/mobliebrace.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganenmoblie/mobliecallus.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganenmoblie/mobliefinishfn.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganenmoblie/moblieindex.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/ganenmoblie/moblieservice.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/gs.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/images/aboutbanner.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/images/aboutleftimg.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/images/banner.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/images/companylogo.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/images/cpicon1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/images/cpicon2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/images/cpicon3.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/images/cpicon4.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/images/fsbanner.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/images/fsicon1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/images/fsicon2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/images/fsicon3.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/images/fsicon4.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/images/fsicon5.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/images/fsicon6.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/images/gsbanner.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/images/gsicon1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/images/gsicon2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/images/gsicon3.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/images/gsicon4.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/images/gsicon5.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/images/icon1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/images/icon2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/images/icon3.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/images/indexBanner1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/images/indexBanner2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/images/lawimg.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/images/loginbg.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/images/logo.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/images/middleimg1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/images/middleimg2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/images/middleimg3.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/images/pcerwei.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/images/questionimg1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/images/questionimg2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/images/questionimg3.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/images/qyfnimg.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/images/servicefnbg.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/images/skimg.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/images/slider1.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/images/slider2.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/images/slider3.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/images/sliderbtn.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/images/solvebanner.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/images/swjsbanner.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/images/txbanner.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/images/txmiddleimg.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/images/txtop1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/images/txtop2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/images/txtop3.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/images/zbbg.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/index.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/index.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/js/index.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/js/swjs.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/login.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/solvefn.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/swjs.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/table.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/bootstrap.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/bootstrap.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/dropzone/basic.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/dropzone/dropzone-amd-module.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/dropzone/dropzone.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/dropzone/dropzone.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/dropzone/min/basic.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/dropzone/min/dropzone-amd-module.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/dropzone/min/dropzone.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/dropzone/min/dropzone.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/dropzone/readme.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/easing.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/.gitignore" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/.travis.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/CHANGELOG.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/CONTRIBUTING.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/LICENSE" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/README.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/bower.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/dist/granim.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/dist/granim.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/api.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/css/prism.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/css/scss/footer.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/css/scss/header.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/css/scss/index.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/css/scss/main.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/css/scss/pages/api.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/css/scss/pages/examples.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/css/scss/pages/home.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/css/scss/var.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/css/style.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/img/bg-forest.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/img/logo-mask.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/img/logo-mask@2x.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/img/logo.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/img/social-image.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/js/app/index.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/js/app/main.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/js/app/pages/examples.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/js/app/pages/home.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/js/script.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/js/vendor/bootstrap.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/js/vendor/granim.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/js/vendor/jquery-3.1.0.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/js/vendor/prism.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/pug/api.pug" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/pug/examples.pug" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/pug/includes/facebook-logo.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/pug/includes/footer.pug" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/pug/includes/github-logo.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/pug/includes/head.pug" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/pug/includes/logo.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/pug/includes/twitter-logo.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/pug/index.pug" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/examples.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/favicon.ico" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/index.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/server.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/gulpfile.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/index.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/karma.conf.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/lib/Granim.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/lib/animateColors.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/lib/changeBlendingMode.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/lib/changeDirection.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/lib/changeState.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/lib/clear.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/lib/colorDiff.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/lib/destroy.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/lib/eventPolyfill.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/lib/getCurrentColors.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/lib/getDimensions.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/lib/getElement.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/lib/getLightness.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/lib/hexToRgb.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/lib/makeGradient.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/lib/onResize.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/lib/onScroll.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/lib/pause.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/lib/pauseWhenNotInView.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/lib/play.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/lib/prepareImage.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/lib/refreshColors.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/lib/setColors.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/lib/setDirection.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/lib/setSizeAttributes.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/lib/triggerError.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/lib/validateInput.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/package-lock.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/package.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/standalone.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/test/animationSpec.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/test/coreSpec.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/test/imageSpec.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/test/img/800x200.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/test/manual-test.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/test/methodsSpec.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/test/testUtils.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/ichart.1.2.1.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/jquery.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/tool.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/vue-resource.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/vue-router.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tooljs/vue.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/tx.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/README.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/WEB-INF/lib/aliyun-java-sdk-core-3.3.1.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/WEB-INF/lib/aliyun-java-sdk-dysmsapi-1.0.0.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/WEB-INF/web.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/aboutus.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/callus.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/contract/爱员工API对接流程v0.1.docx" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/css/aboutus.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/css/callus.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/css/footer.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/css/fs.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/css/gs.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/css/header.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/css/index.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/css/login.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/css/solvefn.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/css/swjs.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/css/tx.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/dropzone/basic.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/dropzone/dropzone-amd-module.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/dropzone/dropzone.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/dropzone/dropzone.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/dropzone/min/basic.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/dropzone/min/dropzone-amd-module.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/dropzone/min/dropzone.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/dropzone/min/dropzone.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/dropzone/readme.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/excel/企业工资发放表.xlsx" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/excel/企业服务明细.xls" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/excel/发放明细模板表-劳动用工.xlsx" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/excel/发放明细模板表-灵活用工.xlsx" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/fs.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/basecms/basecompanymsg.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/basecms/basedownimg.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/basecms/basedownpayimg.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/basecms/baseframe.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/basecms/baselogin.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/basecms/basemailmsg.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/basecms/basemsgex.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/basecms/baseorder.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/basecms/baseordergoing.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/basecms/basesermsg.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/basecms/casemoney.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/basecms/css/basecompanymsg.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/basecms/css/basedownimg.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/basecms/css/basedownpayimg.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/basecms/css/baselogin.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/basecms/css/basemailmsg.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/basecms/css/basemsgex.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/basecms/css/baseorder.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/basecms/css/baseordergoing.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/basecms/css/basesermsg.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/basecms/css/caseframe.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/basecms/css/casemoney.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/basecms/css/exend.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/basecms/css/exing.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/basecms/exend.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/basecms/exing.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/basecms/images/addimg.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/basecms/images/basebg.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/basecms/images/dd.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/basecms/images/dda.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/basecms/images/downimgsuccess.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/basecms/images/fw.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/basecms/images/fwa.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/basecms/images/logo.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/basecms/images/noadd.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/basecms/images/qy.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/basecms/images/qya.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/basecms/images/serbg.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/basecms/images/sh.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/basecms/images/sha.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/basecms/images/usericon.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/basecms/images/yj.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/basecms/images/yja.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/checkpass.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/checkpass2.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/companyaddmsg.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/companycheckedmsg.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/companycheckonemsg.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/companyframe.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/companylogin.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/companymsg.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/companyorder.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/companyordercheck.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/companyordercomplate.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/companyorderconfirm.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/companyordererror.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/companyordergoing.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/companyorderpayimg.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/companyorderpayimgcomplate.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/companyorderupload.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/companyresgin.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/companyrz1.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/companyrz2.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/companyrz3.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/companyselectmsg.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/companyuserset.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/companyxuan.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/css/checkpass.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/css/checkpass2.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/css/companyaddmsg.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/css/companycheckedmsg.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/css/companycheckonemsg.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/css/companycheckonemsg2.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/css/companyframe.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/css/companylogin.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/css/companymsg.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/css/companyorder.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/css/companyordercheck.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/css/companyordercheck2.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/css/companyordercomplate.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/css/companyorderconfirm.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/css/companyordererror.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/css/companyordergoing.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/css/companyorderpayimg.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/css/companyorderpayimgcomplate.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/css/companyorderupload.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/css/companyresgin.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/css/companyrz1.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/css/companyrz2.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/css/companyrz3.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/css/companyselectmsg.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/css/companyuserset.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/css/companyxuan.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/ganenpc.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/images/addimg.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/images/bc.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/images/bc2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/images/bc3.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/images/companybg.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/images/ddicon1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/images/ddicon2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/images/excelimg.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/images/logo.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/images/noadd.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/images/ordercomplateimg.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/images/qyicon1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/images/qyicon2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/images/uploadimg.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/images/uploadsuccess.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/images/usericon.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/images/zhicon1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/images/zhicon2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/test.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/companycms/test2.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/servicecms/css/seraddmsg.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/servicecms/css/sercheckedmsg.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/servicecms/css/serconfirmpayimg.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/servicecms/css/serdownpayimg.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/servicecms/css/serdownpayimgsuccess.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/servicecms/css/serframe.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/servicecms/css/sergetpass.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/servicecms/css/sergetpass2.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/servicecms/css/serlogin.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/servicecms/css/sermsg.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/servicecms/css/serorder.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/servicecms/css/serorderaddmail.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/servicecms/css/serorderadmins.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/servicecms/css/serorderadmins2.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/servicecms/css/serordergoing.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/servicecms/css/serordermail.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/servicecms/css/serresgin.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/servicecms/css/serrz1.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/servicecms/css/serrz2.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/servicecms/css/serrz3.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/servicecms/css/serselectmsg.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/servicecms/css/seruserset.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/servicecms/images/addimg.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/servicecms/images/ddicon1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/servicecms/images/ddicon2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/servicecms/images/downimgsuccess.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/servicecms/images/logo.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/servicecms/images/noadd.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/servicecms/images/qyicon1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/servicecms/images/qyicon2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/servicecms/images/serbg.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/servicecms/images/usericon.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/servicecms/images/zhicon1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/servicecms/images/zhicon2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/servicecms/seraddmsg.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/servicecms/sercheckedmsg.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/servicecms/serconfirmpayimg.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/servicecms/serdownpayimg.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/servicecms/serdownpayimgsuccess.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/servicecms/serframe.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/servicecms/sergetpass.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/servicecms/sergetpass2.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/servicecms/serlogin.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/servicecms/sermsg.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/servicecms/serorder.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/servicecms/serorderaddmail.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/servicecms/serorderadmins.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/servicecms/serordergoing.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/servicecms/serordermail.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/servicecms/serresgin.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/servicecms/serrz1.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/servicecms/serrz2.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/servicecms/serrz3.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/servicecms/serselectmsg.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/servicecms/seruserset.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/usercms/css/userlogin.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganecms/usercms/userlogin.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganenmoblie/ganenmobliecss/moblieaboutus.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganenmoblie/ganenmobliecss/mobliebrace.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganenmoblie/ganenmobliecss/mobliecalluse.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganenmoblie/ganenmobliecss/mobliefinishfn.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganenmoblie/ganenmobliecss/mobliefooter.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganenmoblie/ganenmobliecss/moblieheader.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganenmoblie/ganenmobliecss/moblieindex.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganenmoblie/ganenmobliecss/moblieservice.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganenmoblie/ganenmoblieimages/aboutbanner.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganenmoblie/ganenmoblieimages/banner.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganenmoblie/ganenmoblieimages/bracebanner.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganenmoblie/ganenmoblieimages/braceicon1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganenmoblie/ganenmoblieimages/braceicon2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganenmoblie/ganenmoblieimages/braceicon3.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganenmoblie/ganenmoblieimages/companyimg.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganenmoblie/ganenmoblieimages/contenticon1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganenmoblie/ganenmoblieimages/contenticon2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganenmoblie/ganenmoblieimages/contenticon3.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganenmoblie/ganenmoblieimages/erwei.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganenmoblie/ganenmoblieimages/finishbanner.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganenmoblie/ganenmoblieimages/finishimg1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganenmoblie/ganenmoblieimages/finishimg2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganenmoblie/ganenmoblieimages/fnimg.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganenmoblie/ganenmoblieimages/lnimg1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganenmoblie/ganenmoblieimages/lnimg2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganenmoblie/ganenmoblieimages/lnimg3.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganenmoblie/ganenmoblieimages/lnimg4.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganenmoblie/ganenmoblieimages/logo.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganenmoblie/ganenmoblieimages/menu.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganenmoblie/ganenmoblieimages/s1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganenmoblie/ganenmoblieimages/s2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganenmoblie/ganenmoblieimages/s3.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganenmoblie/ganenmoblieimages/s4.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganenmoblie/ganenmoblieimages/s5.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganenmoblie/ganenmoblieimages/s6.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganenmoblie/ganenmoblieimages/s7.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganenmoblie/ganenmoblieimages/s8.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganenmoblie/ganenmoblieimages/servicebanner.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganenmoblie/ganenmoblieimages/sikaoimg1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganenmoblie/ganenmoblieimages/sikaoimg2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganenmoblie/ganenmoblieimages/sikaoimg3.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganenmoblie/ganenmoblieimages/tdimg1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganenmoblie/ganenmoblieimages/tdimg2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganenmoblie/ganenmoblieimages/tdimg3.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganenmoblie/ganenmobliejs/moblieindex.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganenmoblie/ganenmobliejs/moblieindex.js.bak" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganenmoblie/ganenmobliejs/moblieservice.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganenmoblie/index.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganenmoblie/moblieaboutus.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganenmoblie/mobliebrace.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganenmoblie/mobliecallus.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganenmoblie/mobliefinishfn.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganenmoblie/moblieindex.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/ganenmoblie/moblieservice.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/gs.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/images/aboutbanner.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/images/aboutleftimg.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/images/banner.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/images/companylogo.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/images/cpicon1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/images/cpicon2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/images/cpicon3.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/images/cpicon4.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/images/fsbanner.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/images/fsicon1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/images/fsicon2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/images/fsicon3.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/images/fsicon4.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/images/fsicon5.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/images/fsicon6.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/images/gsbanner.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/images/gsicon1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/images/gsicon2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/images/gsicon3.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/images/gsicon4.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/images/gsicon5.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/images/icon1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/images/icon2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/images/icon3.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/images/indexBanner1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/images/indexBanner2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/images/lawimg.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/images/loginbg.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/images/logo.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/images/middleimg1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/images/middleimg2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/images/middleimg3.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/images/pcerwei.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/images/questionimg1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/images/questionimg2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/images/questionimg3.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/images/qyfnimg.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/images/servicefnbg.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/images/skimg.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/images/slider1.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/images/slider2.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/images/slider3.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/images/sliderbtn.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/images/solvebanner.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/images/swjsbanner.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/images/txbanner.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/images/txmiddleimg.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/images/txtop1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/images/txtop2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/images/txtop3.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/images/zbbg.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/index.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/index.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/js/index.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/js/swjs.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/login.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/solvefn.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/swjs.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/table.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/bootstrap.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/bootstrap.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/dropzone/basic.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/dropzone/dropzone-amd-module.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/dropzone/dropzone.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/dropzone/dropzone.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/dropzone/min/basic.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/dropzone/min/dropzone-amd-module.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/dropzone/min/dropzone.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/dropzone/min/dropzone.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/dropzone/readme.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/easing.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/.gitignore" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/.travis.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/CHANGELOG.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/CONTRIBUTING.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/LICENSE" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/README.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/bower.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/dist/granim.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/dist/granim.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/api.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/css/prism.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/css/scss/footer.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/css/scss/header.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/css/scss/index.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/css/scss/main.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/css/scss/pages/api.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/css/scss/pages/examples.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/css/scss/pages/home.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/css/scss/var.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/css/style.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/img/bg-forest.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/img/logo-mask.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/img/logo-mask@2x.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/img/logo.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/img/social-image.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/js/app/index.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/js/app/main.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/js/app/pages/examples.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/js/app/pages/home.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/js/script.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/js/vendor/bootstrap.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/js/vendor/granim.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/js/vendor/jquery-3.1.0.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/js/vendor/prism.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/pug/api.pug" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/pug/examples.pug" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/pug/includes/facebook-logo.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/pug/includes/footer.pug" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/pug/includes/github-logo.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/pug/includes/head.pug" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/pug/includes/logo.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/pug/includes/twitter-logo.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/assets/pug/index.pug" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/examples.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/favicon.ico" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/index.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/docs/server.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/gulpfile.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/index.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/karma.conf.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/lib/Granim.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/lib/animateColors.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/lib/changeBlendingMode.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/lib/changeDirection.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/lib/changeState.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/lib/clear.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/lib/colorDiff.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/lib/destroy.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/lib/eventPolyfill.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/lib/getCurrentColors.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/lib/getDimensions.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/lib/getElement.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/lib/getLightness.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/lib/hexToRgb.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/lib/makeGradient.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/lib/onResize.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/lib/onScroll.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/lib/pause.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/lib/pauseWhenNotInView.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/lib/play.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/lib/prepareImage.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/lib/refreshColors.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/lib/setColors.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/lib/setDirection.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/lib/setSizeAttributes.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/lib/triggerError.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/lib/validateInput.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/package-lock.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/package.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/standalone.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/test/animationSpec.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/test/coreSpec.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/test/imageSpec.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/test/img/800x200.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/test/manual-test.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/test/methodsSpec.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/granim.js-1.1.0/granim.js-1.1.0/test/testUtils.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/ichart.1.2.1.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/jquery.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/tool.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/vue-resource.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/vue-router.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tooljs/vue.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/src/main/webapp/webapp/webapp/tx.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/target/classes/MyBatis-Configuration.xml" afterPath="$PROJECT_DIR$/ganenpc/target/classes/MyBatis-Configuration.xml" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/target/classes/com/ganen/controller/CompanyController.class" afterPath="$PROJECT_DIR$/ganenpc/target/classes/com/ganen/controller/CompanyController.class" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/target/classes/com/ganen/controller/GanenController.class" afterPath="$PROJECT_DIR$/ganenpc/target/classes/com/ganen/controller/GanenController.class" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/target/classes/com/ganen/dao/CompanyDao.class" afterPath="$PROJECT_DIR$/ganenpc/target/classes/com/ganen/dao/CompanyDao.class" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/target/classes/com/ganen/dao/CompanyMapper.xml" afterPath="$PROJECT_DIR$/ganenpc/target/classes/com/ganen/dao/CompanyMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/target/classes/com/ganen/dao/EmployeeDao.class" afterPath="$PROJECT_DIR$/ganenpc/target/classes/com/ganen/dao/EmployeeDao.class" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/target/classes/com/ganen/dao/EmployeeMapper.xml" afterPath="$PROJECT_DIR$/ganenpc/target/classes/com/ganen/dao/EmployeeMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/target/classes/com/ganen/dao/GanenUserDao.class" afterPath="$PROJECT_DIR$/ganenpc/target/classes/com/ganen/dao/GanenUserDao.class" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/target/classes/com/ganen/dao/GanenUserMapper.xml" afterPath="$PROJECT_DIR$/ganenpc/target/classes/com/ganen/dao/GanenUserMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/target/classes/com/ganen/service/ICompanyService.class" afterPath="$PROJECT_DIR$/ganenpc/target/classes/com/ganen/service/ICompanyService.class" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/target/classes/com/ganen/service/IGanenSevice.class" afterPath="$PROJECT_DIR$/ganenpc/target/classes/com/ganen/service/IGanenSevice.class" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/target/classes/com/ganen/service/impl/CompanyService.class" afterPath="$PROJECT_DIR$/ganenpc/target/classes/com/ganen/service/impl/CompanyService.class" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/target/classes/com/ganen/service/impl/EmployeeService.class" afterPath="$PROJECT_DIR$/ganenpc/target/classes/com/ganen/service/impl/EmployeeService.class" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/target/classes/com/ganen/service/impl/GanenService.class" afterPath="$PROJECT_DIR$/ganenpc/target/classes/com/ganen/service/impl/GanenService.class" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/target/classes/com/ganen/util/MatchService.class" afterPath="$PROJECT_DIR$/ganenpc/target/classes/com/ganen/util/MatchService.class" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/target/classes/com/ganen/util/TaxCuts.class" afterPath="$PROJECT_DIR$/ganenpc/target/classes/com/ganen/util/TaxCuts.class" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/target/classes/com/ganen/util/Tool.class" afterPath="$PROJECT_DIR$/ganenpc/target/classes/com/ganen/util/Tool.class" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/target/ganen-pc/WEB-INF/classes/MyBatis-Configuration.xml" afterPath="$PROJECT_DIR$/ganenpc/target/ganen-pc/WEB-INF/classes/MyBatis-Configuration.xml" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/target/ganen-pc/WEB-INF/classes/com/ganen/controller/CompanyController.class" afterPath="$PROJECT_DIR$/ganenpc/target/ganen-pc/WEB-INF/classes/com/ganen/controller/CompanyController.class" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/target/ganen-pc/WEB-INF/classes/com/ganen/controller/GanenController.class" afterPath="$PROJECT_DIR$/ganenpc/target/ganen-pc/WEB-INF/classes/com/ganen/controller/GanenController.class" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/target/ganen-pc/WEB-INF/classes/com/ganen/dao/CompanyDao.class" afterPath="$PROJECT_DIR$/ganenpc/target/ganen-pc/WEB-INF/classes/com/ganen/dao/CompanyDao.class" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/target/ganen-pc/WEB-INF/classes/com/ganen/dao/CompanyMapper.xml" afterPath="$PROJECT_DIR$/ganenpc/target/ganen-pc/WEB-INF/classes/com/ganen/dao/CompanyMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/target/ganen-pc/WEB-INF/classes/com/ganen/dao/EmployeeDao.class" afterPath="$PROJECT_DIR$/ganenpc/target/ganen-pc/WEB-INF/classes/com/ganen/dao/EmployeeDao.class" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/target/ganen-pc/WEB-INF/classes/com/ganen/dao/EmployeeMapper.xml" afterPath="$PROJECT_DIR$/ganenpc/target/ganen-pc/WEB-INF/classes/com/ganen/dao/EmployeeMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/target/ganen-pc/WEB-INF/classes/com/ganen/dao/GanenUserDao.class" afterPath="$PROJECT_DIR$/ganenpc/target/ganen-pc/WEB-INF/classes/com/ganen/dao/GanenUserDao.class" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/target/ganen-pc/WEB-INF/classes/com/ganen/dao/GanenUserMapper.xml" afterPath="$PROJECT_DIR$/ganenpc/target/ganen-pc/WEB-INF/classes/com/ganen/dao/GanenUserMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/target/ganen-pc/WEB-INF/classes/com/ganen/service/ICompanyService.class" afterPath="$PROJECT_DIR$/ganenpc/target/ganen-pc/WEB-INF/classes/com/ganen/service/ICompanyService.class" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/target/ganen-pc/WEB-INF/classes/com/ganen/service/IGanenSevice.class" afterPath="$PROJECT_DIR$/ganenpc/target/ganen-pc/WEB-INF/classes/com/ganen/service/IGanenSevice.class" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/target/ganen-pc/WEB-INF/classes/com/ganen/service/impl/CompanyService.class" afterPath="$PROJECT_DIR$/ganenpc/target/ganen-pc/WEB-INF/classes/com/ganen/service/impl/CompanyService.class" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/target/ganen-pc/WEB-INF/classes/com/ganen/service/impl/EmployeeService.class" afterPath="$PROJECT_DIR$/ganenpc/target/ganen-pc/WEB-INF/classes/com/ganen/service/impl/EmployeeService.class" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/target/ganen-pc/WEB-INF/classes/com/ganen/service/impl/GanenService.class" afterPath="$PROJECT_DIR$/ganenpc/target/ganen-pc/WEB-INF/classes/com/ganen/service/impl/GanenService.class" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/target/ganen-pc/WEB-INF/classes/com/ganen/util/MatchService.class" afterPath="$PROJECT_DIR$/ganenpc/target/ganen-pc/WEB-INF/classes/com/ganen/util/MatchService.class" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/target/ganen-pc/WEB-INF/classes/com/ganen/util/TaxCuts.class" afterPath="$PROJECT_DIR$/ganenpc/target/ganen-pc/WEB-INF/classes/com/ganen/util/TaxCuts.class" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/target/ganen-pc/WEB-INF/classes/com/ganen/util/Tool.class" afterPath="$PROJECT_DIR$/ganenpc/target/ganen-pc/WEB-INF/classes/com/ganen/util/Tool.class" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/target/ganen-pc/ganecms/basecms/baseframe.html" afterPath="$PROJECT_DIR$/ganenpc/target/ganen-pc/ganecms/basecms/baseframe.html" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/target/ganen-pc/ganecms/basecms/baseorder.html" afterPath="$PROJECT_DIR$/ganenpc/target/ganen-pc/ganecms/basecms/baseorder.html" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/target/ganen-pc/ganecms/basecms/baseordergoing.html" afterPath="$PROJECT_DIR$/ganenpc/target/ganen-pc/ganecms/basecms/baseordergoing.html" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/target/ganen-pc/ganecms/basecms/casemoney.html" afterPath="$PROJECT_DIR$/ganenpc/target/ganen-pc/ganecms/basecms/casemoney.html" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/target/ganen-pc/ganecms/basecms/ganen.txt" afterPath="$PROJECT_DIR$/ganenpc/target/ganen-pc/ganecms/basecms/ganen.txt" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/target/ganen-pc/ganecms/companycms/companyorderconfirm.html" afterPath="$PROJECT_DIR$/ganenpc/target/ganen-pc/ganecms/companycms/companyorderconfirm.html" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/target/ganen-pc/ganecms/companycms/companyordergoing.html" afterPath="$PROJECT_DIR$/ganenpc/target/ganen-pc/ganecms/companycms/companyordergoing.html" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/target/ganen-pc/ganecms/companycms/companyorderpayimg.html" afterPath="$PROJECT_DIR$/ganenpc/target/ganen-pc/ganecms/companycms/companyorderpayimg.html" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/target/ganen-pc/ganecms/companycms/css/companyordercheck.css" afterPath="$PROJECT_DIR$/ganenpc/target/ganen-pc/ganecms/companycms/css/companyordercheck.css" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/target/ganen-pc/ganecms/servicecms/serordergoing.html" afterPath="$PROJECT_DIR$/ganenpc/target/ganen-pc/ganecms/servicecms/serordergoing.html" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/target/ganen-pc/ganecms/servicecms/service.txt" afterPath="$PROJECT_DIR$/ganenpc/target/ganen-pc/ganecms/servicecms/service.txt" />
-      <change beforePath="$PROJECT_DIR$/ganenpc/target/ganen-pc/webapp/ganecms/companycms/companylogin.html" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -966,22 +48,146 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="casemoney.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="casemoney.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/casemoney.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="24" column="42" lean-forward="true" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
+            <state relative-caret-position="247">
+              <caret line="22" column="42" lean-forward="false" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="companyorderpayimg.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/companycms/companyorderpayimg.html">
+      <file leaf-file-name="BestsignOpenApiClient.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/util/BestsignOpenApiClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="65" column="55" lean-forward="true" selection-start-line="65" selection-start-column="55" selection-end-line="65" selection-end-column="55" />
+            <state relative-caret-position="136">
+              <caret line="536" column="0" lean-forward="false" selection-start-line="536" selection-start-column="0" selection-end-line="536" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CompanyController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/controller/CompanyController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="236">
+              <caret line="436" column="0" lean-forward="false" selection-start-line="436" selection-start-column="0" selection-end-line="436" selection-end-column="0" />
+              <folding>
+                <element signature="method#chooseBear#0;class#CompanyController#0" expanded="false" />
+                <element signature="method#checkAll#0;class#CompanyController#0" expanded="false" />
+                <element signature="method#orderAll#0;class#CompanyController#0" expanded="false" />
+                <element signature="method#authTow#0;class#CompanyController#0" expanded="false" />
+                <element signature="method#checkInfo#0;class#CompanyController#0" expanded="false" />
+                <element signature="method#deleteEmployee#0;class#CompanyController#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GanenController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/controller/GanenController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="52">
+              <caret line="464" column="0" lean-forward="false" selection-start-line="464" selection-start-column="0" selection-end-line="464" selection-end-column="0" />
+              <folding>
+                <element signature="method#getCompany#0;class#GanenController#0" expanded="false" />
+                <element signature="method#getService#0;class#GanenController#0" expanded="false" />
+                <element signature="method#serviceAll#0;class#GanenController#0" expanded="false" />
+                <element signature="method#downloadImage#0;class#GanenController#0" expanded="false" />
+                <element signature="method#grant#0;class#GanenController#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Service.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/entity/Service.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="192" column="0" lean-forward="false" selection-start-line="192" selection-start-column="0" selection-end-line="192" selection-end-column="0" />
+              <folding>
+                <element signature="e#6824#6825#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SignUpService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/service/impl/SignUpService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="113" column="0" lean-forward="false" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
+              <folding>
+                <element signature="e#3271#3287#0" expanded="true" />
+                <element signature="e#6114#6130#0" expanded="true" />
+                <element signature="e#8369#8385#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ServiceOrder.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/entity/ServiceOrder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="147">
+              <caret line="142" column="0" lean-forward="false" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
+              <folding>
+                <element signature="e#4480#4481#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EmployeeOrder.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/entity/EmployeeOrder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="147">
+              <caret line="92" column="0" lean-forward="false" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
+              <folding>
+                <element signature="e#2667#2668#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GanenUserDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/dao/GanenUserDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="372">
+              <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GanenUserMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/dao/GanenUserMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="4" column="72" lean-forward="true" selection-start-line="4" selection-start-column="72" selection-end-line="4" selection-end-column="72" />
+              <folding>
+                <element signature="n#resultMap#1;n#mapper#0;n#!!top" expanded="false" />
+                <element signature="n#select#0;n#mapper#0;n#!!top" expanded="false" />
+                <element signature="n#select#1;n#mapper#0;n#!!top" expanded="false" />
+                <element signature="n#select#2;n#mapper#0;n#!!top" expanded="false" />
+                <element signature="n#select#4;n#mapper#0;n#!!top" expanded="false" />
+                <element signature="n#select#5;n#mapper#0;n#!!top" expanded="false" />
+                <element signature="n#select#6;n#mapper#0;n#!!top" expanded="false" />
+                <element signature="n#select#7;n#mapper#0;n#!!top" expanded="false" />
+                <element signature="n#select#8;n#mapper#0;n#!!top" expanded="false" />
+                <element signature="n#select#9;n#mapper#0;n#!!top" expanded="false" />
+                <element signature="n#select#10;n#mapper#0;n#!!top" expanded="false" />
+                <element signature="n#select#11;n#mapper#0;n#!!top" expanded="false" />
+                <element signature="n#update#0;n#mapper#0;n#!!top" expanded="false" />
+                <element signature="n#delete#0;n#mapper#0;n#!!top" expanded="false" />
+                <element signature="n#update#1;n#mapper#0;n#!!top" expanded="false" />
+                <element signature="n#update#2;n#mapper#0;n#!!top" expanded="false" />
+                <element signature="n#select#13;n#mapper#0;n#!!top" expanded="false" />
+                <marker date="1526365440762" expanded="true" signature="4647:4905" ph="SELECT *FROM... employee" />
+                <marker date="1526365440762" expanded="true" signature="8229:8315" ph="UPDATE serviceOrder... " />
+                <marker date="1526365440762" expanded="true" signature="8408:8569" ph="SELECT so.se... companyOrder" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -1003,7 +209,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>sax</find>
       <find>add</find>
       <find>record</find>
       <find>authFinish.do</find>
@@ -1021,7 +226,6 @@
       <find>companyAuthTwo</find>
       <find>serviceOrderID</find>
       <find>getCompanyOrder</find>
-      <find>getServiceOrder</find>
       <find>orderById</find>
       <find>getEmployeesByID</find>
       <find>employeeOrder</find>
@@ -1033,6 +237,8 @@
       <find>updateCompanyOrder</find>
       <find>updateOrderState</find>
       <find>newOrde</find>
+      <find>getServiceOrder</find>
+      <find>employeeIsContant</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -1050,8 +256,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/css/caseframe.css" />
-        <option value="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/css/basemsgex.css" />
         <option value="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/css/exingimg.css" />
         <option value="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/exingimg.html" />
         <option value="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/companycms/ganenpc.txt" />
@@ -1087,20 +291,22 @@
         <option value="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/servicecms/service.txt" />
         <option value="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/baseorder.html" />
         <option value="$PROJECT_DIR$/ganenpc/src/main/resources/MyBatis-Configuration.xml" />
-        <option value="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/util/BestsignOpenApiClient.java" />
         <option value="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/baseframe.html" />
         <option value="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/css/basecontract.css" />
         <option value="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/service/IGanenSevice.java" />
         <option value="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/service/impl/GanenService.java" />
         <option value="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/dao/GanenUserDao.java" />
-        <option value="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/dao/GanenUserMapper.xml" />
         <option value="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/controller/GanenController.java" />
         <option value="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/ganen.txt" />
         <option value="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/basecontract.html" />
         <option value="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/companycms/companyorderconfirm.html" />
         <option value="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/companycms/companyorderpayimg.html" />
         <option value="$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/casemoney.html" />
+        <option value="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/util/Tool.java" />
         <option value="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/dao/SignUpMapper.xml" />
+        <option value="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/util/BestsignOpenApiClient.java" />
+        <option value="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/service/impl/SignUpService.java" />
+        <option value="$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/dao/GanenUserMapper.xml" />
       </list>
     </option>
   </component>
@@ -1137,7 +343,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="955" />
@@ -1246,27 +452,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="ganen" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="part1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ganen" type="462c0819:PsiDirectoryNode" />
-              <item name="ganenpc" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ganen" type="462c0819:PsiDirectoryNode" />
               <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="part1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ganen" type="462c0819:PsiDirectoryNode" />
-              <item name="ganenpc" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ganen" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="part1" type="b2602c69:ProjectViewProjectNode" />
@@ -1294,16 +480,6 @@
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="ganecms" type="462c0819:PsiDirectoryNode" />
               <item name="basecms" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="part1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ganen" type="462c0819:PsiDirectoryNode" />
-              <item name="ganenpc" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="ganecms" type="462c0819:PsiDirectoryNode" />
-              <item name="companycms" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -1772,7 +948,7 @@
       <workItem from="1526285009708" duration="3686000" />
       <workItem from="1526288833052" duration="5657000" />
       <workItem from="1526294617629" duration="1767000" />
-      <workItem from="1526347132724" duration="4479000" />
+      <workItem from="1526347132724" duration="13636000" />
     </task>
     <task id="LOCAL-00001" summary="frist commit">
       <created>1521772862848</created>
@@ -1813,7 +989,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="865271000" />
+    <option name="totallyTimeSpent" value="874428000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1825,8 +1001,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="7" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36995828" sideWeight="0.5989717" order="7" side_tool="true" content_ui="tabs" />
@@ -1838,18 +1013,18 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3795424" sideWeight="0.65616965" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3795424" sideWeight="0.65616965" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24221921" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2503383" sideWeight="0.40102828" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25033647" sideWeight="0.40102828" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32823366" sideWeight="0.4974293" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24756606" sideWeight="0.4974293" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3176312" sideWeight="0.8181234" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42395693" sideWeight="0.8181234" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32746956" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33109018" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23521851" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33109018" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1966581" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
@@ -1996,13 +1171,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/service/impl/SignUpService.java</url>
-          <line>124</line>
+          <line>123</line>
           <properties />
           <option name="timeStamp" value="61" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/util/BestsignOpenApiClient.java</url>
-          <line>330</line>
+          <line>340</line>
           <properties />
           <option name="timeStamp" value="62" />
         </line-breakpoint>
@@ -2018,8 +1193,20 @@
           <properties />
           <option name="timeStamp" value="67" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/service/impl/SignUpService.java</url>
+          <line>113</line>
+          <properties />
+          <option name="timeStamp" value="70" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/controller/GanenController.java</url>
+          <line>395</line>
+          <properties />
+          <option name="timeStamp" value="71" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="68" />
+      <option name="time" value="72" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -2028,27 +1215,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/dao/CompanyMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="36" lean-forward="false" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/service/ICompanyService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-120">
-          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/css/basesermsg.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="162" column="11" lean-forward="false" selection-start-line="162" selection-start-column="11" selection-end-line="162" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/basesermsg.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -2141,13 +1307,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/entity/CompanyOrder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="118" column="0" lean-forward="false" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/util/MatchService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -2187,20 +1346,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="407">
           <caret line="113" column="68" lean-forward="false" selection-start-line="113" selection-start-column="68" selection-end-line="113" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/entity/Service.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="272" column="0" lean-forward="false" selection-start-line="272" selection-start-column="0" selection-end-line="272" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/entity/ServiceOrder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="142" column="0" lean-forward="false" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -2261,51 +1406,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/service/impl/GanenService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="136" column="25" lean-forward="true" selection-start-line="136" selection-start-column="25" selection-end-line="136" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/dao/GanenUserMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="160" column="45" lean-forward="false" selection-start-line="160" selection-start-column="45" selection-end-line="160" selection-end-column="45" />
-          <folding>
-            <element signature="n#resultMap#0;n#mapper#0;n#!!top" expanded="false" />
-            <element signature="n#resultMap#1;n#mapper#0;n#!!top" expanded="false" />
-            <element signature="n#select#0;n#mapper#0;n#!!top" expanded="false" />
-            <element signature="n#select#1;n#mapper#0;n#!!top" expanded="false" />
-            <element signature="n#select#2;n#mapper#0;n#!!top" expanded="false" />
-            <element signature="n#select#3;n#mapper#0;n#!!top" expanded="false" />
-            <element signature="n#select#4;n#mapper#0;n#!!top" expanded="false" />
-            <element signature="n#select#5;n#mapper#0;n#!!top" expanded="false" />
-            <element signature="n#select#6;n#mapper#0;n#!!top" expanded="false" />
-            <element signature="n#select#7;n#mapper#0;n#!!top" expanded="false" />
-            <element signature="n#select#8;n#mapper#0;n#!!top" expanded="false" />
-            <element signature="n#select#9;n#mapper#0;n#!!top" expanded="false" />
-            <element signature="n#select#10;n#mapper#0;n#!!top" expanded="false" />
-            <element signature="n#select#11;n#mapper#0;n#!!top" expanded="false" />
-            <element signature="n#update#0;n#mapper#0;n#!!top" expanded="false" />
-            <element signature="n#delete#0;n#mapper#0;n#!!top" expanded="false" />
-            <element signature="n#update#1;n#mapper#0;n#!!top" expanded="false" />
-            <element signature="n#update#2;n#mapper#0;n#!!top" expanded="false" />
-            <element signature="n#select#13;n#mapper#0;n#!!top" expanded="false" />
-            <marker date="1526291937839" expanded="true" signature="8145:8231" ph="UPDATE serviceOrder... " />
-            <marker date="1526291937839" expanded="true" signature="8324:8485" ph="SELECT so.se... companyOrder" />
-            <marker date="1526291937839" expanded="true" signature="8554:8605" ph="SELECT *FROM... employee" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/dao/GanenUserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="49" column="25" lean-forward="false" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/service/IGanenSevice.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="497">
@@ -2345,54 +1445,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/entity/EmployeeOrder.java">
+    <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/controller/PublicController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="25" column="18" lean-forward="false" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
-          <folding>
-            <element signature="e#2814#2815#0" expanded="false" />
-            <element signature="e#2845#2846#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="292">
+          <caret line="57" column="51" lean-forward="true" selection-start-line="57" selection-start-column="51" selection-end-line="57" selection-end-column="51" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/companycms/companyorderpayimg.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="65" column="55" lean-forward="true" selection-start-line="65" selection-start-column="55" selection-end-line="65" selection-end-column="55" />
+        <state relative-caret-position="0">
+          <caret line="58" column="44" lean-forward="false" selection-start-line="58" selection-start-column="44" selection-end-line="58" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/util/BestsignOpenApiClient.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_162/src.zip!/java/text/DateFormat.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="516" column="46" lean-forward="true" selection-start-line="516" selection-start-column="46" selection-end-line="516" selection-end-column="46" />
+        <state relative-caret-position="238">
+          <caret line="342" column="24" lean-forward="false" selection-start-line="342" selection-start-column="24" selection-end-line="342" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/controller/GanenController.java">
+    <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/util/Tool.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="423" column="37" lean-forward="false" selection-start-line="423" selection-start-column="37" selection-end-line="423" selection-end-column="37" />
+        <state relative-caret-position="249">
+          <caret line="180" column="39" lean-forward="true" selection-start-line="180" selection-start-column="39" selection-end-line="180" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/entity/CompanyOrder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="21" column="38" lean-forward="false" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="38" />
           <folding>
-            <element signature="method#getCompany#0;class#GanenController#0" expanded="false" />
-            <element signature="method#getService#0;class#GanenController#0" expanded="false" />
-            <element signature="method#serviceAll#0;class#GanenController#0" expanded="false" />
-            <element signature="method#downloadImage#0;class#GanenController#0" expanded="false" />
-            <element signature="method#grant#0;class#GanenController#0" expanded="false" />
+            <element signature="e#3865#3866#0" expanded="false" />
+            <element signature="e#3906#3907#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/dao/SignUpMapper.xml">
+    <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/entity/Company.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="30" column="13" lean-forward="true" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
-          <folding>
-            <marker date="1526351279552" expanded="true" signature="1475:1835" ph="SELECT *FROM... serviceOrder" />
-          </folding>
+        <state relative-caret-position="361">
+          <caret line="19" column="33" lean-forward="false" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2404,12 +1504,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/service/impl/SignUpService.java">
+    <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/dao/SignUpMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="51" column="18" lean-forward="false" selection-start-line="51" selection-start-column="18" selection-end-line="51" selection-end-column="18" />
+        <state relative-caret-position="-124">
+          <caret line="7" column="48" lean-forward="false" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="48" />
           <folding>
-            <element signature="e#8270#8286#0" expanded="true" />
+            <element signature="n#collection#0;n#resultMap#0;n#mapper#0;n#!!top" expanded="false" />
+            <marker date="1526358213208" expanded="true" signature="1980:2389" ph="SELECT *FROM... serviceOrder" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/casemoney.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="22" column="42" lean-forward="false" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/service/impl/GanenService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="97" column="28" lean-forward="false" selection-start-line="97" selection-start-column="28" selection-end-line="97" selection-end-column="28" />
+          <folding>
+            <element signature="e#3316#3317#0" expanded="true" />
+            <element signature="e#3362#3363#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/dao/GanenUserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/dao/GanenUserMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="72" lean-forward="true" selection-start-line="4" selection-start-column="72" selection-end-line="4" selection-end-column="72" />
+          <folding>
+            <element signature="n#resultMap#1;n#mapper#0;n#!!top" expanded="false" />
+            <element signature="n#select#0;n#mapper#0;n#!!top" expanded="false" />
+            <element signature="n#select#1;n#mapper#0;n#!!top" expanded="false" />
+            <element signature="n#select#2;n#mapper#0;n#!!top" expanded="false" />
+            <element signature="n#select#4;n#mapper#0;n#!!top" expanded="false" />
+            <element signature="n#select#5;n#mapper#0;n#!!top" expanded="false" />
+            <element signature="n#select#6;n#mapper#0;n#!!top" expanded="false" />
+            <element signature="n#select#7;n#mapper#0;n#!!top" expanded="false" />
+            <element signature="n#select#8;n#mapper#0;n#!!top" expanded="false" />
+            <element signature="n#select#9;n#mapper#0;n#!!top" expanded="false" />
+            <element signature="n#select#10;n#mapper#0;n#!!top" expanded="false" />
+            <element signature="n#select#11;n#mapper#0;n#!!top" expanded="false" />
+            <element signature="n#update#0;n#mapper#0;n#!!top" expanded="false" />
+            <element signature="n#delete#0;n#mapper#0;n#!!top" expanded="false" />
+            <element signature="n#update#1;n#mapper#0;n#!!top" expanded="false" />
+            <element signature="n#update#2;n#mapper#0;n#!!top" expanded="false" />
+            <element signature="n#select#13;n#mapper#0;n#!!top" expanded="false" />
+            <marker date="1526365440762" expanded="true" signature="4647:4905" ph="SELECT *FROM... employee" />
+            <marker date="1526365440762" expanded="true" signature="8229:8315" ph="UPDATE serviceOrder... " />
+            <marker date="1526365440762" expanded="true" signature="8408:8569" ph="SELECT so.se... companyOrder" />
           </folding>
         </state>
       </provider>
@@ -2417,7 +1574,7 @@
     <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/controller/CompanyController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="236">
-          <caret line="436" column="51" lean-forward="false" selection-start-line="436" selection-start-column="51" selection-end-line="436" selection-end-column="51" />
+          <caret line="436" column="0" lean-forward="false" selection-start-line="436" selection-start-column="0" selection-end-line="436" selection-end-column="0" />
           <folding>
             <element signature="method#chooseBear#0;class#CompanyController#0" expanded="false" />
             <element signature="method#checkAll#0;class#CompanyController#0" expanded="false" />
@@ -2429,19 +1586,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/controller/PublicController.java">
+    <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/entity/EmployeeOrder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="57" column="51" lean-forward="true" selection-start-line="57" selection-start-column="51" selection-end-line="57" selection-end-column="51" />
+        <state relative-caret-position="147">
+          <caret line="92" column="0" lean-forward="false" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
+          <folding>
+            <element signature="e#2667#2668#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/entity/ServiceOrder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="142" column="0" lean-forward="false" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
+          <folding>
+            <element signature="e#4480#4481#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/entity/Service.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="192" column="0" lean-forward="false" selection-start-line="192" selection-start-column="0" selection-end-line="192" selection-end-column="0" />
+          <folding>
+            <element signature="e#6824#6825#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/service/impl/SignUpService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="113" column="0" lean-forward="false" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
+          <folding>
+            <element signature="e#3271#3287#0" expanded="true" />
+            <element signature="e#6114#6130#0" expanded="true" />
+            <element signature="e#8369#8385#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/util/BestsignOpenApiClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="536" column="0" lean-forward="false" selection-start-line="536" selection-start-column="0" selection-end-line="536" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ganenpc/src/main/webapp/ganecms/basecms/casemoney.html">
+    <entry file="file://$PROJECT_DIR$/ganenpc/src/main/java/com/ganen/controller/GanenController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="24" column="42" lean-forward="true" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
-          <folding />
+        <state relative-caret-position="52">
+          <caret line="464" column="0" lean-forward="false" selection-start-line="464" selection-start-column="0" selection-end-line="464" selection-end-column="0" />
+          <folding>
+            <element signature="method#getCompany#0;class#GanenController#0" expanded="false" />
+            <element signature="method#getService#0;class#GanenController#0" expanded="false" />
+            <element signature="method#serviceAll#0;class#GanenController#0" expanded="false" />
+            <element signature="method#downloadImage#0;class#GanenController#0" expanded="false" />
+            <element signature="method#grant#0;class#GanenController#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
